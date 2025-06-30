@@ -1,0 +1,23 @@
+[data-theme="flexoki"] {
+  color-scheme: light;
+  --color-primary: oklch(47.47% 0.222 255.56);
+  --color-primary-content: oklch(99.47% 0.015 102.11);
+  --color-secondary: oklch(52.47% 0.196 106.26);
+  --color-secondary-content: oklch(99.47% 0.015 102.11);
+  --color-accent: oklch(41.47% 0.250 336.41);
+  --color-accent-content: oklch(99.47% 0.015 102.11);
+  --color-neutral: oklch(38.47% 0.110 82.31);
+  --color-neutral-content: oklch(99.47% 0.015 102.11);
+  --color-base-100: oklch(99.47% 0.015 102.11);
+  --color-base-200: oklch(94.47% 0.020 102.11);
+  --color-base-300: oklch(90.47% 0.025 102.11);
+  --color-base-content: oklch(38.47% 0.110 82.31);
+  --color-info: oklch(59.47% 0.190 255.56);
+  --color-info-content: oklch(99.47% 0.015 102.11);
+  --color-success: oklch(61.47% 0.210 106.26);
+  --color-success-content: oklch(99.47% 0.015 102.11);
+  --color-warning: oklch(70.47% 0.090 82.31);
+  --color-warning-content: oklch(38.47% 0.110 82.31);
+  --color-error: oklch(56.47% 0.270 336.41);
+  --color-error-content: oklch(99.47% 0.015 102.11);
+}

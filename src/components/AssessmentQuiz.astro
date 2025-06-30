@@ -1,0 +1,887 @@
+---
+// Assessment Quiz Component for Harney County Digital Wellness
+---
+
+<div class="assessment-quiz" id="assessmentQuiz">
+    <!-- Quiz Container -->
+    <div id="quizContainer" class="space-y-6">
+        <div class="progress-bar mb-6">
+            <div class="flex justify-between text-sm text-base-content mb-2">
+                <span>Progress</span>
+                <span id="progressText">1 of 8</span>
+            </div>
+            <div class="w-full bg-base-300 rounded-full h-2">
+                <div
+                    id="progressBar"
+                    class="bg-primary h-2 rounded-full transition-all duration-300"
+                    style="width: 12.5%"
+                >
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 1: Child's Age -->
+        <div class="question-card" data-question="1">
+            <div class="card bg-base-100 shadow-lg">
+                <div class="card-body">
+                    <h3 class="card-title text-primary mb-4">
+                        What is your child's age?
+                    </h3>
+                    <div class="space-y-2">
+                        <label class="cursor-pointer label">
+                            <span class="label-text">Under 6 years old</span>
+                            <input
+                                type="radio"
+                                name="age"
+                                value="under6"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                        <label class="cursor-pointer label">
+                            <span class="label-text">6-8 years old</span>
+                            <input
+                                type="radio"
+                                name="age"
+                                value="6-8"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                        <label class="cursor-pointer label">
+                            <span class="label-text">9-12 years old</span>
+                            <input
+                                type="radio"
+                                name="age"
+                                value="9-12"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                        <label class="cursor-pointer label">
+                            <span class="label-text">13-15 years old</span>
+                            <input
+                                type="radio"
+                                name="age"
+                                value="13-15"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                        <label class="cursor-pointer label">
+                            <span class="label-text">16+ years old</span>
+                            <input
+                                type="radio"
+                                name="age"
+                                value="16+"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 2: Daily Screen Time -->
+        <div class="question-card hidden" data-question="2">
+            <div class="card bg-base-100 shadow-lg">
+                <div class="card-body">
+                    <h3 class="card-title text-primary mb-4">
+                        How much recreational screen time does your child have
+                        on a typical day?
+                    </h3>
+                    <div class="space-y-2">
+                        <label class="cursor-pointer label">
+                            <span class="label-text">Less than 1 hour</span>
+                            <input
+                                type="radio"
+                                name="screenTime"
+                                value="<1"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                        <label class="cursor-pointer label">
+                            <span class="label-text">1-2 hours</span>
+                            <input
+                                type="radio"
+                                name="screenTime"
+                                value="1-2"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                        <label class="cursor-pointer label">
+                            <span class="label-text">2-4 hours</span>
+                            <input
+                                type="radio"
+                                name="screenTime"
+                                value="2-4"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                        <label class="cursor-pointer label">
+                            <span class="label-text">4-6 hours</span>
+                            <input
+                                type="radio"
+                                name="screenTime"
+                                value="4-6"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                        <label class="cursor-pointer label">
+                            <span class="label-text">More than 6 hours</span>
+                            <input
+                                type="radio"
+                                name="screenTime"
+                                value="6+"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 3: Sleep Impact -->
+        <div class="question-card hidden" data-question="3">
+            <div class="card bg-base-100 shadow-lg">
+                <div class="card-body">
+                    <h3 class="card-title text-primary mb-4">
+                        Does your child use screens within 1 hour of bedtime?
+                    </h3>
+                    <div class="space-y-2">
+                        <label class="cursor-pointer label">
+                            <span class="label-text">Never</span>
+                            <input
+                                type="radio"
+                                name="bedtimeScreens"
+                                value="never"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                        <label class="cursor-pointer label">
+                            <span class="label-text"
+                                >Rarely (1-2 times per week)</span
+                            >
+                            <input
+                                type="radio"
+                                name="bedtimeScreens"
+                                value="rarely"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                        <label class="cursor-pointer label">
+                            <span class="label-text"
+                                >Sometimes (3-4 times per week)</span
+                            >
+                            <input
+                                type="radio"
+                                name="bedtimeScreens"
+                                value="sometimes"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                        <label class="cursor-pointer label">
+                            <span class="label-text"
+                                >Often (5-6 times per week)</span
+                            >
+                            <input
+                                type="radio"
+                                name="bedtimeScreens"
+                                value="often"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                        <label class="cursor-pointer label">
+                            <span class="label-text">Every night</span>
+                            <input
+                                type="radio"
+                                name="bedtimeScreens"
+                                value="daily"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 4: Social Media -->
+        <div class="question-card hidden" data-question="4">
+            <div class="card bg-base-100 shadow-lg">
+                <div class="card-body">
+                    <h3 class="card-title text-primary mb-4">
+                        Does your child use social media platforms?
+                    </h3>
+                    <div class="space-y-2">
+                        <label class="cursor-pointer label">
+                            <span class="label-text">No social media use</span>
+                            <input
+                                type="radio"
+                                name="socialMedia"
+                                value="none"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                        <label class="cursor-pointer label">
+                            <span class="label-text"
+                                >Limited use with supervision</span
+                            >
+                            <input
+                                type="radio"
+                                name="socialMedia"
+                                value="supervised"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                        <label class="cursor-pointer label">
+                            <span class="label-text"
+                                >Regular use with some monitoring</span
+                            >
+                            <input
+                                type="radio"
+                                name="socialMedia"
+                                value="monitored"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                        <label class="cursor-pointer label">
+                            <span class="label-text"
+                                >Frequent unsupervised use</span
+                            >
+                            <input
+                                type="radio"
+                                name="socialMedia"
+                                value="unsupervised"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 5: Physical Activity -->
+        <div class="question-card hidden" data-question="5">
+            <div class="card bg-base-100 shadow-lg">
+                <div class="card-body">
+                    <h3 class="card-title text-primary mb-4">
+                        How often does your child engage in physical activity or
+                        outdoor play?
+                    </h3>
+                    <div class="space-y-2">
+                        <label class="cursor-pointer label">
+                            <span class="label-text">Daily (1+ hours)</span>
+                            <input
+                                type="radio"
+                                name="physicalActivity"
+                                value="daily"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                        <label class="cursor-pointer label">
+                            <span class="label-text"
+                                >Most days (4-6 times per week)</span
+                            >
+                            <input
+                                type="radio"
+                                name="physicalActivity"
+                                value="mostDays"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                        <label class="cursor-pointer label">
+                            <span class="label-text"
+                                >Sometimes (2-3 times per week)</span
+                            >
+                            <input
+                                type="radio"
+                                name="physicalActivity"
+                                value="sometimes"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                        <label class="cursor-pointer label">
+                            <span class="label-text"
+                                >Rarely (once per week or less)</span
+                            >
+                            <input
+                                type="radio"
+                                name="physicalActivity"
+                                value="rarely"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 6: Mood Changes -->
+        <div class="question-card hidden" data-question="6">
+            <div class="card bg-base-100 shadow-lg">
+                <div class="card-body">
+                    <h3 class="card-title text-primary mb-4">
+                        Have you noticed mood changes when limiting screen time?
+                    </h3>
+                    <div class="space-y-2">
+                        <label class="cursor-pointer label">
+                            <span class="label-text"
+                                >No significant changes</span
+                            >
+                            <input
+                                type="radio"
+                                name="moodChanges"
+                                value="none"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                        <label class="cursor-pointer label">
+                            <span class="label-text"
+                                >Mild frustration that passes quickly</span
+                            >
+                            <input
+                                type="radio"
+                                name="moodChanges"
+                                value="mild"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                        <label class="cursor-pointer label">
+                            <span class="label-text"
+                                >Moderate resistance or tantrums</span
+                            >
+                            <input
+                                type="radio"
+                                name="moodChanges"
+                                value="moderate"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                        <label class="cursor-pointer label">
+                            <span class="label-text"
+                                >Severe emotional reactions</span
+                            >
+                            <input
+                                type="radio"
+                                name="moodChanges"
+                                value="severe"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 7: Family Rules -->
+        <div class="question-card hidden" data-question="7">
+            <div class="card bg-base-100 shadow-lg">
+                <div class="card-body">
+                    <h3 class="card-title text-primary mb-4">
+                        Do you currently have family rules about screen time?
+                    </h3>
+                    <div class="space-y-2">
+                        <label class="cursor-pointer label">
+                            <span class="label-text"
+                                >Yes, clear rules that are consistently followed</span
+                            >
+                            <input
+                                type="radio"
+                                name="familyRules"
+                                value="consistent"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                        <label class="cursor-pointer label">
+                            <span class="label-text"
+                                >Yes, but rules are sometimes broken</span
+                            >
+                            <input
+                                type="radio"
+                                name="familyRules"
+                                value="inconsistent"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                        <label class="cursor-pointer label">
+                            <span class="label-text"
+                                >Some informal guidelines</span
+                            >
+                            <input
+                                type="radio"
+                                name="familyRules"
+                                value="informal"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                        <label class="cursor-pointer label">
+                            <span class="label-text">No specific rules</span>
+                            <input
+                                type="radio"
+                                name="familyRules"
+                                value="none"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Question 8: Concerns -->
+        <div class="question-card hidden" data-question="8">
+            <div class="card bg-base-100 shadow-lg">
+                <div class="card-body">
+                    <h3 class="card-title text-primary mb-4">
+                        What is your biggest concern about your child's digital
+                        habits?
+                    </h3>
+                    <div class="space-y-2">
+                        <label class="cursor-pointer label">
+                            <span class="label-text"
+                                >Too much time on screens</span
+                            >
+                            <input
+                                type="radio"
+                                name="concerns"
+                                value="time"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                        <label class="cursor-pointer label">
+                            <span class="label-text"
+                                >Impact on sleep or physical health</span
+                            >
+                            <input
+                                type="radio"
+                                name="concerns"
+                                value="health"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                        <label class="cursor-pointer label">
+                            <span class="label-text"
+                                >Online safety and cyberbullying</span
+                            >
+                            <input
+                                type="radio"
+                                name="concerns"
+                                value="safety"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                        <label class="cursor-pointer label">
+                            <span class="label-text"
+                                >Impact on schoolwork or social skills</span
+                            >
+                            <input
+                                type="radio"
+                                name="concerns"
+                                value="academic"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                        <label class="cursor-pointer label">
+                            <span class="label-text"
+                                >No significant concerns</span
+                            >
+                            <input
+                                type="radio"
+                                name="concerns"
+                                value="none"
+                                class="radio radio-primary"
+                            />
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="flex justify-between mt-8">
+            <button
+                id="prevBtn"
+                class="btn btn-outline btn-primary"
+                style="display: none;">Previous</button
+            >
+            <button id="nextBtn" class="btn btn-primary">Next</button>
+            <button
+                id="submitBtn"
+                class="btn btn-primary"
+                style="display: none;">Get My Results</button
+            >
+        </div>
+    </div>
+
+    <!-- Results Container -->
+    <div id="resultsContainer" class="hidden space-y-6">
+        <div class="card bg-base-100 shadow-xl">
+            <div class="card-body">
+                <h2 class="card-title text-2xl text-primary mb-4">
+                    Your Personalized Assessment Results
+                </h2>
+
+                <div id="riskLevel" class="alert mb-6">
+                    <div>
+                        <h3 class="font-bold text-lg" id="riskTitle"></h3>
+                        <p id="riskDescription"></p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-semibold text-primary mb-3">
+                            Recommended Actions:
+                        </h4>
+                        <ul
+                            id="recommendations"
+                            class="list-disc list-inside space-y-2 text-base-content"
+                        >
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-semibold text-primary mb-3">
+                            Helpful Resources:
+                        </h4>
+                        <div id="resources" class="space-y-2"></div>
+                    </div>
+                </div>
+
+                <div class="card-actions justify-center mt-6">
+                    <button id="restartBtn" class="btn btn-outline btn-primary"
+                        >Take Assessment Again</button
+                    >
+                    <a href="/screen-time" class="btn btn-primary"
+                        >Access Screen Time Management Tools</a
+                    >
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    class AssessmentQuiz {
+        constructor() {
+            this.currentQuestion = 1;
+            this.totalQuestions = 8;
+            this.answers = {};
+            this.initializeQuiz();
+        }
+
+        initializeQuiz() {
+            this.updateProgress();
+            this.attachEventListeners();
+            this.showCurrentQuestion();
+        }
+
+        attachEventListeners() {
+            document
+                .getElementById("nextBtn")
+                .addEventListener("click", () => this.nextQuestion());
+            document
+                .getElementById("prevBtn")
+                .addEventListener("click", () => this.prevQuestion());
+            document
+                .getElementById("submitBtn")
+                .addEventListener("click", () => this.showResults());
+            document
+                .getElementById("restartBtn")
+                .addEventListener("click", () => this.restartQuiz());
+
+            // Listen for radio button changes
+            document
+                .querySelectorAll('input[type="radio"]')
+                .forEach((radio) => {
+                    radio.addEventListener("change", () =>
+                        this.handleAnswerChange(),
+                    );
+                });
+        }
+
+        handleAnswerChange() {
+            const nextBtn = document.getElementById("nextBtn");
+            const submitBtn = document.getElementById("submitBtn");
+
+            if (this.currentQuestion < this.totalQuestions) {
+                nextBtn.disabled = false;
+            } else {
+                submitBtn.disabled = false;
+            }
+        }
+
+        nextQuestion() {
+            if (this.currentQuestion < this.totalQuestions) {
+                this.saveCurrentAnswer();
+                this.currentQuestion++;
+                this.showCurrentQuestion();
+                this.updateProgress();
+                this.updateNavigation();
+            }
+        }
+
+        prevQuestion() {
+            if (this.currentQuestion > 1) {
+                this.currentQuestion--;
+                this.showCurrentQuestion();
+                this.updateProgress();
+                this.updateNavigation();
+            }
+        }
+
+        saveCurrentAnswer() {
+            const currentCard = document.querySelector(
+                `[data-question="${this.currentQuestion}"]`,
+            );
+            const selectedAnswer = currentCard.querySelector(
+                'input[type="radio"]:checked',
+            );
+            if (selectedAnswer) {
+                this.answers[selectedAnswer.name] = selectedAnswer.value;
+            }
+        }
+
+        showCurrentQuestion() {
+            document.querySelectorAll(".question-card").forEach((card) => {
+                card.classList.add("hidden");
+            });
+
+            const currentCard = document.querySelector(
+                `[data-question="${this.currentQuestion}"]`,
+            );
+            if (currentCard) {
+                currentCard.classList.remove("hidden");
+            }
+        }
+
+        updateProgress() {
+            const progressBar = document.getElementById("progressBar");
+            const progressText = document.getElementById("progressText");
+            const percentage =
+                (this.currentQuestion / this.totalQuestions) * 100;
+
+            progressBar.style.width = `${percentage}%`;
+            progressText.textContent = `${this.currentQuestion} of ${this.totalQuestions}`;
+        }
+
+        updateNavigation() {
+            const prevBtn = document.getElementById("prevBtn");
+            const nextBtn = document.getElementById("nextBtn");
+            const submitBtn = document.getElementById("submitBtn");
+
+            prevBtn.style.display = this.currentQuestion > 1 ? "block" : "none";
+            nextBtn.style.display =
+                this.currentQuestion < this.totalQuestions ? "block" : "none";
+            submitBtn.style.display =
+                this.currentQuestion === this.totalQuestions ? "block" : "none";
+
+            // Disable next/submit until answer is selected
+            const currentCard = document.querySelector(
+                `[data-question="${this.currentQuestion}"]`,
+            );
+            const hasAnswer = currentCard.querySelector(
+                'input[type="radio"]:checked',
+            );
+            nextBtn.disabled = !hasAnswer;
+            submitBtn.disabled = !hasAnswer;
+        }
+
+        calculateRiskLevel() {
+            let riskScore = 0;
+
+            // Age-based scoring
+            if (
+                this.answers.age === "under6" &&
+                this.answers.screenTime !== "<1"
+            )
+                riskScore += 2;
+            if (
+                this.answers.age === "6-8" &&
+                ["4-6", "6+"].includes(this.answers.screenTime)
+            )
+                riskScore += 2;
+            if (
+                ["9-12", "13-15", "16+"].includes(this.answers.age) &&
+                this.answers.screenTime === "6+"
+            )
+                riskScore += 1;
+
+            // Screen time scoring
+            if (this.answers.screenTime === "6+") riskScore += 2;
+            if (["4-6", "2-4"].includes(this.answers.screenTime))
+                riskScore += 1;
+
+            // Sleep impact
+            if (["often", "daily"].includes(this.answers.bedtimeScreens))
+                riskScore += 2;
+            if (this.answers.bedtimeScreens === "sometimes") riskScore += 1;
+
+            // Social media
+            if (this.answers.socialMedia === "unsupervised") riskScore += 2;
+            if (this.answers.socialMedia === "monitored") riskScore += 1;
+
+            // Physical activity
+            if (this.answers.physicalActivity === "rarely") riskScore += 2;
+            if (this.answers.physicalActivity === "sometimes") riskScore += 1;
+
+            // Mood changes
+            if (this.answers.moodChanges === "severe") riskScore += 2;
+            if (this.answers.moodChanges === "moderate") riskScore += 1;
+
+            // Family rules
+            if (this.answers.familyRules === "none") riskScore += 1;
+            if (this.answers.familyRules === "inconsistent") riskScore += 1;
+
+            return riskScore;
+        }
+
+        showResults() {
+            this.saveCurrentAnswer();
+
+            const riskScore = this.calculateRiskLevel();
+            const quizContainer = document.getElementById("quizContainer");
+            const resultsContainer =
+                document.getElementById("resultsContainer");
+
+            quizContainer.classList.add("hidden");
+            resultsContainer.classList.remove("hidden");
+
+            this.displayResults(riskScore);
+        }
+
+        displayResults(riskScore) {
+            const riskLevel = document.getElementById("riskLevel");
+            const riskTitle = document.getElementById("riskTitle");
+            const riskDescription = document.getElementById("riskDescription");
+            const recommendations = document.getElementById("recommendations");
+            const resources = document.getElementById("resources");
+
+            let level, title, description, recs, resourceLinks;
+
+            if (riskScore <= 3) {
+                level = "alert-success";
+                title = "Low Risk - Great Foundation!";
+                description =
+                    "Your family has healthy digital habits with room for minor improvements.";
+                recs = [
+                    "Continue current positive practices",
+                    "Consider adding screen-free family time",
+                    "Stay aware of age-appropriate content",
+                    "Model healthy screen habits yourself",
+                ];
+                resourceLinks = [
+                    {
+                        text: "Mindful Breaks Activities",
+                        url: "/mindful-breaks",
+                    },
+                    { text: "Maintaining Healthy Habits", url: "/resources" },
+                ];
+            } else if (riskScore <= 7) {
+                level = "alert-warning";
+                title = "Moderate Risk - Time for Changes";
+                description =
+                    "Some aspects of your child's digital habits may benefit from attention and adjustment.";
+                recs = [
+                    "Create a family media plan",
+                    "Establish screen-free times (meals, bedtime)",
+                    "Increase physical activity and outdoor time",
+                    "Set up parental controls if not already in place",
+                    "Monitor mood changes related to screen time",
+                ];
+                resourceLinks = [
+                    { text: "Create Family Media Plan", url: "/screen-time" },
+                    { text: "Online Safety Guide", url: "/online-safety" },
+                    { text: "Screen Time Tools", url: "/screen-time" },
+                ];
+            } else {
+                level = "alert-error";
+                title = "Higher Risk - Action Needed";
+                description =
+                    "Your child's digital habits show several areas of concern that would benefit from immediate attention.";
+                recs = [
+                    "Significantly reduce recreational screen time",
+                    "Remove screens from bedrooms",
+                    "Implement strict bedtime screen curfews",
+                    "Increase supervision of online activities",
+                    "Prioritize physical activities and face-to-face social time",
+                    "Consider consulting with school counselor or pediatrician",
+                ];
+                resourceLinks = [
+                    { text: "Get Professional Help", url: "/get-help" },
+                    {
+                        text: "Crisis Support Resources",
+                        url: "/get-help#crisis",
+                    },
+                    { text: "Screen Time Management", url: "/screen-time" },
+                    { text: "Online Safety Tools", url: "/online-safety" },
+                ];
+            }
+
+            riskLevel.className = `alert ${level} mb-6`;
+            riskTitle.textContent = title;
+            riskDescription.textContent = description;
+
+            recommendations.innerHTML = recs
+                .map((rec) => `<li>${rec}</li>`)
+                .join("");
+            resources.innerHTML = resourceLinks
+                .map(
+                    (link) =>
+                        `<a href="${link.url}" class="btn btn-outline btn-sm btn-primary block w-full">${link.text}</a>`,
+                )
+                .join("");
+        }
+
+        restartQuiz() {
+            this.currentQuestion = 1;
+            this.answers = {};
+
+            const quizContainer = document.getElementById("quizContainer");
+            const resultsContainer =
+                document.getElementById("resultsContainer");
+
+            resultsContainer.classList.add("hidden");
+            quizContainer.classList.remove("hidden");
+
+            // Clear all radio selections
+            document
+                .querySelectorAll('input[type="radio"]')
+                .forEach((radio) => {
+                    radio.checked = false;
+                });
+
+            this.showCurrentQuestion();
+            this.updateProgress();
+            this.updateNavigation();
+        }
+    }
+
+    // Initialize the quiz when the page loads
+    document.addEventListener("DOMContentLoaded", () => {
+        new AssessmentQuiz();
+    });
+</script>
+
+<style>
+    .question-card {
+        animation: fadeIn 0.3s ease-in;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .radio:checked {
+        background-color: oklch(47.47% 0.222 255.56);
+        border-color: oklch(47.47% 0.222 255.56);
+    }
+
+    .btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+</style>

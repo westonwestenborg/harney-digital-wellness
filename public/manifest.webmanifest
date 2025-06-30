@@ -1,0 +1,24 @@
+{
+  "name": "Harney County Digital Wellness",
+  "short_name": "Harney Digital Wellness",
+  "description": "Practical tools for Harney County families to build healthy screen habits",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFCF0",
+  "theme_color": "#205EA6",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "health",
+    "education",
+    "lifestyle"
+  ],
+  "lang": "en-US",
+  "scope": "/"
+}

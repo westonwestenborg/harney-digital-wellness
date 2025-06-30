@@ -1,16 +1,354 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Harney County Digital Wellness - Help Your Child Thrive">
+    <!-- Hero Section -->
+    <section
+        class="hero min-h-screen bg-gradient-to-br from-flexoki-blue-50 to-flexoki-green-50"
+    >
+        <div class="hero-content text-center">
+            <div class="max-w-md lg:max-w-2xl">
+                <h1 class="text-4xl lg:text-6xl font-bold text-primary mb-6">
+                    Help Your Child Thrive in a Digital World
+                </h1>
+                <p
+                    class="text-lg lg:text-xl text-base-content mb-8 leading-relaxed"
+                >
+                    Practical tools for Harney County families to build healthy
+                    screen habits
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/quick-start" class="btn btn-primary btn-lg">
+                        Take the 2-Minute Family Assessment
+                    </a>
+                    <a
+                        href="/get-help"
+                        class="btn btn-accent btn-lg btn-outline"
+                    >
+                        Get Help Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="py-16 bg-base-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <div
+                    class="flex flex-wrap justify-center items-center gap-8 text-base-content"
+                >
+                    <div class="flex items-center gap-2">
+                        <svg
+                            class="w-6 h-6 text-primary"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                            ></path>
+                        </svg>
+                        <span class="font-medium"
+                            >Created for Harney County Families</span
+                        >
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg
+                            class="w-6 h-6 text-primary"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                            ></path>
+                        </svg>
+                        <span class="font-medium"
+                            >Backed by Research by Pacific University</span
+                        >
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg
+                            class="w-6 h-6 text-primary"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"
+                            ></path>
+                        </svg>
+                        <span class="font-medium"
+                            >Approved by Harney County School District</span
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Access Cards -->
+    <section class="py-16 bg-base-200">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-primary mb-12">
+                Quick Help for Common Concerns
+            </h2>
+            <div
+                class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto"
+            >
+                <!-- Screen Time Card -->
+                <div
+                    class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow"
+                >
+                    <div class="card-body">
+                        <div class="flex items-center mb-4">
+                            <div
+                                class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-3"
+                            >
+                                <svg
+                                    class="w-6 h-6 text-primary"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <h3 class="card-title text-lg">
+                                Is 3 Hours Too Much?
+                            </h3>
+                        </div>
+                        <p class="text-base-content mb-4">
+                            Use our screen time calculator to see if your
+                            child's usage is within healthy ranges and get
+                            personalized recommendations.
+                        </p>
+                        <div class="card-actions">
+                            <a
+                                href="/screen-time"
+                                class="btn btn-primary btn-sm"
+                                >Check Screen Time</a
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cyberbullying Card -->
+                <div
+                    class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow"
+                >
+                    <div class="card-body">
+                        <div class="flex items-center mb-4">
+                            <div
+                                class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mr-3"
+                            >
+                                <svg
+                                    class="w-6 h-6 text-accent"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.082 16.5c-.77.833.192 2.5 1.732 2.5z"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <h3 class="card-title text-lg">
+                                Worried About Cyberbullying?
+                            </h3>
+                        </div>
+                        <p class="text-base-content mb-4">
+                            Learn the warning signs, prevention strategies, and
+                            what to do if your child is being bullied or
+                            bullying others online.
+                        </p>
+                        <div class="card-actions">
+                            <a
+                                href="/online-safety"
+                                class="btn btn-accent btn-sm"
+                                >Learn About Online Safety</a
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parental Controls Card -->
+                <div
+                    class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow"
+                >
+                    <div class="card-body">
+                        <div class="flex items-center mb-4">
+                            <div
+                                class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mr-3"
+                            >
+                                <svg
+                                    class="w-6 h-6 text-secondary"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        stroke-width="2"
+                                        d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                                    ></path>
+                                </svg>
+                            </div>
+                            <h3 class="card-title text-lg">
+                                Set Up Parental Controls
+                            </h3>
+                        </div>
+                        <p class="text-base-content mb-4">
+                            Step-by-step guides for setting up safety controls
+                            on iOS, Android, Windows, and popular social media
+                            platforms.
+                        </p>
+                        <div class="card-actions">
+                            <a
+                                href="/online-safety#device-settings"
+                                class="btn btn-secondary btn-sm"
+                                >Setup Parental Controls</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Features Section -->
+    <section class="py-16 bg-base-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary mb-4">
+                    More Tools to Support Your Family
+                </h2>
+                <p class="text-lg text-base-content max-w-2xl mx-auto">
+                    Discover additional resources to help your family develop
+                    healthy digital habits
+                </p>
+            </div>
+
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto"
+            >
+                <a
+                    href="/mindful-breaks"
+                    class="card bg-flexoki-blue-50 hover:bg-flexoki-blue-100 transition-colors border border-flexoki-blue-200"
+                >
+                    <div class="card-body text-center">
+                        <svg
+                            class="w-8 h-8 text-flexoki-blue-600 mx-auto mb-2"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+                            ></path>
+                        </svg>
+                        <h3 class="font-semibold text-flexoki-blue-900">
+                            Mindful Breaks
+                        </h3>
+                        <p class="text-sm text-flexoki-blue-800">
+                            Fun activities to replace screen time
+                        </p>
+                    </div>
+                </a>
+
+                <a
+                    href="/survey"
+                    class="card bg-flexoki-green-50 hover:bg-flexoki-green-100 transition-colors border border-flexoki-green-200"
+                >
+                    <div class="card-body text-center">
+                        <svg
+                            class="w-8 h-8 text-flexoki-green-600 mx-auto mb-2"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M9 5H7a2 2 0 00-2 2v6a2 2 0 002 2h2m0 0h2m-2 0v4a2 2 0 002 2h2a2 2 0 002-2v-4m-6 0a2 2 0 002-2V7a2 2 0 00-2-2H9z"
+                            ></path>
+                        </svg>
+                        <h3 class="font-semibold text-flexoki-green-900">
+                            Parent Survey
+                        </h3>
+                        <p class="text-sm text-flexoki-green-800">
+                            Share your experience and help others
+                        </p>
+                    </div>
+                </a>
+
+                <a
+                    href="/resources"
+                    class="card bg-flexoki-magenta-50 hover:bg-flexoki-magenta-100 transition-colors border border-flexoki-magenta-200"
+                >
+                    <div class="card-body text-center">
+                        <svg
+                            class="w-8 h-8 text-flexoki-magenta-600 mx-auto mb-2"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
+                            ></path>
+                        </svg>
+                        <h3 class="font-semibold text-flexoki-magenta-900">
+                            External Resources
+                        </h3>
+                        <p class="text-sm text-flexoki-magenta-800">
+                            Links to trusted organizations
+                        </p>
+                    </div>
+                </a>
+
+                <a
+                    href="/get-help"
+                    class="card bg-flexoki-paper-100 hover:bg-flexoki-paper-200 transition-colors border border-flexoki-paper-300"
+                >
+                    <div class="card-body text-center">
+                        <svg
+                            class="w-8 h-8 text-flexoki-paper-700 mx-auto mb-2"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.5a9.5 9.5 0 100 19 9.5 9.5 0 000-19z"
+                            ></path>
+                        </svg>
+                        <h3 class="font-semibold text-flexoki-paper-900">
+                            Get Local Help
+                        </h3>
+                        <p class="text-sm text-flexoki-paper-800">
+                            Connect with Harney County resources
+                        </p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+</Layout>

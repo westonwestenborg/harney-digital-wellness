@@ -61,22 +61,29 @@ module.exports = {
       "light",
       {
         flexoki: {
-          "primary": "oklch(47.47% 0.222 255.56)",
-          "secondary": "oklch(52.47% 0.196 106.26)", 
-          "accent": "oklch(41.47% 0.250 336.41)",
+          // Core brand colors - semantic meaning for digital wellness
+          "primary": "oklch(47.47% 0.222 255.56)", // Flexoki Blue - Trust, professional guidance
+          "secondary": "oklch(52.47% 0.196 106.26)", // Flexoki Green - Growth, wellness, balance
+          "accent": "oklch(41.47% 0.250 336.41)", // Flexoki Magenta - Gentle urgency, important actions
+          
+          // Neutral tones - warm, approachable foundation
           "neutral": "oklch(38.47% 0.110 82.31)",
-          "base-100": "oklch(99.47% 0.015 102.11)",
-          "base-200": "oklch(94.47% 0.020 102.11)",
-          "base-300": "oklch(90.47% 0.025 102.11)",
-          "base-content": "oklch(38.47% 0.110 82.31)",
+          "base-100": "oklch(99.47% 0.015 102.11)", // Flexoki Paper - warm, comforting background
+          "base-200": "oklch(94.47% 0.020 102.11)", // Subtle sections
+          "base-300": "oklch(90.47% 0.025 102.11)", // Borders, dividers
+          
+          // Content colors - high contrast for accessibility
+          "base-content": "oklch(25.47% 0.110 82.31)", // Darker for better readability
           "primary-content": "oklch(99.47% 0.015 102.11)",
           "secondary-content": "oklch(99.47% 0.015 102.11)",
           "accent-content": "oklch(99.47% 0.015 102.11)",
           "neutral-content": "oklch(99.47% 0.015 102.11)",
-          "info": "oklch(59.47% 0.190 255.56)",
-          "success": "oklch(61.47% 0.210 106.26)",
-          "warning": "oklch(70.47% 0.090 82.31)",
-          "error": "oklch(56.47% 0.270 336.41)",
+          
+          // Semantic state colors - meaningful for parent guidance
+          "info": "oklch(59.47% 0.190 255.56)", // Information, tips
+          "success": "oklch(61.47% 0.210 106.26)", // Positive outcomes, healthy habits
+          "warning": "oklch(70.47% 0.090 82.31)", // Caution, attention needed
+          "error": "oklch(56.47% 0.270 336.41)", // Problems, crisis indicators
         },
       },
     ],

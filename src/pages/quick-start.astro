@@ -7,14 +7,14 @@ import AssessmentQuiz from "../components/AssessmentQuiz.astro";
     <div class="min-h-screen bg-base-100">
         <!-- Hero Section -->
         <section
-            class="bg-gradient-to-r from-flexoki-green-50 to-flexoki-blue-50 py-16"
+            class="hero-gradient-primary py-16"
         >
             <div class="container mx-auto px-4 text-center">
-                <h1 class="text-4xl font-bold text-primary mb-4">
+                <h1 class="text-4xl font-bold hero-title mb-4">
                     Quick Start Guides
                 </h1>
                 <p
-                    class="text-xl text-base-content opacity-70 max-w-2xl mx-auto"
+                    class="text-xl hero-subtitle max-w-2xl mx-auto"
                 >
                     Find the right resources for your family's digital wellness
                     needs in just a few minutes
@@ -26,12 +26,12 @@ import AssessmentQuiz from "../components/AssessmentQuiz.astro";
         <section class="py-16">
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto">
-                    <div class="card bg-base-100 shadow-xl">
+                    <div class="card bg-base-100 shadow-xl assessment-container">
                         <div class="card-body">
-                            <h2 class="card-title text-2xl text-primary mb-6">
+                            <h2 class="card-title text-2xl assessment-text mb-6">
                                 Is My Child at Risk? (2-minute assessment)
                             </h2>
-                            <p class="text-base-content mb-6">
+                            <p class="assessment-subtitle mb-6">
                                 Take this quick assessment to understand your
                                 child's digital habits and get personalized
                                 recommendations.
@@ -57,7 +57,7 @@ import AssessmentQuiz from "../components/AssessmentQuiz.astro";
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <!-- Screen Time Guide -->
                         <div
-                            class="card bg-base-100 shadow-lg hover:shadow-xl transition-shadow"
+                            class="card bg-base-100 shadow-lg card-hover-lift guidance-section"
                         >
                             <div class="card-body">
                                 <div
@@ -91,7 +91,7 @@ import AssessmentQuiz from "../components/AssessmentQuiz.astro";
                                 <div class="card-actions">
                                     <a
                                         href="/harney-digital-wellness/screen-time"
-                                        class="btn btn-primary"
+                                        class="guidance-button"
                                         >Get Screen Time Guide</a
                                     >
                                 </div>
@@ -100,7 +100,7 @@ import AssessmentQuiz from "../components/AssessmentQuiz.astro";
 
                         <!-- Safety Guide -->
                         <div
-                            class="card bg-base-100 shadow-lg hover:shadow-xl transition-shadow"
+                            class="card bg-base-100 shadow-lg card-hover-lift crisis-alert"
                         >
                             <div class="card-body">
                                 <div
@@ -132,7 +132,7 @@ import AssessmentQuiz from "../components/AssessmentQuiz.astro";
                                 <div class="card-actions">
                                     <a
                                         href="/harney-digital-wellness/online-safety"
-                                        class="btn btn-accent"
+                                        class="crisis-button"
                                         >Learn About Online Safety</a
                                     >
                                 </div>
@@ -141,7 +141,7 @@ import AssessmentQuiz from "../components/AssessmentQuiz.astro";
 
                         <!-- Digital Balance Guide -->
                         <div
-                            class="card bg-base-100 shadow-lg hover:shadow-xl transition-shadow"
+                            class="card bg-base-100 shadow-lg card-hover-lift wellness-card"
                         >
                             <div class="card-body">
                                 <div
@@ -175,7 +175,7 @@ import AssessmentQuiz from "../components/AssessmentQuiz.astro";
                                 <div class="card-actions">
                                     <a
                                         href="/harney-digital-wellness/mindful-breaks"
-                                        class="btn btn-secondary"
+                                        class="wellness-button"
                                         >Get Mindful Breaks Guide</a
                                     >
                                 </div>
@@ -191,7 +191,7 @@ import AssessmentQuiz from "../components/AssessmentQuiz.astro";
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto">
                     <div
-                        class="card bg-base-100 shadow-lg border-l-4 border-accent"
+                        class="card bg-base-100 shadow-lg crisis-alert"
                     >
                         <div class="card-body">
                             <h2 class="text-2xl font-bold text-accent mb-6">
@@ -290,7 +290,7 @@ import AssessmentQuiz from "../components/AssessmentQuiz.astro";
                                         </p>
                                         <a
                                             href="/harney-digital-wellness/get-help"
-                                            class="btn btn-primary btn-sm"
+                                            class="crisis-button btn-sm"
                                             >Find Harney County Support
                                             Resources</a
                                         >

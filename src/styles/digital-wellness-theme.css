@@ -1,0 +1,229 @@
+/* Digital Wellness Semantic Color Extensions */
+/* Extends Flexoki theme with meaningful color usage for parent guidance */
+
+/* Hero Section Backgrounds - Responsive to light/dark mode */
+.hero-gradient-primary {
+  background: linear-gradient(135deg, 
+    oklch(98.47% 0.050 255.56) 0%, 
+    oklch(98.47% 0.050 106.26) 100%);
+}
+
+[data-theme="flexoki"] .hero-gradient-primary {
+  background: linear-gradient(135deg,
+    oklch(98.47% 0.050 255.56) 0%,
+    oklch(98.47% 0.050 106.26) 100%);
+  color: oklch(25.47% 0.110 82.31);
+}
+
+/* Dark mode hero gradients (if implementing dark mode later) */
+@media (prefers-color-scheme: dark) {
+  .hero-gradient-primary {
+    background: linear-gradient(135deg,
+      oklch(20.47% 0.080 255.56) 0%,
+      oklch(20.47% 0.080 106.26) 100%);
+  }
+}
+
+/* Hero text contrast improvements */
+.hero-title {
+  color: oklch(25.47% 0.110 82.31) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.hero-subtitle {
+  color: oklch(45.47% 0.090 82.31) !important;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.03);
+}
+
+/* Quiz and Assessment Contrast Fixes */
+.assessment-text {
+  color: oklch(25.47% 0.110 82.31) !important;
+}
+
+.assessment-subtitle {
+  color: oklch(45.47% 0.090 82.31) !important;
+}
+
+:root {
+  /* Crisis and Emergency Colors - Accessible but not alarming */
+  --crisis-primary: oklch(41.47% 0.250 336.41); /* Flexoki Magenta */
+  --crisis-secondary: oklch(56.47% 0.270 336.41); /* Stronger for alerts */
+  --crisis-background: oklch(98.47% 0.050 336.41); /* Very light magenta tint */
+  
+  /* Success and Wellness Colors - Growth and positive reinforcement */
+  --wellness-primary: oklch(52.47% 0.196 106.26); /* Flexoki Green */
+  --wellness-secondary: oklch(61.47% 0.210 106.26); /* Lighter for success states */
+  --wellness-background: oklch(98.47% 0.050 106.26); /* Very light green tint */
+  
+  /* Trust and Guidance Colors - Professional, authoritative */
+  --guidance-primary: oklch(47.47% 0.222 255.56); /* Flexoki Blue */
+  --guidance-secondary: oklch(59.47% 0.190 255.56); /* Lighter for info */
+  --guidance-background: oklch(98.47% 0.050 255.56); /* Very light blue tint */
+  
+  /* Warm Foundation - Analog comfort against digital overwhelm */
+  --comfort-background: oklch(99.47% 0.015 102.11); /* Flexoki Paper */
+  --comfort-surface: oklch(94.47% 0.020 102.11); /* Subtle sections */
+  --comfort-border: oklch(90.47% 0.025 102.11); /* Gentle divisions */
+}
+
+/* Crisis and Emergency Styling */
+.crisis-alert {
+  @apply border-l-4 border-accent text-base-content;
+  background-color: var(--crisis-background);
+  border-left-color: var(--crisis-primary);
+}
+
+.crisis-button {
+  @apply btn-accent shadow-lg;
+  transition: all 0.2s ease;
+}
+
+.crisis-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px -8px var(--crisis-primary);
+}
+
+/* Wellness and Success Styling */
+.wellness-card {
+  @apply border;
+  background-color: var(--wellness-background);
+  border-color: var(--wellness-primary);
+}
+
+.wellness-button {
+  @apply btn-secondary;
+  transition: all 0.2s ease;
+}
+
+.wellness-progress {
+  @apply progress progress-secondary;
+}
+
+/* Guidance and Trust Styling */
+.guidance-section {
+  @apply border;
+  background-color: var(--guidance-background);
+  border-color: var(--guidance-primary);
+}
+
+.guidance-button {
+  @apply btn-primary shadow-md;
+  transition: all 0.2s ease;
+}
+
+.guidance-button:hover {
+  box-shadow: 0 6px 20px -6px var(--guidance-primary);
+}
+
+/* Enhanced Focus States for Accessibility */
+.btn:focus-visible,
+.card:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--guidance-primary);
+  outline-offset: 2px;
+  border-radius: 0.5rem;
+}
+
+/* Improved Interactive States */
+.card-hover-lift {
+  transition: all 0.3s ease;
+}
+
+.card-hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.1);
+}
+
+/* Content Hierarchy with Flexoki Warmth */
+.content-primary {
+  color: oklch(25.47% 0.110 82.31); /* Darker base-content for better readability */
+}
+
+.content-secondary {
+  color: oklch(45.47% 0.090 82.31); /* Medium opacity for secondary text */
+}
+
+.content-muted {
+  color: oklch(65.47% 0.070 82.31); /* Light for helper text */
+}
+
+/* Assessment and Quiz Styling */
+.assessment-container {
+  @apply bg-base-100 border rounded-2xl shadow-lg;
+  background: linear-gradient(135deg, var(--comfort-background) 0%, var(--guidance-background) 100%);
+  border-color: var(--guidance-primary);
+}
+
+.quiz-option {
+  @apply border border-base-300 rounded-lg p-4 cursor-pointer transition-all duration-200;
+}
+
+.quiz-option:hover {
+  @apply border-primary;
+  background-color: var(--guidance-background);
+}
+
+.quiz-option.selected {
+  @apply border-primary;
+  background-color: var(--guidance-background);
+}
+
+/* Screen Time Calculator Styling */
+.calculator-result.healthy {
+  @apply text-secondary border border-secondary;
+  background-color: var(--wellness-background);
+}
+
+.calculator-result.caution {
+  @apply text-warning border border-warning;
+  background-color: oklch(98.47% 0.050 82.31);
+}
+
+.calculator-result.concern {
+  @apply text-error border border-error;
+  background-color: var(--crisis-background);
+}
+
+/* Mobile-First Responsive Touch Targets */
+@media (max-width: 768px) {
+  .btn {
+    min-height: 44px; /* WCAG minimum touch target */
+    min-width: 44px;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
+  
+  .crisis-button {
+    font-size: 1.1rem;
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+/* Print Styles for Family Media Plans */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .card {
+    border: 1px solid #ccc !important;
+    box-shadow: none !important;
+  }
+}
+
+/* Additional Quiz Results Contrast */
+.alert h3, .alert p {
+  color: oklch(25.47% 0.110 82.31) \!important;
+}
+
+.btn-outline.btn-primary {
+  color: oklch(47.47% 0.222 255.56) \!important;
+  border-color: oklch(47.47% 0.222 255.56) \!important;
+}

@@ -4,23 +4,24 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Harney County Digital Wellness - Help Your Child Thrive">
     <!-- Hero Section -->
-    <section
-        class="hero min-h-screen bg-gradient-to-br from-flexoki-blue-50 to-flexoki-green-50"
-    >
+    <section class="hero min-h-screen hero-gradient-primary">
         <div class="hero-content text-center">
             <div class="max-w-md lg:max-w-2xl">
-                <h1 class="text-4xl lg:text-6xl font-bold text-primary mb-6">
+                <h1 class="text-4xl lg:text-6xl font-bold hero-title mb-6">
                     Help Your Child Thrive in a Digital World
                 </h1>
                 <p
-                    class="text-lg lg:text-xl text-base-content mb-8 leading-relaxed"
+                    class="text-lg lg:text-xl hero-subtitle mb-8 leading-relaxed"
                 >
                     Practical tools for Harney County families to build healthy
                     screen habits
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="/harney-digital-wellness/quick-start" class="btn btn-primary btn-lg">
-                        Take the 2-Minute Family Assessment
+                    <a
+                        href="/harney-digital-wellness/quick-start"
+                        class="btn btn-primary btn-lg"
+                    >
+                        Start here: Take the 2-Minute Family Assessment
                     </a>
                     <a
                         href="/harney-digital-wellness/get-help"
@@ -98,7 +99,7 @@ import Layout from "../layouts/Layout.astro";
             >
                 <!-- Screen Time Card -->
                 <div
-                    class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow"
+                    class="card bg-base-100 shadow-xl card-hover-lift guidance-section"
                 >
                     <div class="card-body">
                         <div class="flex items-center mb-4">
@@ -131,7 +132,7 @@ import Layout from "../layouts/Layout.astro";
                         <div class="card-actions">
                             <a
                                 href="/harney-digital-wellness/screen-time"
-                                class="btn btn-primary btn-sm"
+                                class="guidance-button btn-sm"
                                 >Check Screen Time</a
                             >
                         </div>
@@ -140,7 +141,7 @@ import Layout from "../layouts/Layout.astro";
 
                 <!-- Cyberbullying Card -->
                 <div
-                    class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow"
+                    class="card bg-base-100 shadow-xl card-hover-lift crisis-alert"
                 >
                     <div class="card-body">
                         <div class="flex items-center mb-4">
@@ -173,7 +174,7 @@ import Layout from "../layouts/Layout.astro";
                         <div class="card-actions">
                             <a
                                 href="/harney-digital-wellness/online-safety"
-                                class="btn btn-accent btn-sm"
+                                class="crisis-button btn-sm"
                                 >Learn About Online Safety</a
                             >
                         </div>
@@ -182,7 +183,7 @@ import Layout from "../layouts/Layout.astro";
 
                 <!-- Parental Controls Card -->
                 <div
-                    class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow"
+                    class="card bg-base-100 shadow-xl card-hover-lift wellness-card"
                 >
                     <div class="card-body">
                         <div class="flex items-center mb-4">
@@ -215,7 +216,7 @@ import Layout from "../layouts/Layout.astro";
                         <div class="card-actions">
                             <a
                                 href="/harney-digital-wellness/online-safety#device-settings"
-                                class="btn btn-secondary btn-sm"
+                                class="wellness-button btn-sm"
                                 >Setup Parental Controls</a
                             >
                         </div>

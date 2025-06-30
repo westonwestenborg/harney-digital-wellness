@@ -1,4 +1,5 @@
 @import './flexoki-theme.css';
+@import './digital-wellness-theme.css';
 
 @tailwind base;
 @tailwind components;

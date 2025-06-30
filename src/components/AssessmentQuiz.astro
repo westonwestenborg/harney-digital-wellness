@@ -29,34 +29,16 @@
                     </h3>
                     <div class="space-y-2">
                         <label class="cursor-pointer label">
-                            <span class="label-text assessment-subtitle">Under 6 years old</span>
+                            <span class="label-text assessment-subtitle">10–12 years old</span>
                             <input
                                 type="radio"
                                 name="age"
-                                value="under6"
+                                value="10-12"
                                 class="radio radio-primary"
                             />
                         </label>
                         <label class="cursor-pointer label">
-                            <span class="label-text assessment-subtitle">6-8 years old</span>
-                            <input
-                                type="radio"
-                                name="age"
-                                value="6-8"
-                                class="radio radio-primary"
-                            />
-                        </label>
-                        <label class="cursor-pointer label">
-                            <span class="label-text assessment-subtitle">9-12 years old</span>
-                            <input
-                                type="radio"
-                                name="age"
-                                value="9-12"
-                                class="radio radio-primary"
-                            />
-                        </label>
-                        <label class="cursor-pointer label">
-                            <span class="label-text assessment-subtitle">13-15 years old</span>
+                            <span class="label-text assessment-subtitle">13–15 years old</span>
                             <input
                                 type="radio"
                                 name="age"
@@ -65,11 +47,11 @@
                             />
                         </label>
                         <label class="cursor-pointer label">
-                            <span class="label-text assessment-subtitle">16+ years old</span>
+                            <span class="label-text assessment-subtitle">16–18 years old</span>
                             <input
                                 type="radio"
                                 name="age"
-                                value="16+"
+                                value="16-18"
                                 class="radio radio-primary"
                             />
                         </label>
@@ -686,19 +668,14 @@
         calculateRiskLevel() {
             let riskScore = 0;
 
-            // Age-based scoring
+            // Age-based scoring (10–18 years)
             if (
-                this.answers.age === "under6" &&
-                this.answers.screenTime !== "<1"
-            )
-                riskScore += 2;
-            if (
-                this.answers.age === "6-8" &&
+                ["10-12", "13-15"].includes(this.answers.age) &&
                 ["4-6", "6+"].includes(this.answers.screenTime)
             )
                 riskScore += 2;
             if (
-                ["9-12", "13-15", "16+"].includes(this.answers.age) &&
+                this.answers.age === "16-18" &&
                 this.answers.screenTime === "6+"
             )
                 riskScore += 1;
@@ -732,6 +709,54 @@
             return riskScore;
         }
 
+        buildRecommendations() {
+            const recs = [];
+
+            // Universal recommendation for every family
+            recs.push("Create a family media plan");
+
+            const a = this.answers || {};
+
+            // High / medium concern logic
+            // 1. Screen time
+            if (a.screenTime === "6+") {
+                recs.push("Significantly reduce recreational screen time");
+            } else if (["4-6", "2-4"].includes(a.screenTime)) {
+                recs.push("Limit recreational screen time to 2 hours or less");
+            }
+
+            // 2. Bedtime screen use
+            if (["often", "daily"].includes(a.bedtimeScreens)) {
+                recs.push("Implement strict bedtime screen curfews");
+            } else if (a.bedtimeScreens === "sometimes") {
+                recs.push("Avoid screens within 1 hour of bedtime");
+            }
+
+            // 3. Social-media supervision
+            if (a.socialMedia === "unsupervised") {
+                recs.push("Increase supervision of online activities");
+            } else if (a.socialMedia === "monitored") {
+                recs.push("Continue monitoring social media usage");
+            }
+
+            // 4. Physical activity
+            if (a.physicalActivity === "rarely") {
+                recs.push("Prioritize physical activities and outdoor time");
+            } else if (a.physicalActivity === "sometimes") {
+                recs.push("Encourage more physical activity each day");
+            }
+
+            // 5. Mood changes
+            if (a.moodChanges === "severe") {
+                recs.push("Consider consulting with a school counselor or pediatrician");
+            } else if (a.moodChanges === "moderate") {
+                recs.push("Monitor mood changes related to screen time");
+            }
+
+            // Remove duplicates while preserving order
+            return [...new Set(recs)];
+        }
+
         showResults() {
             this.saveCurrentAnswer();
 
@@ -753,19 +778,14 @@
             const recommendations = document.getElementById("recommendations");
             const resources = document.getElementById("resources");
 
-            let level, title, description, recs, resourceLinks;
+            let level, title, description, resourceLinks;
+            const recs = this.buildRecommendations();
 
             if (riskScore <= 3) {
                 level = "alert-success";
                 title = "Low Risk - Great Foundation!";
                 description =
                     "Your family has healthy digital habits with room for minor improvements.";
-                recs = [
-                    "Continue current positive practices",
-                    "Consider adding screen-free family time",
-                    "Stay aware of age-appropriate content",
-                    "Model healthy screen habits yourself",
-                ];
                 resourceLinks = [
                     {
                         text: "Mindful Breaks Activities",
@@ -778,13 +798,6 @@
                 title = "Moderate Risk - Time for Changes";
                 description =
                     "Some aspects of your child's digital habits may benefit from attention and adjustment.";
-                recs = [
-                    "Create a family media plan",
-                    "Establish screen-free times (meals, bedtime)",
-                    "Increase physical activity and outdoor time",
-                    "Set up parental controls if not already in place",
-                    "Monitor mood changes related to screen time",
-                ];
                 resourceLinks = [
                     { text: "Create Family Media Plan", url: "/screen-time" },
                     { text: "Online Safety Guide", url: "/online-safety" },
@@ -795,14 +808,6 @@
                 title = "Higher Risk - Action Needed";
                 description =
                     "Your child's digital habits show several areas of concern that would benefit from immediate attention.";
-                recs = [
-                    "Significantly reduce recreational screen time",
-                    "Remove screens from bedrooms",
-                    "Implement strict bedtime screen curfews",
-                    "Increase supervision of online activities",
-                    "Prioritize physical activities and face-to-face social time",
-                    "Consider consulting with school counselor or pediatrician",
-                ];
                 resourceLinks = [
                     { text: "Get Professional Help", url: "/get-help" },
                     {
@@ -812,6 +817,19 @@
                     { text: "Screen Time Management", url: "/screen-time" },
                     { text: "Online Safety Tools", url: "/online-safety" },
                 ];
+            }
+
+            // Ensure universal link to creating a family media plan appears first
+            const mediaPlanLink = { text: "Create Family Media Plan", url: "/screen-time#media-plan" };
+            if (!resourceLinks.some((l) => l.url.startsWith("/screen-time"))) {
+                resourceLinks.unshift(mediaPlanLink);
+            } else {
+                // If a screen-time link already exists but not specific, move the universal one to the front
+                const idx = resourceLinks.findIndex((l) => l.url.startsWith("/screen-time"));
+                if (idx > 0) {
+                    resourceLinks.splice(idx, 1); // remove existing
+                    resourceLinks.unshift(mediaPlanLink);
+                }
             }
 
             riskLevel.className = `alert ${level} mb-6`;

@@ -32,45 +32,265 @@ import Layout from "../layouts/Layout.astro";
                                 Oregon/National averages.
                             </p>
 
-                            <!-- Calculator Placeholder -->
-                            <div class="bg-base-200 p-8 rounded-lg">
-                                <p
-                                    class="text-center text-base-content italic mb-4"
-                                >
-                                    [PACIFIC UNIVERSITY TEAM: Interactive screen
-                                    time calculator to be implemented here]
-                                </p>
-                                <div class="text-sm text-base-content">
-                                    <p>
-                                        <strong
-                                            >Calculator should include:</strong>
-                                    </p>
-                                    <ul
-                                        class="list-disc list-inside mt-2 space-y-1"
+                            <!-- Interactive Screen Time Calculator -->
+                            <form id="screenTimeForm" class="space-y-6">
+                                <!-- Age Question -->
+                                <div>
+                                    <label class="font-semibold"
+                                        >What is your child's age?</label
                                     >
-                                        <li>Age-based input form</li>
-                                        <li>
-                                            Visual chart showing healthy vs.
-                                            concerning ranges
-                                        </li>
-                                        <li>
-                                            Comparison to Oregon State averages
-                                        </li>
-                                        <li>Comparison to National averages</li>
-                                        <li>
-                                            Personalized reduction strategies
-                                            based on input
-                                        </li>
-                                        <li>Progress tracking capabilities</li>
-                                    </ul>
+                                    <div
+                                        class="mt-2 flex flex-col sm:flex-row gap-4"
+                                    >
+                                        <label class="cursor-pointer flex items-center gap-2"
+                                            ><input
+                                                type="radio"
+                                                name="ageGroup"
+                                                value="10-12"
+                                                class="radio radio-primary"
+                                            />
+                                            10–12
+                                        </label>
+                                        <label class="cursor-pointer flex items-center gap-2"
+                                            ><input
+                                                type="radio"
+                                                name="ageGroup"
+                                                value="13-15"
+                                                class="radio radio-primary"
+                                            />
+                                            13–15
+                                        </label>
+                                        <label class="cursor-pointer flex items-center gap-2"
+                                            ><input
+                                                type="radio"
+                                                name="ageGroup"
+                                                value="16-18"
+                                                class="radio radio-primary"
+                                            />
+                                            16–18
+                                        </label>
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div class="card-actions justify-center mt-6">
-                                <button class="btn btn-primary btn-lg"
-                                    >Calculate Screen Time</button
-                                >
-                            </div>
+                                <!-- Screen-time Question -->
+                                <div>
+                                    <label class="font-semibold"
+                                        >On average, how much non-school screen
+                                        time does your child have each day?</label
+                                    >
+                                    <div class="mt-4 w-full text-center">
+                                        <input
+                                            type="number"
+                                            id="totalHoursInput"
+                                            step="0.5"
+                                            min="0"
+                                            max="12"
+                                            value="0"
+                                            class="input input-bordered w-24 text-center font-bold"
+                                        />
+                                        <span class="ml-1">hrs/day</span>
+                                    </div>
+                                    <input
+                                        type="range"
+                                        id="timeSlider"
+                                        min="0"
+                                        max="12"
+                                        step="0.5"
+                                        value="0"
+                                        class="range range-primary w-full mt-4"
+                                    />
+                                </div>
+
+                                <!-- Results -->
+                                <div id="resultsSection" class="mt-10 hidden">
+                                    <div class="md:flex gap-6">
+                                        <!-- Level of concern & recommendations -->
+                                        <div id="resultsText" class="md:w-1/2 mb-6 md:mb-0">
+                                            <div id="resultMessage" class="alert gap-0 mb-8"></div>
+                                            <p id="guidelineText" class="text-sm text-base-content/80 mt-1 mb-6"></p>
+                                            <div id="tipsSection" class="mt-6"></div>
+                                        </div>
+
+                                        <!-- Comparison bar chart -->
+                                        <div class="md:w-1/2">
+                                            <canvas id="screenTimeChart" height="220"></canvas>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Dependencies -->
+                                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                                <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-annotation"></script>
+
+                                <!-- Inline Logic -->
+                                <script is:inline>
+                                    document.addEventListener("DOMContentLoaded", () => {
+                                        const totalInput = document.getElementById("totalHoursInput");
+                                        const slider = document.getElementById("timeSlider");
+
+                                        function roundToHalf(val) {
+                                            return Math.round(val * 2) / 2;
+                                        }
+
+                                        function syncFromSlider(val) {
+                                            const hrs = roundToHalf(parseFloat(val));
+                                            slider.value = hrs;
+                                            totalInput.value = hrs;
+                                        }
+
+                                        function syncFromInput() {
+                                            let hrs = parseFloat(totalInput.value) || 0;
+                                            hrs = roundToHalf(hrs);
+                                            if (hrs < 0) hrs = 0;
+                                            if (hrs > 12) hrs = 12;
+                                            totalInput.value = hrs;
+                                            slider.value = hrs;
+                                        }
+
+                                        slider.addEventListener("input", (e) =>
+                                            syncFromSlider(e.target.value),
+                                        );
+                                        totalInput.addEventListener("input", syncFromInput);
+
+                                        syncFromSlider(0);
+
+                                        const form = document.getElementById("screenTimeForm");
+                                        const results = document.getElementById("resultsSection");
+                                        const resultMessage = document.getElementById("resultMessage");
+                                        const tipsSection = document.getElementById("tipsSection");
+                                        let chart;
+
+                                        form.addEventListener("submit", (e) => {
+                                            e.preventDefault();
+
+                                            const ageRadio = document.querySelector(
+                                                'input[name="ageGroup"]:checked',
+                                            );
+                                            if (!ageRadio) {
+                                                alert("Please select an age group");
+                                                return;
+                                            }
+
+                                            const total = parseFloat(totalInput.value) || 0;
+
+                                            const thresholds = {
+                                                "10-12": { healthy: 2, caution: 3.5 },
+                                                "13-15": { healthy: 2, caution: 4 },
+                                                "16-18": { healthy: 2, caution: 4 },
+                                            };
+                                            const t = thresholds[ageRadio.value];
+
+                                            let category, alertClass, color;
+                                            if (total <= t.healthy) {
+                                                category = "Healthy";
+                                                alertClass = "alert-success";
+                                                color = "#4CAF50";
+                                            } else if (total <= t.caution) {
+                                                category = "Caution";
+                                                alertClass = "alert-warning";
+                                                color = "#FFC107";
+                                            } else {
+                                                category = "High Concern";
+                                                alertClass = "alert-error";
+                                                color = "#F44336";
+                                            }
+
+                                            // Prepare chart — three bars comparison
+                                            const ctx = document
+                                                .getElementById("screenTimeChart")
+                                                .getContext("2d");
+
+                                            if (chart) chart.destroy();
+
+                                            chart = new Chart(ctx, {
+                                                type: "bar",
+                                                data: {
+                                                    labels: [
+                                                        "Your Child",
+                                                        "Oregon Avg",
+                                                        "National Avg",
+                                                    ],
+                                                    datasets: [
+                                                        {
+                                                            label: "Hours per day",
+                                                            data: [total, 3.7, 4.1],
+                                                            backgroundColor: [
+                                                                "#3B82F6",
+                                                                "#2196F3",
+                                                                "#9C27B0",
+                                                            ],
+                                                            borderRadius: 4,
+                                                        },
+                                                    ],
+                                                },
+                                                options: {
+                                                    responsive: true,
+                                                    scales: {
+                                                        y: {
+                                                            beginAtZero: true,
+                                                            suggestedMax: 6,
+                                                            title: {
+                                                                display: true,
+                                                                text: "Hours per day",
+                                                            },
+                                                        },
+                                                    },
+                                                    plugins: {
+                                                        legend: { display: false },
+                                                    },
+                                                },
+                                            });
+
+                                            // Update result message
+                                            resultMessage.className = `alert ${alertClass} gap-0`;
+                                            resultMessage.innerHTML = `<span>Your child’s screen time falls in the <strong>${category}</strong> zone. See how it compares in the chart.</span>`;
+
+                                            // guideline text under risk box
+                                            const guidelineText = document.getElementById("guidelineText");
+                                            guidelineText.textContent = `AAP Guideline: ≤ ${t.healthy} hours/day for your selected age group`;
+
+                                            // Recommendation bullets
+                                            const tipsList = {
+                                                Healthy: [
+                                                    "Encourage creative, screen-free activities like our <a href=\"/harney-digital-wellness/mindful-breaks\" class=\"link link-primary\">Mindful Breaks</a>",
+                                                    "Keep routines on track using the <a href=\"/harney-digital-wellness/screen-time#media-plan\" class=\"link link-primary\">Family Media Plan</a> as school and seasons shift",
+                                                ],
+                                                Caution: [
+                                                    "Try a screen-free hour before bed",
+                                                    "Set app limits with your device’s controls",
+                                                    "Explore the <a href=\"/harney-digital-wellness/screen-time#media-plan\" class=\"link link-primary\">Family Media Plan</a> and <a href=\"/harney-digital-wellness/online-safety#device-settings\" class=\"link link-primary\">Parental Controls Guide</a>",
+                                                ],
+                                                "High Concern": [
+                                                    "Try a 30-minute screen-free block each evening",
+                                                    "Use the <a href=\"/harney-digital-wellness/screen-time#tracker\" class=\"link link-primary\">Screen-Time Tracker</a> to spot patterns and set realistic goals",
+                                                    "Encourage tech-free moments with our <a href=\"/harney-digital-wellness/mindful-breaks\" class=\"link link-primary\">Mindful Breaks</a>",
+                                                    "Create shared boundaries using the <a href=\"/harney-digital-wellness/screen-time#media-plan\" class=\"link link-primary\">Family Media Plan</a>",
+                                                ],
+                                            };
+
+                                            const bullets = tipsList[category]
+                                                .map((item) => `<li>${item}</li>`) 
+                                                .join("");
+
+                                            tipsSection.innerHTML = `
+                                                <h3 class="font-semibold mb-2">Recommendations based on your child’s screen time:</h3>
+                                                <ul class="list-disc pl-5 space-y-1 text-base-content">${bullets}</ul>`;
+                                            results.classList.remove("hidden");
+                                        });
+                                    });
+                                </script>
+
+                                <!-- Small calculate button removed; large button below now submits form -->
+                                <div class="card-actions justify-center mt-6">
+                                    <button
+                                        class="btn btn-primary btn-lg"
+                                        type="submit"
+                                        form="screenTimeForm"
+                                    >
+                                        Calculate Screen Time
+                                    </button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -166,7 +386,7 @@ import Layout from "../layouts/Layout.astro";
                                             stroke-linecap="round"
                                             stroke-linejoin="round"
                                             stroke-width="2"
-                                            d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                                            d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0114 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
                                         ></path>
                                     </svg>
                                 </div>
@@ -186,7 +406,7 @@ import Layout from "../layouts/Layout.astro";
         </section>
 
         <!-- Family Media Plan -->
-        <section class="py-16">
+        <section id="media-plan" class="py-16">
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto">
                     <div class="card bg-base-100 shadow-xl">
@@ -277,7 +497,7 @@ import Layout from "../layouts/Layout.astro";
                                             stroke-linecap="round"
                                             stroke-linejoin="round"
                                             stroke-width="2"
-                                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+                                            d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0112 21a9.003 9.003 0 008.354-5.646z"
                                         ></path>
                                     </svg>
                                 </div>
@@ -335,7 +555,7 @@ import Layout from "../layouts/Layout.astro";
         </section>
 
         <!-- Tracking Tools -->
-        <section class="py-16">
+        <section id="tracker" class="py-16">
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto">
                     <h2
@@ -386,7 +606,7 @@ import Layout from "../layouts/Layout.astro";
                                         viewBox="0 0 24 24"
                                     >
                                         <path
-                                            d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4483.9993.9993.0001.5511-.4482.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4483.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1567-.5703.416.416 0 00-.5703.1567l-2.0223 3.5014c-1.0048-.4745-2.1349-.7461-3.3508-.7461s-2.3459.2716-3.3507.7461L9.2434 5.8592a.4162.4162 0 00-.5703-.1567.416.416 0 00-.1567.5703l1.9973 3.4592C8.2558 10.5866 6.8147 12.6456 6.8147 15.0092H17.185c0-2.3636-1.441-4.4226-3.7035-5.6678"
+                                            d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4483.9993.9993 0 .5511-.4482.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4483.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1567-.5703.416.416 0 00-.5703.1567l-2.0223 3.5014c-1.0048-.4745-2.1349-.7461-3.3508-.7461s-2.3459.2716-3.3507.7461L9.2434 5.8592a.4162.4162 0 00-.5703-.1567.416.416 0 00-.1567.5703l1.9973 3.4592C8.2558 10.5866 6.8147 12.6456 6.8147 15.0092H17.185c0-2.3636-1.441-4.4226-3.7035-5.6678"
                                         ></path>
                                     </svg>
                                     <h3 class="card-title">

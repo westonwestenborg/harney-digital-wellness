@@ -332,6 +332,17 @@ For content and local resource questions:
 
 ## 📝 License
 
+This project is open source and available under the [MIT License](LICENSE).
+
+**Permissions:**
+- ✅ Commercial use
+- ✅ Modification
+- ✅ Distribution
+- ✅ Private use
+
+**Conditions:**
+- 📋 License and copyright notice must be included
+
 This project is created for Harney County families and may include references to external resources. Please ensure all content and links comply with applicable usage rights and provide proper attribution where required.
 
 ---

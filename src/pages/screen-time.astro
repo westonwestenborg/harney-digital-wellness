@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Cite from "../lib/citations/Cite.astro";
 ---
 
 <Layout title="Managing Screen Time - Harney County Digital Wellness">
@@ -324,18 +325,20 @@ import Layout from "../layouts/Layout.astro";
                                             stroke-linecap="round"
                                             stroke-linejoin="round"
                                             stroke-width="2"
-                                            d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.5-.886-6.131-2.343"
+                                            d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0114 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
                                         ></path>
                                     </svg>
                                 </div>
                                 <h3 class="card-title text-lg text-accent">
                                     Mental Health Impact
                                 </h3>
-                                <p class="text-base-content text-sm">
-                                    [Pacific Team: Add research-backed
-                                    information about screen time's connection
-                                    to depression and anxiety in children]
-                                </p>
+                                <ul class="list-disc list-inside text-base-content text-sm space-y-2 mb-4">
+                                    <li><strong>Dose matters:</strong> Meta-analyses show that every extra recreational hour above ≈ 2 hrs/day raises the odds of depressive symptoms by 13–20 %, with a stronger effect in girls.<Cite id="liu2016" /><Cite id="li2022" /></li>
+                                    <li><strong>Quality over quantity:</strong> A 2025 <em>JAMA</em> cohort study of 4,200 U.S. teens found that addictive use patterns—difficulty logging off, emotional dependence—predicted anxiety, depression, and suicidal thoughts better than total hours online.<Cite id="xiao2025" /></li>
+                                    <li><strong>Sleep & mood loop:</strong> Evening screen-light suppresses melatonin, delaying sleep and amplifying next-day irritability; prospective data link late-night use to higher depression scores nine months later.<Cite id="hale2018" /><Cite id="hokby2025" /></li>
+                                    <li><strong>Good news:</strong> Families that cut leisure screen use for just one week reported measurable drops in children’s stress and sadness.<Cite id="schmidt2024" /><Cite id="pieh2025" /></li>
+                                </ul>
+                                <p class="italic text-sm">Take-away: Focus on balanced, purposeful use and tech-free wind-down time rather than rigid minute counts.</p>
                             </div>
                         </div>
 
@@ -362,11 +365,12 @@ import Layout from "../layouts/Layout.astro";
                                 <h3 class="card-title text-lg text-secondary">
                                     School Performance
                                 </h3>
-                                <p class="text-base-content text-sm">
-                                    [Pacific Team: Add information about how
-                                    excessive screen time affects academic
-                                    performance, attention span, and learning]
-                                </p>
+                                <ul class="list-disc list-inside text-base-content text-sm space-y-2 mb-4">
+                                    <li><strong>Grades &amp; homework:</strong> Students exceeding the American Academy of Pediatrics’ 2-hour recreational limit had significantly lower GPA equivalents and reported less homework completion in a 2024 U.S. survey of 220 middle-schoolers.<Cite id="adelantado2019" /></li>
+                                    <li><strong>Bedroom screens:</strong> Having a TV or game console in the bedroom predicts a 7–8-point drop on standardized math/reading tests, independent of socioeconomic status.<Cite id="borzekowski2005" /></li>
+                                    <li><strong>Classroom distraction:</strong> States and districts limiting smartphones during lessons report improved on-task behavior and test scores, prompting 2025 legislation in Virginia and Los Angeles.<Cite id="beland2016" /><Cite id="paul2024" /></li>
+                                </ul>
+                                <p class="italic text-sm">Take-away: Keep study spaces device-light and reserve entertainment screens for after assignments are done.</p>
                             </div>
                         </div>
 

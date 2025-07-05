@@ -1,0 +1,154 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { citations } from "../lib/citations/citations.js";
+---
+
+<Layout title="Sources & Further Reading - Harney County Digital Wellness">
+  <div class="min-h-screen bg-base-100">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-secondary/10 to-flexoki-paper-50 py-16">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl font-bold text-secondary mb-4">Sources &amp; Further Reading</h1>
+        <p class="text-xl text-base-content opacity-70 max-w-2xl mx-auto">
+          Evidence-based research articles, books, and guidelines to dig deeper into digital
+          wellness topics.
+        </p>
+      </div>
+    </section>
+
+    <!-- Academic Research -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl font-bold text-primary mb-8 text-center">Citations</h2>
+          <ol class="space-y-4 list-decimal list-inside">
+            {citations.map((c, idx) => (
+              <li id={`cite-${idx + 1}`}>{c.text}</li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Official Guidelines -->
+    <section class="py-16 bg-base-200">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl font-bold text-primary mb-8 text-center">Official Recommendations &amp; Reports</h2>
+          <ul class="space-y-6 list-disc list-inside">
+            <li>
+              <a
+                href="https://www.cdc.gov/nccdphp/dnpao/multimedia/infographics/physical-activity.htm"
+                target="_blank"
+                class="link link-hover"
+                >Centers for Disease Control and Prevention – Physical Activity Guidelines for Children &amp; Adolescents.</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.who.int/publications/i/item/9789241550536"
+                target="_blank"
+                class="link link-hover"
+                >World Health Organization. (2019). Guidelines on Physical Activity, Sedentary Behaviour and Sleep for Children Under 5 Years of Age.</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.apa.org/topics/social-media-internet/health-advisory-children"
+                target="_blank"
+                class="link link-hover"
+                >American Psychological Association. (2023). Health Advisory on Social Media Use in Adolescence.</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.hhs.gov/sites/default/files/sg.youthmentalhealth.pdf"
+                target="_blank"
+                class="link link-hover"
+                >U.S. Surgeon General. (2023). Advisory on Protecting Youth Mental Health.</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Books for Parents -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl font-bold text-primary mb-8 text-center">Books &amp; Long-Form Reading</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div class="card bg-base-100 shadow-lg">
+              <div class="card-body">
+                <h3 class="card-title text-lg">"Digital Minimalism" – Cal Newport</h3>
+                <p class="text-base-content opacity-70 text-sm">
+                  A practical philosophy for intentional technology use and reclaiming focus.
+                </p>
+              </div>
+            </div>
+            <div class="card bg-base-100 shadow-lg">
+              <div class="card-body">
+                <h3 class="card-title text-lg">"Glow Kids" – Nicholas Kardaras</h3>
+                <p class="text-base-content opacity-70 text-sm">
+                  Examines screen addiction and its impact on child development.
+                </p>
+              </div>
+            </div>
+            <div class="card bg-base-100 shadow-lg">
+              <div class="card-body">
+                <h3 class="card-title text-lg">"Irresistible" – Adam Alter</h3>
+                <p class="text-base-content opacity-70 text-sm">
+                  Explores the rise of addictive technology and the business models behind it.
+                </p>
+              </div>
+            </div>
+            <div class="card bg-base-100 shadow-lg">
+              <div class="card-body">
+                <h3 class="card-title text-lg">"The Tech-Wise Family" – Andy Crouch</h3>
+                <p class="text-base-content opacity-70 text-sm">
+                  Strategies for putting technology in its proper place within family life.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Additional Articles -->
+    <section class="py-16 bg-base-200">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <h2 class="text-3xl font-bold text-primary mb-8 text-center">Articles &amp; Opinion Pieces</h2>
+          <ul class="space-y-6 list-disc list-inside">
+            <li>
+              <a
+                href="https://www.nytimes.com/guides/smarterliving/family-tech"
+                target="_blank"
+                class="link link-hover"
+                >New York Times – The Family’s Guide to Digital Wellness.</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://time.com/6096474/screen-time-kids-pandemic/"
+                target="_blank"
+                class="link link-hover"
+                >Time Magazine – Kids’ Screen Time Has Soared in the Pandemic. Here’s How to Handle It.</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.theatlantic.com/magazine/archive/2022/05/social-media-teens-mental-health-facebook/629366/"
+                target="_blank"
+                class="link link-hover"
+                >The Atlantic – Why Social Media Is a Trap for Teenagers’ Mental Health.</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

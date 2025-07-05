@@ -1,0 +1,12 @@
+---
+import { getCitationNumber } from './citations.js';
+const { id } = Astro.props;
+const num = getCitationNumber(id);
+---
+{num ? (
+  <sup class="ml-1">
+    <a href={`/harney-digital-wellness/sources#cite-${num}`} class="text-accent cursor-pointer hover:underline underline-offset-2">
+      {num}
+    </a>
+  </sup>
+) : null}

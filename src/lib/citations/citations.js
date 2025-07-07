@@ -44,6 +44,26 @@ export const citations = [
   {
     id: 'paul2024',
     text: 'Paul K. \'Let kids be kids\': LA becomes largest US school district to ban phones in class. The Guardian. June 18 2024. Accessed July 5 2025.'
+  },
+  {
+    id: 'lampropoulos2024',
+    text: 'Lampropoulos G, Sidiropoulos A. Impact of Gamification on Students’ Learning Outcomes and Academic Performance: A Longitudinal Study Comparing Online, Traditional, and Gamified Learning. Education Sciences. 2024;14(4):367. doi:10.3390/educsci14040367'
+  },
+  {
+    id: 'pew2025',
+    text: 'Pew Research Center. Teens, Social Media and Mental Health. Published April 22 2025. Accessed July 7 2025.'
+  },
+  {
+    id: 'surgeon2023',
+    text: "Office of the U.S. Surgeon General. Social Media and Youth Mental Health: The U.S. Surgeon General’s Advisory. U.S. Department of Health and Human Services; 2023. Accessed July 7 2025."
+  },
+  {
+    id: 'who2023',
+    text: 'World Health Organization. Adolescent Mental Health and Digital Media: Global Evidence Review. WHO; 2023.'
+  },
+  {
+    id: 'zheng2016',
+    text: 'Zheng B, Warschauer M, Lin C, Chang C. Learning in One-to-One Laptop Environments: A Meta-Analysis and Research Synthesis. Review of Educational Research. 2016;86(4):1052-1084. doi:10.3102/0034654316628645'
   }
 ];
 

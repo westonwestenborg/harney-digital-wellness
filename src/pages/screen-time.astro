@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Cite from "../lib/citations/Cite.astro";
+import FamilyMediaPlan from "../components/FamilyMediaPlan.jsx";
 ---
 
 <Layout title="Managing Screen Time - Harney County Digital Wellness">
@@ -325,7 +326,7 @@ import Cite from "../lib/citations/Cite.astro";
                                             stroke-linecap="round"
                                             stroke-linejoin="round"
                                             stroke-width="2"
-                                            d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0114 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                                            d="M16.5 3.75a4.725 4.725 0 013.356 1.392 4.725 4.725 0 011.394 3.356c0 5.25-7.5 10.5-9.75 11.25-2.25-.75-9.75-6-9.75-11.25a4.725 4.725 0 011.394-3.356A4.725 4.725 0 017.5 3.75c2.084 0 3.702 1.21 4.5 2.403C12.798 4.96 14.416 3.75 16.5 3.75z"
                                         ></path>
                                     </svg>
                                 </div>
@@ -358,7 +359,7 @@ import Cite from "../lib/citations/Cite.astro";
                                             stroke-linecap="round"
                                             stroke-linejoin="round"
                                             stroke-width="2"
-                                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"
                                         ></path>
                                     </svg>
                                 </div>
@@ -397,11 +398,13 @@ import Cite from "../lib/citations/Cite.astro";
                                 <h3 class="card-title text-lg text-primary">
                                     Positive Uses
                                 </h3>
-                                <p class="text-base-content text-sm">
-                                    [Pacific Team: Add balanced information
-                                    about educational benefits and positive uses
-                                    of technology when used mindfully]
-                                </p>
+                                <ul class="list-disc list-inside text-base-content text-sm space-y-2 mb-4">
+                                    <li><strong>Learning tools:</strong> A three-year longitudinal trial found gamified math apps boosted test scores and engagement vs. traditional homework.<Cite id="lampropoulos2024" /></li>
+                                    <li><strong>Creativity &amp; connection:</strong> Pew’s 2025 teen survey shows 74&nbsp;% feel social media helps them stay connected, and 63&nbsp;% say it lets them express creativity that doesn’t fit offline spaces.<Cite id="pew2025" /></li>
+                                    <li><strong>Inclusive communities:</strong> WHO reports heavy-but-non-problematic users often gain peer support—especially marginalized youths finding niche interest groups online.<Cite id="who2023" /></li>
+                                    <li><strong>Active tech in class:</strong> Evidence-based one-to-one laptop programs with interactive lessons raise reading and math achievement when screens are used with the teacher, not instead of.<Cite id="zheng2016" /></li>
+                                </ul>
+                                <p class="italic text-sm">Take-away: Encourage “active” screen time—creating, exploring, collaborating—while setting guardrails around passive scrolling.</p>
                             </div>
                         </div>
                     </div>
@@ -424,45 +427,7 @@ import Cite from "../lib/citations/Cite.astro";
                             </p>
 
                             <!-- Family Media Plan Generator -->
-                            <div class="bg-base-200 p-8 rounded-lg">
-                                <p
-                                    class="text-center text-base-content italic mb-4"
-                                >
-                                    [PACIFIC UNIVERSITY TEAM: Interactive family
-                                    media plan generator to be implemented here]
-                                </p>
-                                <div class="text-sm text-base-content">
-                                    <p>
-                                        <strong
-                                            >Tool should guide families through:</strong>
-                                    </p>
-                                    <ul
-                                        class="list-disc list-inside mt-2 space-y-1"
-                                    >
-                                        <li>
-                                            Setting screen-free times (meals,
-                                            bedtime)
-                                        </li>
-                                        <li>
-                                            Defining appropriate content for
-                                            each age
-                                        </li>
-                                        <li>
-                                            Creating consequences for plan
-                                            violations
-                                        </li>
-                                        <li>
-                                            Establishing positive reinforcement
-                                            systems
-                                        </li>
-                                        <li>Planning alternative activities</li>
-                                        <li>
-                                            Generating a printable PDF for
-                                            family signatures
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                            <FamilyMediaPlan client:load />
 
                             <div class="card-actions justify-center mt-6">
                                 <button class="btn btn-primary btn-lg"

@@ -24,12 +24,13 @@ export default function FamilyMediaPlan() {
     ratings: { allowed: [], permission: [], never: [] },
     comms: { who: "Friends & Family", share: "Positive only" },
     techTalkDay: "Sunday",
-    reviewDate: new Date(Date.now() + 15552e6) /* ~6 mo */
+    reviewDate: new Date(Date.now() + 7776e6) /* ~3 mo */
       .toISOString()
       .slice(0, 10),
     signatures: "",
   });
   const [step, setStep] = useState(0);
+  const [maxStep, setMaxStep] = useState(0);
 
   const steps = [
     // 0. Family title
@@ -134,7 +135,7 @@ export default function FamilyMediaPlan() {
       title: "Individual Screen-Time Budget",
       content: (
         <>
-          <p className="text-sm italic mb-2">Purpose: Set a daily cap (or flexible range) for each family member.</p>
+          <p className="text-sm italic mb-2">Purpose: Set a daily cap for each family member.</p>
           <div className="space-y-4">
             {data.budgets.map((m, i) => (
               <div key={i} className="flex items-center gap-2">
@@ -384,16 +385,7 @@ export default function FamilyMediaPlan() {
         </>
       ),
     },
-    // 10. App ratings placeholder
-    {
-      title: "App / Content Ratings",
-      content: (
-        <>
-          <p className="text-sm italic mb-2">Purpose: Sort apps, games, and shows into Always Allowed, Needs Permission, or Never Allowed.</p>
-          <p className="italic">Drag-and-drop organizer coming soon…</p>
-        </>
-      ),
-    },
+
     // 11. Communication expectations
     {
       title: "Communication Expectations",
@@ -550,17 +542,23 @@ export default function FamilyMediaPlan() {
 
             <h4>Plan Signatures</h4>
             <p>{data.signatures || "—"}</p>
-          </div>
 
-          <button className="btn btn-primary print:hidden" onClick={() => window.print()}>
+          <button className="btn btn-primary btn-lg print:hidden mt-6" onClick={() => window.print()}>
             Print / Save as PDF
           </button>
+          </div>
         </div>
       ),
     },
   ];
 
-  const next = () => setStep((s) => Math.min(s + 1, steps.length - 1));
+  const next = () => {
+    setStep((s) => {
+      const n = Math.min(s + 1, steps.length - 1);
+      setMaxStep((m) => Math.max(m, n));
+      return n;
+    });
+  };
   const back = () => setStep((s) => Math.max(s - 1, 0));
 
   return (
@@ -570,7 +568,10 @@ export default function FamilyMediaPlan() {
         {steps.map((s, i) => (
           <li
             key={s.title}
-            className={`step ${i <= step ? "step-primary" : ""}`}
+            className={`step ${i <= step ? "step-primary" : ""} ${i <= maxStep ? "cursor-pointer" : ""}`}
+          onClick={() => {
+              if (i <= maxStep) setStep(i);
+            }}
           >
             {i + 1}
           </li>

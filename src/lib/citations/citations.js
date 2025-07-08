@@ -164,6 +164,26 @@ export const citations = [
   {
     id: 'cyberbullyingBully2023',
     text: 'Hinduja S, Patchin JW. What to Do When Your Child Cyberbullies Others: Tips for Parents. Cyberbullying Research Center; 2023.'
+  },
+  {
+    id: 'aapIntroSM2025',
+    text: 'American Academy of Pediatrics. "Age to Introduce Social Media" Q&A. HealthyChildren.org; 2025.'
+  },
+  {
+    id: 'ftcCoppa',
+    text: 'Federal Trade Commission. Children’s Online Privacy Protection Rule (COPPA). Accessed 2025.'
+  },
+  {
+    id: 'ftcSurveillance2024',
+    text: 'Federal Trade Commission. Staff Report on Social Media & Video Streaming Surveillance. 2024.'
+  },
+  {
+    id: 'pirdehghan2021',
+    text: 'Pirdehghan A, et al. Social Media Use and Sleep Disturbance among Adolescents. Iran J Psychiatry. 2021;16(3):222-230.'
+  },
+  {
+    id: 'aapScreenTime2025',
+    text: 'American Academy of Pediatrics. "Screen Time Guidelines" & Family Media Plan tool. 2025.'
   }
 ];
 

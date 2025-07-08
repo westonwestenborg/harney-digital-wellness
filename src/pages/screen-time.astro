@@ -355,11 +355,18 @@ import FamilyMediaPlan from "../components/FamilyMediaPlan.jsx";
                                         stroke="currentColor"
                                         viewBox="0 0 24 24"
                                     >
+                                        <!-- Academic Cap Icon -->
                                         <path
                                             stroke-linecap="round"
                                             stroke-linejoin="round"
                                             stroke-width="2"
-                                            d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"
+                                            d="M12 14l9-5-9-5-9 5 9 5z"
+                                        ></path>
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2"
+                                            d="M12 14l6.16-3.422a12.083 12.083 0 01.84 4.46V20.5l-7 3-7-3v-5.163a12.083 12.083 0 01.84-4.46L12 14z"
                                         ></path>
                                     </svg>
                                 </div>
@@ -473,9 +480,9 @@ import FamilyMediaPlan from "../components/FamilyMediaPlan.jsx";
                             </div>
 
                             <p class="text-base-content mb-6">
-                                [Pacific Team: Add content about blue light
-                                impact on sleep, recommended screen curfews, and
-                                tips for better sleep hygiene]
+                                Blue-light from phones, tablets and TVs can suppress
+                                melatonin by ≈ 50 % after just 60 min of evening use, shifting
+                                the body-clock later and cutting next-day alertness<Cite id="chang2015" />.
                             </p>
 
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -483,35 +490,43 @@ import FamilyMediaPlan from "../components/FamilyMediaPlan.jsx";
                                     <h4 class="font-semibold mb-2">
                                         Recommended Guidelines:
                                     </h4>
-                                    <ul
-                                        class="list-disc list-inside text-base-content space-y-1"
-                                    >
+                                    <ul class="pl-5 list-disc marker:text-primary text-base-content space-y-3">
                                         <li>
-                                            [Add age-specific screen curfew
-                                            times]
+                                            <strong>Digital curfew</strong><br/>
+                                            Ages 6–12: screens off ≥ 45 min; &nbsp;Ages 13–18: ≥ 60 min before lights-out<Cite id="mayo2024" /> <Cite id="sleepfoundation2023" />
                                         </li>
                                         <li>
-                                            [Add blue light filter
-                                            recommendations]
+                                            <strong>Bedroom = No-screen zone</strong><br/>
+                                            Charge all devices outside the room to avoid “quick checks” that fragment sleep<Cite id="carter2016" /> <Cite id="hale2017" />
                                         </li>
-                                        <li>[Add bedroom screen policies]</li>
+                                        <li>
+                                            <strong>Turn on blue-light filters</strong><br/>
+                                            Schedule Night Shift (iOS), Night Light (Android) or f.lux (computers) from sunset → sunrise<Cite id="apple2024" />
+                                        </li>
+                                        <li>
+                                            <strong>Hit the sleep-hour targets</strong><br/>
+                                            6–12 yrs: 9–12 h &nbsp;|&nbsp; 13–18 yrs: 8–10 h per night<Cite id="aasm2016" />
+                                        </li>
+                                        <li>
+                                            <strong>Dim & quiet</strong><br/>
+                                            Wind down under warm light the last 2 h; keep the bedroom &lt; 1 lux blue-weighted light and &lt; 30 dB ambient noise<Cite id="brown2022" /> <Cite id="who2011noise" />
+                                        </li>
                                     </ul>
                                 </div>
                                 <div>
                                     <h4 class="font-semibold mb-2">
                                         Sleep-Friendly Alternatives:
                                     </h4>
-                                    <ul
-                                        class="list-disc list-inside text-base-content space-y-1"
-                                    >
-                                        <li>
-                                            [Add bedtime reading suggestions]
-                                        </li>
-                                        <li>[Add relaxation activities]</li>
-                                        <li>
-                                            [Add family bonding alternatives]
-                                        </li>
+                                    <ul class="pl-5 list-disc marker:text-secondary text-base-content space-y-3">
+                                        <li>Bedtime paperback or comic</li>
+                                        <li>Guided audio meditation / sleepy-time podcast (screen facedown)</li>
+                                        <li>2-minute neck/shoulder stretch + 5-5-5 breathing</li>
+                                        <li>Family “high/low” check-in while phones charge elsewhere</li>
+                                        <li>5-minute gratitude journal or doodle page</li>
                                     </ul>
+                                    <p class="mt-4 text-sm italic text-base-content">
+                                        Tip: Post the household curfew time on the fridge and set an automatic “Wind-Down” reminder on devices so everyone gets a gentle cue to unplug.
+                                    </p>
                                 </div>
                             </div>
                         </div>

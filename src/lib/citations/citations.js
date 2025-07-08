@@ -64,6 +64,42 @@ export const citations = [
   {
     id: 'zheng2016',
     text: 'Zheng B, Warschauer M, Lin C, Chang C. Learning in One-to-One Laptop Environments: A Meta-Analysis and Research Synthesis. Review of Educational Research. 2016;86(4):1052-1084. doi:10.3102/0034654316628645'
+  },
+  {
+    id: 'chang2015',
+    text: 'Chang A-M, Aeschbach D, Duffy JF, & Czeisler CA. Evening use of light-emitting eReaders negatively affects sleep, circadian timing, and next-morning alertness. PNAS. 2015;112(4):1232-1237.'
+  },
+  {
+    id: 'mayo2024',
+    text: 'Mayo Clinic Staff. Screen time and children: How to guide your child. Mayo Clinic. June 19 2024.'
+  },
+  {
+    id: 'sleepfoundation2023',
+    text: 'Sleep Foundation. Sleep Strategies for Kids – Implement a Screen Curfew. Updated 2023.'
+  },
+  {
+    id: 'carter2016',
+    text: 'Carter B, et al. Association between portable screen-based media device access or use and sleep outcomes. JAMA Pediatrics. 2016;170(12):1202-1208.'
+  },
+  {
+    id: 'hale2017',
+    text: 'Hale L, et al. Digital Media and Sleep in Childhood and Adolescence. Pediatrics. 2017;140(Suppl 2):S92-S96.'
+  },
+  {
+    id: 'apple2024',
+    text: 'Apple Support. Use Night Shift on your iPhone, iPad, and iPod touch. Updated 2024.'
+  },
+  {
+    id: 'aasm2016',
+    text: 'American Academy of Sleep Medicine. Consensus Statement: Recommended Amount of Sleep for Pediatric Populations. J Clin Sleep Med. 2016;12(6):785-786.'
+  },
+  {
+    id: 'brown2022',
+    text: 'Brown TM, et al. Recommendations for daytime, evening, and nighttime indoor light exposure to support sleep and wakefulness. PLOS Biology. 2022;20(3):e3001571.'
+  },
+  {
+    id: 'who2011noise',
+    text: 'World Health Organization. Guidelines for Community Noise – recommends < 30 dB(A) in bedrooms at night. WHO Fact Sheet. 2011.'
   }
 ];
 

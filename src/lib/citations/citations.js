@@ -100,6 +100,46 @@ export const citations = [
   {
     id: 'who2011noise',
     text: 'World Health Organization. Guidelines for Community Noise – recommends < 30 dB(A) in bedrooms at night. WHO Fact Sheet. 2011.'
+  },
+  {
+    id: 'stopbullying2024',
+    text: 'U.S. Department of Health & Human Services. What is Cyberbullying? StopBullying.gov. Published 2024. Accessed July 8 2025.'
+  },
+  {
+    id: 'cyberbullyingrc2024',
+    text: 'Hinduja S, Patchin JW. Cyberbullying Research Center – Definition & Forms of Cyberbullying. Updated 2024.'
+  },
+  {
+    id: 'nces2023',
+    text: 'National Center for Education Statistics. Bullying at School and Electronic Bullying (Indicator A10). 2023 data release.'
+  },
+  {
+    id: 'vogels2022',
+    text: 'Vogels E. Teens and Cyberbullying 2022. Pew Research Center; December 15 2022.'
+  },
+  {
+    id: 'stopbullyingSigns2021',
+    text: 'U.S. Department of Health & Human Services. Warning Signs a Child Is Being Cyberbullied. StopBullying.gov; reviewed 2021.'
+  },
+  {
+    id: 'netsmartz2025',
+    text: 'National Center for Missing & Exploited Children. NetSmartz – Cyberbullying: Signs a Child May Be a Victim. Accessed July 8 2025.'
+  },
+  {
+    id: 'aapHealthyChildren2022',
+    text: 'American Academy of Pediatrics. Cyberbullying: How to Help Prevent It. HealthyChildren.org; updated 2022.'
+  },
+  {
+    id: 'stopbullyingPrevent2024',
+    text: 'StopBullying.gov. Digital Awareness for Parents – Prevent Cyberbullying. U.S. Department of Health and Human Services; reviewed 2024.'
+  },
+  {
+    id: 'aapCoE2024',
+    text: 'AAP Center of Excellence on Social Media & Youth Mental Health. Screen Time Guidelines Q&A. 2024.'
+  },
+  {
+    id: 'verywell2020',
+    text: 'Sweeney M. How to Prevent Cyberbullying. Verywell Family; 2020.'
   }
 ];
 

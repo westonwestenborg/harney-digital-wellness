@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Cite from '../lib/citations/Cite.astro';
 ---
 
 <Layout title="Online Safety - Harney County Digital Wellness">
@@ -78,18 +79,43 @@ import Layout from '../layouts/Layout.astro';
           <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <!-- What is Cyberbullying -->
             <div class="card bg-base-100 shadow-lg">
-              <div class="card-body">
+              <div class="card-body space-y-6">
                 <h3 class="card-title text-xl text-accent mb-4">What is Cyberbullying?</h3>
                 <p class="text-base-content opacity-70 mb-4">
-                  > **PACIFIC UNIVERSITY TEAM:** Define cyberbullying, include examples, and explain how it differs from traditional bullying
+                  Cyberbullying is willful, repeated harm carried out through digital devices—phones, tablets, computers, game consoles, even smart-TV chat apps—by sending, posting, or sharing negative, false, or private content about someone else<Cite id="stopbullying2024" />.
                 </p>
-                <div class="text-sm text-base-content opacity-60">
-                  <p><strong>Should cover:</strong></p>
-                  <ul class="list-disc list-inside mt-2 space-y-1">
-                    <li>Definition and examples</li>
-                    <li>Different forms (harassment, exclusion, etc.)</li>
-                    <li>Platforms where it commonly occurs</li>
-                    <li>Why it can be more harmful than face-to-face bullying</li>
+                <p class="text-base-content opacity-70 mb-6">
+                  Unlike traditional face-to-face bullying, these attacks can follow a child 24/7, reach a vast audience in seconds, and leave a permanent record online, making them harder to escape and potentially more damaging to mental health<Cite id="stopbullying2024" /><Cite id="vogels2022" />.
+                </p>
+
+                <div class="mb-4 border-l-4 border-accent/30 pl-4">
+                  <h4 class="font-semibold mb-2">Common Forms</h4>
+                  <ul class="list-disc list-inside space-y-1">
+                    <li>Harassment &amp; flaming – repeated insults, threats, or humiliating comments in texts, DMs, or comment threads<Cite id="cyberbullyingrc2024" /></li>
+                    <li>Exclusion – deliberately leaving someone out of group chats, games, or online communities<Cite id="cyberbullyingrc2024" /></li>
+                    <li>Outing / doxxing – posting private messages, photos, or personal details to embarrass or endanger someone<Cite id="stopbullying2024" /><Cite id="cyberbullyingrc2024" /></li>
+                    <li>Impersonation – creating fake profiles or hijacking accounts to spread rumors or pose as the victim<Cite id="cyberbullyingrc2024" /></li>
+                    <li>Rumor-spreading &amp; image-based abuse – sharing edited or humiliating pictures, videos, or gossip<Cite id="stopbullying2024" /></li>
+                  </ul>
+                </div>
+
+                <div class="mb-4 border-l-4 border-accent/30 pl-4">
+                  <h4 class="font-semibold mb-2">Where It Happens Most</h4>
+                  <ul class="list-disc list-inside space-y-1">
+                    <li>Social media platforms (Snapchat, Instagram, TikTok, Facebook)<Cite id="stopbullying2024" /></li>
+                    <li>Group texts and direct-message apps</li>
+                    <li>Online multiplayer games and voice-chat services<Cite id="stopbullying2024" /></li>
+                    <li>School learning portals, forums, or live-stream comments<Cite id="cyberbullyingrc2024" /></li>
+                  </ul>
+                </div>
+
+                <div class="border-l-4 border-accent/30 pl-4">
+                  <h4 class="font-semibold mb-2">Why It Can Be More Harmful Than In-Person Bullying</h4>
+                  <ul class="list-disc list-inside space-y-1">
+                    <li>Round-the-clock reach: messages arrive any time, even at home or during the night<Cite id="stopbullying2024" /></li>
+                    <li>Amplified audience &amp; permanence: posts can be screenshotted, forwarded, and remain searchable long after deletion<Cite id="stopbullying2024" /></li>
+                    <li>Anonymity: perpetrators may hide their identity, lowering empathy and increasing cruelty<Cite id="cyberbullyingrc2024" /></li>
+                    <li>Growing prevalence: 59&nbsp;% of U.S. teens say they’ve been bullied or harassed online, and girls 15–17 report the highest rates<Cite id="vogels2022" />; 22&nbsp;% of bullied students (ages 12–18) said it happened online or by text in the 2021-22 school year<Cite id="nces2023" /></li>
                   </ul>
                 </div>
               </div>
@@ -97,38 +123,47 @@ import Layout from '../layouts/Layout.astro';
 
             <!-- Warning Signs -->
             <div class="card bg-base-100 shadow-lg">
-              <div class="card-body">
+              <div class="card-body space-y-6">
                 <h3 class="card-title text-xl text-accent mb-4">Warning Signs</h3>
-                <p class="text-base-content opacity-70 mb-4">
-                  > **PACIFIC UNIVERSITY TEAM:** List behavioral and emotional signs that may indicate a child is being cyberbullied
+                <p class="text-base-content opacity-70">
+                  Children rarely tell adults outright when cyberbullying is happening. Watch for these behavioral and emotional red-flags — especially if several appear together:
                 </p>
-                <div class="text-sm text-base-content opacity-60">
-                  <p><strong>Should include signs like:</strong></p>
-                  <ul class="list-disc list-inside mt-2 space-y-1">
-                    <li>Changes in device usage patterns</li>
-                    <li>Emotional changes after device use</li>
-                    <li>Withdrawal from social activities</li>
-                    <li>Sleep or appetite changes</li>
-                    <li>Reluctance to discuss online activities</li>
+
+                <div class="border-l-4 border-accent/30 pl-4">
+                  <ul class="list-disc list-inside space-y-1">
+                    <li>Noticeable shifts in device use — late-night scrolling, compulsive checking, or suddenly avoiding screens<Cite id="stopbullyingSigns2021" /></li>
+                    <li>Strong emotional reactions after going online — visible laughter, anger, or tears immediately after reading messages<Cite id="stopbullyingSigns2021" /></li>
+                    <li>Secrecy about digital life — quickly closing tabs, hiding the screen, or refusing to talk about online activities<Cite id="stopbullyingSigns2021" /></li>
+                    <li>Withdrawal from friends or activities once enjoyed — skipping hang-outs, sports, or clubs; spending more time alone<Cite id="stopbullyingSigns2021" /><Cite id="netsmartz2025" /></li>
+                    <li>Changes in sleep, appetite, or mood — headaches, stomach-aches, insomnia, overeating/undereating, signs of depression or anxiety<Cite id="netsmartz2025" /></li>
+                    <li>Academic struggles or declining grades — trouble concentrating, sudden drop in performance<Cite id="netsmartz2025" /><Cite id="aapHealthyChildren2022" /></li>
                   </ul>
                 </div>
+
+                <p class="text-base-content opacity-70">
+                  Any one sign doesn’t prove cyberbullying, but a pattern should prompt calm, open-ended questions and supportive follow-up.
+                </p>
               </div>
             </div>
 
             <!-- Prevention Strategies -->
             <div class="card bg-base-100 shadow-lg">
-              <div class="card-body">
+              <div class="card-body space-y-6">
                 <h3 class="card-title text-xl text-accent mb-4">Prevention Strategies</h3>
-                <p class="text-base-content opacity-70 mb-4">
-                  > **PACIFIC UNIVERSITY TEAM:** Provide proactive steps families can take to prevent cyberbullying
+                <p class="text-base-content opacity-70">
+                  Strong relationships and smart tech settings are the best defense. Try weaving these practices into everyday life:
                 </p>
-                <div class="text-sm text-base-content opacity-60">
-                  <p><strong>Should include:</strong></p>
-                  <ul class="list-disc list-inside mt-2 space-y-1">
-                    <li>Open communication strategies</li>
-                    <li>Privacy settings education</li>
-                    <li>Digital citizenship principles</li>
-                    <li>Regular check-ins about online experiences</li>
+
+                <div class="border-l-4 border-accent/30 pl-4">
+                  <ul class="list-disc list-inside space-y-1">
+                    <li>Talk early &amp; often — ask what they’re doing online, how posts make them feel, and listen without judgment<Cite id="stopbullyingPrevent2024" /></li>
+                    <li>Build a Family Media Plan — together set screen-time limits, approved apps, and agreed-upon consequences for hurtful posts<Cite id="aapHealthyChildren2022" /></li>
+                    <li>Teach digital citizenship &amp; empathy — use school or free curricula (e.g., Common Sense) to practice respectful commenting, verifying sources, and protecting privacy<Cite id="aapCoE2024" /></li>
+                    <li>Lock down privacy &amp; security tools — review every platform’s settings, enable two-factor log-ins, and show kids how to block/report harassers<Cite id="stopbullyingPrevent2024" /></li>
+                    <li>Model healthy tech habits — put your own phone away at dinner, avoid posting gossip, and show how to pause before sharing<Cite id="aapHealthyChildren2022" /></li>
+                    <li>Coach “up-stander” skills — encourage kids to support peers, refuse to forward cruel content, and speak up when someone’s targeted<Cite id="verywell2020" /></li>
+                    <li>Document &amp; report problems fast — screenshot abusive messages, save dates/times, and follow school or platform reporting channels<Cite id="stopbullyingPrevent2024" /></li>
+                    <li>Work with schools &amp; community — align household rules with classroom policies and community programs so messages stay consistent<Cite id="stopbullyingPrevent2024" /></li>
                   </ul>
                 </div>
               </div>

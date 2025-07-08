@@ -140,6 +140,30 @@ export const citations = [
   {
     id: 'verywell2020',
     text: 'Sweeney M. How to Prevent Cyberbullying. Verywell Family; 2020.'
+  },
+  {
+    id: 'stopbullyingResponse2021',
+    text: 'U.S. Department of Health & Human Services. What to Do When Cyberbullying Happens. StopBullying.gov; reviewed 2021.'
+  },
+  {
+    id: 'aapBullied2022',
+    text: 'American Academy of Pediatrics. What Should I Do if My Child Is Bullied Online? HealthyChildren.org; updated 2022.'
+  },
+  {
+    id: 'cyberbullyingRC2024v2',
+    text: 'Hinduja S, Patchin JW. Cyberbullying: Identification, Prevention, and Response. Cyberbullying Research Center; 2024 edition.'
+  },
+  {
+    id: 'stopbullyingChildBully2024',
+    text: 'StopBullying.gov. Bullying Prevention for Parents of Middle School Students – What to do if your child is bullying others. Reviewed 2024.'
+  },
+  {
+    id: 'aapChildBully2024',
+    text: 'American Academy of Pediatrics. Back-to-School Tips for Families – When your child is the bully. HealthyChildren.org; updated 2024.'
+  },
+  {
+    id: 'cyberbullyingBully2023',
+    text: 'Hinduja S, Patchin JW. What to Do When Your Child Cyberbullies Others: Tips for Parents. Cyberbullying Research Center; 2023.'
   }
 ];
 

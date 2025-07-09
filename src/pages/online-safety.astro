@@ -236,11 +236,28 @@ import Cite from '../lib/citations/Cite.astro';
                   </svg>
                   <h3 class="card-title">iOS Parental Controls</h3>
                 </div>
-                <p class="text-base-content opacity-70 mb-4">
-                  > **PACIFIC UNIVERSITY TEAM:** Step-by-step guide for setting up Screen Time, app restrictions, and content filters on iPhone/iPad
-                </p>
+                <div class="prose text-base-content mb-4">
+                  <h4 class="font-semibold">iOS 17 Setup Guide</h4>
+                  <ol class="list-decimal pl-5 space-y-2">
+                    <li><strong>Add child to Family&nbsp;Sharing.</strong> On the parent iPhone open <em>Settings › Family</em> › <em>Add Member</em> (or choose the child) and follow the prompts.</li>
+                    <li><strong>Turn on Screen Time & set a passcode.</strong> Go to <em>Settings › Screen Time › [child]</em>, tap <em>Turn On Screen Time</em>, choose “This is My Child’s iPhone,” then create a 4-digit Screen Time passcode that’s different from the device unlock code.</li>
+                    <li><strong>Schedule Downtime.</strong> In Screen Time tap <em>Downtime › Scheduled</em>, pick a start/end time (e.g., 9 PM–7 AM) and enable <em>Block at Downtime</em>.</li>
+                    <li><strong>Set App Limits.</strong> Screen Time › <em>App Limits › Add Limit</em>, select categories/apps, set a daily limit (e.g., 1 hour) and tap <em>Add</em>.</li>
+                    <li><strong>Configure Communication Limits.</strong> Screen Time › <em>Communication Limits</em>, decide who the child can contact during allowed time and downtime (e.g., Contacts Only).</li>
+                    <li><strong>Choose “Always Allowed” apps.</strong> Screen Time › <em>Always Allowed</em>, keep essentials (Phone, Messages) and remove browsers/games you don’t want accessible 24/7.</li>
+                    <li><strong>Turn on Content & Privacy Restrictions.</strong> Screen Time › <em>Content & Privacy Restrictions</em> → On, then adjust:
+                      <ul class="list-disc pl-5">
+                        <li><em>Web Content</em> → Limit Adult Websites</li>
+                        <li><em>App Store Purchases</em> → In-App Purchases = Don’t Allow</li>
+                        <li><em>Allowed Apps</em> → Hide Safari or Mail if desired</li>
+                      </ul>
+                    </li>
+                    <li><strong>Enable “Ask to Buy” & block in-app purchases.</strong> <em>Settings › Family › [child] › Ask to Buy</em> → Require Purchase Approval. Also ensure <em>In-App Purchases = Don’t Allow</em> (Content & Privacy › App Store Purchases).</li>
+                    <li><strong>Turn on Communication Safety & Screen Distance.</strong> Screen Time › <em>Communication Safety</em> → On (nudity warnings); on supported models enable <em>Screen Distance</em> to remind kids not to hold the phone too close.</li>
+                  </ol>
+                </div>
                 <div class="card-actions">
-                  <button class="btn btn-primary btn-sm">View iOS Guide</button>
+                  <a href="https://support.apple.com/en-us/HT208982" target="_blank" class="btn btn-primary btn-sm">Official Apple Guide</a>
                 </div>
               </div>
             </div>

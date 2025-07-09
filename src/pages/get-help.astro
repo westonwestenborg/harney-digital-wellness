@@ -70,21 +70,21 @@ import Layout from '../layouts/Layout.astro';
                 <div>
                   <h3 class="text-xl font-semibold text-primary mb-4">Local Crisis Support</h3>
                   
-                  <div class="bg-accent/10 p-6 rounded-lg">
-                    <p class="text-base-content opacity-70 mb-4">
-                      <strong>> PACIFIC UNIVERSITY TEAM:</strong> Please add Symmetry Crisis Support contact information and any other local crisis resources here.
-                    </p>
-                    <div class="text-sm text-base-content opacity-60">
-                      <p><strong>What to include:</strong></p>
-                      <ul class="list-disc list-inside mt-2 space-y-1">
-                        <li>Symmetry Crisis Support phone number</li>
-                        <li>Hours of operation</li>
-                        <li>What services they provide</li>
-                        <li>How to access services</li>
-                        <li>Any other local crisis resources</li>
-                      </ul>
-                    </div>
-                  </div>
+                  <div class="card bg-base-100 shadow-md">
+            <div class="card-body p-4">
+              <h4 class="font-semibold text-secondary mb-2">Symmetry Care Inc. – 24/7 Crisis Response</h4>
+              <ul class="list-disc list-inside text-sm text-base-content opacity-70 space-y-1">
+                <li>County crisis line available 24/7: <a href="tel:541-573-8376" class="link">541-573-8376</a> (or dial <a href="tel:988" class="link">988</a>)</li>
+                <li>Mobile Crisis Team serves all of Harney County for on-site support</li>
+                <li>Immediate assessment, safety planning, and connection to ongoing services</li>
+                <li>Walk-in support Mon–Fri 8 AM–5 PM at 348 W. Adams St., Burns</li>
+              </ul>
+              <div class="card-actions mt-3">
+                <a href="tel:541-573-8376" class="btn btn-secondary btn-sm">Call 541-573-8376</a>
+              </div>
+            </div>
+          </div>
+
                 </div>
               </div>
             </div>
@@ -108,23 +108,53 @@ import Layout from '../layouts/Layout.astro';
                 <div class="space-y-4">
                   <div>
                     <h4 class="font-semibold mb-2">Counseling Center</h4>
-                    <p class="text-base-content opacity-70 text-sm mb-2">
-                      > **PACIFIC UNIVERSITY TEAM:** Add information about school counseling services, how to access them, and what support they provide for digital wellness issues.
-                    </p>
+                    <ul class="list-disc list-inside text-sm text-base-content opacity-70 space-y-1">
+                      <li>Academic &amp; career planning (course scheduling, scholarship info).</li>
+                      <li>Social-emotional support (short-term individual sessions, crisis triage, outside-referral guidance).</li>
+                      <li>Family connections (parent meetings, links to local mental-health providers).</li>
+                    </ul>
                   </div>
 
                   <div>
-                    <h4 class="font-semibold mb-2">Technology Support</h4>
-                    <p class="text-base-content opacity-70 text-sm mb-2">
-                      > **PACIFIC UNIVERSITY TEAM:** Add information about tech support for families, device management assistance, and educational technology guidance.
-                    </p>
+                    <h4 class="font-semibold mb-2">Accessing Services</h4>
+                    <ol class="list-decimal list-inside text-sm text-base-content opacity-70 space-y-1">
+                      <li>Students – ask a teacher or the school office for a counselor referral slip or drop by during posted office hours.</li>
+                      <li>Parents/guardians – call the school number below or email the Student Services Director to request an appointment or resources.</li>
+                      <li>Community providers – coordinate through the Student Services Director (<a href="tel:541-573-6811" class="link">541-573-6811</a>) for multi-disciplinary support.</li>
+                    </ol>
                   </div>
 
                   <div>
                     <h4 class="font-semibold mb-2">Contact Information</h4>
-                    <p class="text-base-content opacity-70 text-sm">
-                      > **PACIFIC UNIVERSITY TEAM:** Add contact information, hours, and how to access these services.
+                    <p class="text-sm text-base-content opacity-70">
+                      <strong>Student Services Department</strong><br />
+                      190 Hines Blvd., Burns, OR 97720<br />
+                      Phone: <a href="tel:541-573-6811" class="link">541-573-6811</a><br />
+                      Director: <a href="mailto:taciweil@hcsd3.org" class="link">Taci Weil, taciweil@hcsd3.org</a>
                     </p>
+                    <div class="mt-4 space-y-2 text-sm text-base-content opacity-70">
+                      <p>
+                        <strong>Slater Elementary (K-5)</strong><br />
+                        Nicki Henshaw, School Counselor<br />
+                        Front office — <a href="tel:541-573-720" class="link">541-573-720</a>,
+                        <a href="mailto:nickihenshaw@hcsd3.org" class="link">nickihenshaw@hcsd3.org</a>
+                      </p>
+                      <p>
+                        <strong>Hines Middle (6-8)</strong><br />
+                        School counselor available (contact front office)<br />
+                        <a href="tel:541-573-6436" class="link">541-573-6436</a>
+                      </p>
+                      <p>
+                        <strong>Burns High (9-12)</strong><br />
+                        School counselor available (contact main office)<br />
+                        <a href="tel:541-573-2044" class="link">541-573-2044</a>
+                      </p>
+                      <p>
+                        <strong>Monroe School (Alt Ed)</strong><br />
+                        Student-support staff on site; call for counseling referral<br />
+                        <a href="tel:541-573-3019" class="link">541-573-3019</a>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -137,23 +167,51 @@ import Layout from '../layouts/Layout.astro';
                 
                 <div class="space-y-4">
                   <div>
-                    <h4 class="font-semibold mb-2">Mental Health Services</h4>
-                    <p class="text-base-content opacity-70 text-sm mb-2">
-                      > **PACIFIC UNIVERSITY TEAM:** Add information about mental health services available through Symmetry Care, including counseling for digital wellness issues.
-                    </p>
+                    <h4 class="font-semibold mb-2">Mental &amp; Behavioral-Health Services</h4>
+                    <ul class="list-disc list-inside text-sm text-base-content opacity-70 space-y-1">
+                      <li>Outpatient therapy &amp; counseling for children, teens, adults, couples, and families (individual, group, grief, trauma-focused).</li>
+                      <li>Psychiatric care – evaluation, medication management, and ongoing monitoring by a psychiatric team.</li>
+                      <li>Substance-use &amp; gambling-addiction treatment, including dual-diagnosis programs.</li>
+                      <li>24/7 crisis response – county crisis line <a href="tel:541-573-8376" class="link">541-573-8376</a> (or dial 988); mobile crisis team covers all of Harney County.</li>
+                      <li>Case management, life-skills &amp; supported-employment coaching to help clients meet daily-living and job-readiness goals.</li>
+                    </ul>
                   </div>
 
                   <div>
-                    <h4 class="font-semibold mb-2">Family Support Programs</h4>
-                    <p class="text-base-content opacity-70 text-sm mb-2">
-                      > **PACIFIC UNIVERSITY TEAM:** Add information about family support programs, parenting resources, and community support services.
-                    </p>
+                    <h4 class="font-semibold mb-2">Youth &amp; Family Support</h4>
+                    <ul class="list-disc list-inside text-sm text-base-content opacity-70 space-y-1">
+                      <li>Wraparound &amp; ICTS (Intensive Community-based Treatment &amp; Support) – care-coordination teams for youth 0-18 with complex behavioral or developmental needs.</li>
+                      <li>Community Health Worker services – help with housing, food security, transportation, and Oregon Health Plan navigation.</li>
+                      <li>Parent-focused collaboration – therapists include caregivers, offer referrals to local parenting resources, and can arrange in-home or telehealth visits to ease rural-access barriers.</li>
+                      <li>If a family seeks support around screen-time stress, cyber-bullying, or other digital-wellness issues, the intake team can match them with a clinician specializing in that area.</li>
+                    </ul>
                   </div>
 
                   <div>
-                    <h4 class="font-semibold mb-2">Contact & Scheduling</h4>
-                    <p class="text-base-content opacity-70 text-sm">
-                      > **PACIFIC UNIVERSITY TEAM:** Add contact information, appointment scheduling, insurance information, and accessibility details.
+                    <h4 class="font-semibold mb-2">Contact &amp; Scheduling</h4>
+                    <p class="text-sm text-base-content opacity-70">
+                      <strong>Clinic address</strong><br />
+                      348 W. Adams St., Burns, OR 97720
+                    </p>
+                    <p class="text-sm text-base-content opacity-70">
+                      <strong>Business hours</strong><br />
+                      Mon – Fri 8&nbsp;AM – 5&nbsp;PM; evening sessions by appointment.
+                    </p>
+                    <p class="text-sm text-base-content opacity-70">
+                      <strong>24-hour line / switchboard</strong><br />
+                      <a href="tel:541-573-8376" class="link">541-573-8376</a>
+                    </p>
+                    <p class="text-sm text-base-content opacity-70">
+                      <strong>Email</strong><br />
+                      <a href="mailto:symcare@symmetrycareinc.com" class="link">symcare@symmetrycareinc.com</a>
+                    </p>
+                    <p class="text-sm text-base-content opacity-70">
+                      <strong>Getting started</strong><br />
+                      Drop in during business hours, call the number above, or click “How to Enroll” on the Symmetry Care website; secure Client Portal available once enrolled.
+                    </p>
+                    <p class="text-sm text-base-content opacity-70">
+                      <strong>Insurance &amp; cost</strong><br />
+                      Oregon Health Plan (EOCCO) and most private insurers accepted; sliding-scale options available on request.
                     </p>
                   </div>
                 </div>
@@ -180,14 +238,18 @@ import Layout from '../layouts/Layout.astro';
                 <div class="bg-primary/5 p-4 rounded-lg">
                   <h3 class="font-semibold text-primary mb-2">Nicki Henshaw</h3>
                   <p class="text-base-content opacity-70 text-sm">
-                    > **PACIFIC UNIVERSITY TEAM:** Add Nicki's title, role, contact information, best times to contact, and areas of specialization.
+                    School Counselor, Slater Elementary (K-5)<br />
+                    Phone: <a href="tel:541-573-720" class="link">541-573-720</a><br />
+                    Email: <a href="mailto:nickihenshaw@hcsd3.org" class="link">nickihenshaw@hcsd3.org</a>
                   </p>
                 </div>
 
                 <div class="bg-secondary/5 p-4 rounded-lg">
-                  <h3 class="font-semibold text-secondary mb-2">Additional Contact</h3>
+                  <h3 class="font-semibold text-secondary mb-2">Maggie Young</h3>
                   <p class="text-base-content opacity-70 text-sm">
-                    > **PACIFIC UNIVERSITY TEAM:** Add second contact person's name, title, role, contact information, best times to contact, and areas of specialization.
+                    School Counselor, Burns High (9-12)<br />
+                    Phone: <a href="tel:541-573-2044" class="link">541-573-2044</a><br />
+                    Email: <a href="mailto:maggieyoung@hcsd3.org" class="link">maggieyoung@hcsd3.org</a>
                   </p>
                 </div>
               </div>

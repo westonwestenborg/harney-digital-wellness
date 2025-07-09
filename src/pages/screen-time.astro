@@ -556,17 +556,17 @@ import FamilyMediaPlan from "../components/FamilyMediaPlan.jsx";
                                         viewBox="0 0 24 24"
                                     >
                                         <path
-                                            d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"
+                                            d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4483.9993.9993 0 .5511-.4482.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4483.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1567-.5703.416.416 0 00-.5703.1567l-2.0223 3.5014c-1.0048-.4745-2.1349-.7461-3.3508-.7461s-2.3459.2716-3.3507.7461L9.2434 5.8592a.4162.4162 0 00-.5703-.1567.416.416 0 00-.1567.5703l1.9973 3.4592C8.2558 10.5866 6.8147 12.6456 6.8147 15.0092H17.185c0-2.3636-1.441-4.4226-3.7035-5.6678"
                                         ></path>
                                     </svg>
                                     <h3 class="card-title">iOS Screen Time</h3>
                                 </div>
                                 <div class="prose text-base-content mb-4">
-                                    <h4 class="font-semibold">iOS 17 Setup Guide</h4>
+                                    <h4 class="font-semibold">iOS 17 Screen Time Monitoring</h4>
                                     <ol class="list-decimal pl-5 space-y-2">
-                                        <li><strong>Add child to Family&nbsp;Sharing.</strong> On the parent iPhone open <em>Settings › Family</em> › <em>Add Member</em> (or choose the child) and follow the prompts.</li>
-                                        <li><strong>Turn on Screen Time & set a passcode.</strong> Go to <em>Settings › Screen Time › [child]</em>, tap <em>Turn On Screen Time</em>, choose “This is My Child’s iPhone,” then create a 4-digit Screen Time passcode that’s different from the device unlock code.</li>
-                                        <li><strong>Schedule Downtime.</strong> In Screen Time tap <em>Downtime › Scheduled</em>, pick a start/end time (e.g., 9 PM–7 AM) and enable <em>Block at Downtime</em>.</li>
+                                        <li><strong>Check today’s usage chart.</strong> Open <em>Settings › Screen Time</em>; the bar chart shows total pickups, most-used apps, and minutes spent today.</li>
+                                        <li><strong>Turn on weekly activity reports.</strong> In Screen Time scroll down and toggle <em>Share Across Devices</em> (if you have multiple Apple devices) and ensure <em>Screen Time Weekly Report</em> notifications are enabled so you get a summary every Sunday evening.</li>
+                                        <li><strong>Set quick App&nbsp;Limits.</strong> Tap <em>App Limits › Add Limit</em>, pick a category or individual app, then choose a daily allowance (e.g., 30&nbsp;m). When the limit is reached, the app grays out until midnight unless you enter the Screen Time passcode.</li>
                                     </ol>
                                 </div>
                                 <div class="card-actions">
@@ -598,11 +598,14 @@ import FamilyMediaPlan from "../components/FamilyMediaPlan.jsx";
                                         Android Digital Wellbeing
                                     </h3>
                                 </div>
-                                <p class="text-base-content mb-4">
-                                    [Pacific Team: Add step-by-step guide for
-                                    setting up Digital Wellbeing on Android
-                                    devices]
-                                </p>
+                                <div class="prose text-base-content mb-4">
+                                     <h4 class="font-semibold">Android 13/14 Digital Wellbeing</h4>
+                                     <ol class="list-decimal pl-5 space-y-2">
+                                         <li><strong>Open the Digital&nbsp;Wellbeing dashboard.</strong> On the child phone go to <em>Settings › Digital&nbsp;Wellbeing &amp; Parental controls</em>. The pie chart shows today’s total screen-time and most-used apps.</li>
+                                         <li><strong>Set a daily device-usage goal.</strong> Tap the <em>Screen time</em> graph, then choose <em>Daily device usage goal</em> (Android 14) or enable <em>Screen time goal</em> (Android 13) to pick hours/minutes allowed.</li>
+                                         <li><strong>Add app timers.</strong> In the dashboard tap an app name (or the hourglass icon) → <em>App timer</em>, set a daily limit (e.g., 30&nbsp;m). When time’s up the app pauses until the next day.</li>
+                                     </ol>
+                                 </div>
                                 <div class="card-actions">
                                     <a
                                         href="https://support.google.com/android/answer/9346420"

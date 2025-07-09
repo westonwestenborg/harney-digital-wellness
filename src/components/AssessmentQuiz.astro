@@ -530,7 +530,7 @@
                     <button id="restartBtn" class="btn btn-outline btn-primary"
                         >Take Assessment Again</button
                     >
-                    <a href="/harney-digital-wellness/screen-time" class="btn btn-primary" target="_blank" rel="noopener noreferrer"
+                    <a href="/screen-time" class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-new-tab
                         >Access Screen Time Management Tools</a
                     >
                 </div>
@@ -789,9 +789,9 @@
                 resourceLinks = [
                     {
                         text: "Mindful Breaks Activities",
-                        url: "/harney-digital-wellness/mindful-breaks",
+                        url: "/mindful-breaks",
                     },
-                    { text: "Maintaining Healthy Habits", url: "/harney-digital-wellness/resources" },
+                    { text: "Maintaining Healthy Habits", url: "/resources" },
                 ];
             } else if (riskScore <= 7) {
                 level = "alert-warning";
@@ -799,9 +799,9 @@
                 description =
                     "Some aspects of your child's digital habits may benefit from attention and adjustment.";
                 resourceLinks = [
-                    { text: "Create Family Media Plan", url: "/harney-digital-wellness/screen-time" },
-                    { text: "Online Safety Guide", url: "/harney-digital-wellness/online-safety" },
-                    { text: "Screen Time Tools", url: "/harney-digital-wellness/screen-time" },
+                    { text: "Create Family Media Plan", url: "/screen-time" },
+                    { text: "Online Safety Guide", url: "/online-safety" },
+                    { text: "Screen Time Tools", url: "/screen-time" },
                 ];
             } else {
                 level = "alert-error";
@@ -809,18 +809,18 @@
                 description =
                     "Your child's digital habits show several areas of concern that would benefit from immediate attention.";
                 resourceLinks = [
-                    { text: "Get Professional Help", url: "/harney-digital-wellness/get-help#providers" },
+                    { text: "Get Professional Help", url: "/get-help#providers" },
                     {
                         text: "Crisis Support Resources",
-                        url: "/harney-digital-wellness/get-help#crisis",
+                        url: "/get-help#crisis",
                     },
-                    { text: "Screen Time Management", url: "/harney-digital-wellness/screen-time" },
-                    { text: "Online Safety Tools", url: "/harney-digital-wellness/online-safety" },
+                    { text: "Screen Time Management", url: "/screen-time" },
+                    { text: "Online Safety Tools", url: "/online-safety" },
                 ];
             }
 
             // Ensure universal link to creating a family media plan appears first
-            const mediaPlanLink = { text: "Create Family Media Plan", url: "/harney-digital-wellness/screen-time#media-plan" };
+            const mediaPlanLink = { text: "Create Family Media Plan", url: "/screen-time#media-plan" };
             if (!resourceLinks.some((l) => l.url.includes("/screen-time"))) {
                 resourceLinks.unshift(mediaPlanLink);
             } else {
@@ -842,7 +842,7 @@
             resources.innerHTML = resourceLinks
                 .map(
                     (link) =>
-                        `<a href="${link.url}" class="btn btn-outline btn-sm btn-primary block w-full" target="_blank" rel="noopener noreferrer">${link.text}</a>`,
+                        `<a href="${link.url}" class="btn btn-outline btn-sm btn-primary block w-full" target="_blank" rel="noopener noreferrer" data-new-tab>${link.text}</a>`,
                 )
                 .join("");
         }

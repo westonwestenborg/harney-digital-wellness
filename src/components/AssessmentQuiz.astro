@@ -6,15 +6,14 @@
     <!-- Quiz Container -->
     <div id="quizContainer" class="space-y-6">
         <div class="progress-bar mb-6">
-            <div class="flex justify-between text-sm assessment-text mb-2">
-                <span>Progress</span>
-                <span id="progressText">1 of 8</span>
+            <div class="flex justify-end text-sm assessment-text mb-2">
+                <span id="progressText">Step 1 of 4</span>
             </div>
             <div class="w-full bg-base-300 rounded-full h-2">
                 <div
                     id="progressBar"
                     class="bg-primary h-2 rounded-full transition-all duration-300"
-                    style="width: 12.5%"
+                    style="width: 25%"
                 >
                 </div>
             </div>
@@ -507,32 +506,41 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <h4 class="font-semibold assessment-text mb-3">
-                            Recommended Actions:
-                        </h4>
-                        <ul
+                    <div class="p-5 rounded-lg border border-base-300 bg-base-200/40">
+                        <h3 id="recommendations-heading" class="font-semibold assessment-text mb-3">
+                            Top Recommended Actions:
+                        </h3>
+                        <ol
                             id="recommendations"
-                            class="list-disc list-inside space-y-2 assessment-subtitle"
+                            aria-labelledby="recommendations-heading"
+                            class="list-decimal list-inside space-y-2 assessment-subtitle"
                         >
-                        </ul>
+                        </ol>
                     </div>
 
-                    <div>
-                        <h4 class="font-semibold assessment-text mb-3">
-                            Helpful Resources:
-                        </h4>
-                        <div id="resources" class="space-y-2"></div>
+                    <div id="resourcesCard" class="p-5 rounded-lg border border-base-300 bg-base-200/40">
+                        <h3 class="font-semibold assessment-text mb-3" id="resources-heading">
+                            Tools to Help You Take Action:
+                        </h3>
+                        <div id="personalResourceList" class="flex flex-col gap-3"></div>
+                        <details id="moreIdeas" class="mt-3 hidden">
+                            <summary class="cursor-pointer text-sm link">More ideas</summary>
+                            <div id="extraResourceList" class="flex flex-wrap gap-2 mt-2"></div>
+                        </details>
                     </div>
                 </div>
 
-                <div class="card-actions justify-center mt-6">
+                <div class="mt-6 flex flex-wrap gap-2 justify-center" aria-label="Next steps">
+                        <a href="/screen-time/" class="badge badge-primary badge-lg" data-badge-topic="screen" target="_blank" rel="noopener noreferrer" aria-label="Next: Deep-dive into Screen Time" data-new-tab>Screen-Time</a>
+                        <a href="/online-safety/" class="badge badge-accent badge-lg" data-badge-topic="safety" target="_blank" rel="noopener noreferrer" aria-label="Next: Deep-dive into Online Safety" data-new-tab>Online-Safety</a>
+                        <a href="/mindful-breaks/" class="badge badge-secondary badge-lg" data-badge-topic="mindful" target="_blank" rel="noopener noreferrer" aria-label="Next: Mindful Breaks" data-new-tab>Mindful-Breaks</a>
+                    </div>
+
+                    <div class="card-actions justify-center mt-6">
                     <button id="restartBtn" class="btn btn-outline btn-primary"
                         >Take Assessment Again</button
                     >
-                    <a href="/screen-time" class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-new-tab
-                        >Access Screen Time Management Tools</a
-                    >
+                    
                 </div>
             </div>
         </div>
@@ -541,10 +549,12 @@
 
 <script>
     class AssessmentQuiz {
+        // Explicit property declarations for TypeScript
+        currentQuestion: number = 1;
+        totalQuestions: number = 8;
+        totalSteps: number = 4;
+        answers: Record<string, string> = {};
         constructor() {
-            this.currentQuestion = 1;
-            this.totalQuestions = 8;
-            this.answers = {};
             this.initializeQuiz();
         }
 
@@ -636,11 +646,12 @@
         updateProgress() {
             const progressBar = document.getElementById("progressBar");
             const progressText = document.getElementById("progressText");
-            const percentage =
-                (this.currentQuestion / this.totalQuestions) * 100;
+            const stepSize = this.totalQuestions / this.totalSteps;
+            const currentStep = Math.ceil(this.currentQuestion / stepSize);
+            const percentage = (currentStep / this.totalSteps) * 100;
 
             progressBar.style.width = `${percentage}%`;
-            progressText.textContent = `${this.currentQuestion} of ${this.totalQuestions}`;
+            progressText.textContent = `Step ${currentStep} of ${this.totalSteps}`;
         }
 
         updateNavigation() {
@@ -771,17 +782,27 @@
             this.displayResults(riskScore);
         }
 
-        displayResults(riskScore) {
-            const riskLevel = document.getElementById("riskLevel");
-            const riskTitle = document.getElementById("riskTitle");
-            const riskDescription = document.getElementById("riskDescription");
-            const recommendations = document.getElementById("recommendations");
-            const resources = document.getElementById("resources");
+        displayResults(riskScore: number) {
+            const riskLevelBox = document.getElementById("riskLevel") as HTMLElement;
+            const riskTitleEl = document.getElementById("riskTitle") as HTMLElement;
+            const riskDescriptionEl = document.getElementById("riskDescription") as HTMLElement;
+            const recommendationsEl = document.getElementById("recommendations") as HTMLElement;
+            const personalResourceList = document.getElementById("personalResourceList")!;
+            const extraResourceList = document.getElementById("extraResourceList")!;
+            const moreIdeas = document.getElementById("moreIdeas")! as HTMLDetailsElement;
 
-            let level, title, description, resourceLinks;
-            const recs = this.buildRecommendations();
+            let level: string;
+            let title: string;
+            let description: string;
+            let resourceLinks: { text: string; url: string }[];
+            let riskLevelStr: "low" | "moderate" | "high" = "low";
+
+            const recs: string[] = this.buildRecommendations();
+
+            
 
             if (riskScore <= 3) {
+                riskLevelStr = "low";
                 level = "alert-success";
                 title = "Low Risk - Great Foundation!";
                 description =
@@ -794,6 +815,7 @@
                     { text: "Maintaining Healthy Habits", url: "/resources" },
                 ];
             } else if (riskScore <= 7) {
+                riskLevelStr = "moderate";
                 level = "alert-warning";
                 title = "Moderate Risk - Time for Changes";
                 description =
@@ -804,7 +826,7 @@
                     { text: "Screen Time Tools", url: "/screen-time" },
                 ];
             } else {
-                level = "alert-error";
+                level = "alert-error text-white";
                 title = "Higher Risk - Action Needed";
                 description =
                     "Your child's digital habits show several areas of concern that would benefit from immediate attention.";
@@ -832,18 +854,49 @@
                 }
             }
 
-            riskLevel.className = `alert ${level} mb-6`;
-            riskTitle.textContent = title;
-            riskDescription.textContent = description;
+            riskLevelBox.className = `alert ${level} mb-6`;
+            riskTitleEl.textContent = title;
+            riskDescriptionEl.textContent = description;
 
-            recommendations.innerHTML = recs
-                .map((rec) => `<li>${rec}</li>`)
-                .join("");
-            resources.innerHTML = resourceLinks
-                .map(
-                    (link) =>
-                        `<a href="${link.url}" class="btn btn-outline btn-sm btn-primary block w-full" target="_blank" rel="noopener noreferrer" data-new-tab>${link.text}</a>`,
-                )
+            // Populate personalized resources
+            personalResourceList.innerHTML = "";
+            extraResourceList.innerHTML = "";
+            resourceLinks.forEach((link, idx) => {
+                const el = document.createElement("a");
+                el.href = link.url;
+                el.textContent = link.text;
+                el.setAttribute("aria-label", link.text);
+                el.target = "_blank";
+                el.rel = "noopener noreferrer";
+                el.className = "btn btn-outline btn-sm";
+                if (idx < 3) {
+                    personalResourceList.appendChild(el);
+                } else {
+                    extraResourceList.appendChild(el);
+                }
+            });
+            // Show accordion only if extras exist
+            if (extraResourceList.childElementCount > 0) {
+                moreIdeas.classList.remove("hidden");
+            } else {
+                moreIdeas.classList.add("hidden");
+            }
+
+            // Highlight universal badge matching risk level
+            document.querySelectorAll("[data-badge-topic]").forEach((badge) => {
+                badge.classList.remove("ring", "ring-offset-2", "ring-primary");
+            });
+            const highlightMap: Record<string,string> = { low: "mindful", moderate: "screen", high: "screen" };
+            const topic = highlightMap[riskLevelStr];
+            if (topic) {
+                const badge = document.querySelector(`[data-badge-topic="${topic}"]`);
+                if (badge) {
+                    badge.classList.add("ring", "ring-offset-2", "ring-primary");
+                }
+            }
+
+            recommendationsEl.innerHTML = recs
+                .map((rec: string) => `<li>${rec}</li>`)
                 .join("");
         }
 

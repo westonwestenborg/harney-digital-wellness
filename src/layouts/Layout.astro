@@ -206,28 +206,36 @@ import "../styles/global.css";
             </div>
         </footer>
         <script is:inline>
-            // Ensure all links open in a new tab (except in-page anchors or mailto). Applies to existing and future links.
+            // Open external links, or links explicitly marked with `data-new-tab`, in a new tab.
+            // Internal site navigation now remains in-tab to avoid unnecessary tab proliferation.
             if (typeof window !== 'undefined') {
                 const applyBlankTargets = (root = document) => {
                     root.querySelectorAll('a[href]').forEach((link) => {
                         const href = link.getAttribute('href');
-                        if (
-                            !href ||
-                            href.startsWith('#') ||
-                            href.startsWith('javascript:') ||
-                            href.startsWith('mailto:')
-                        ) {
-                            return;
+                        if (!href || href.startsWith('#') || href.startsWith('javascript:') || href.startsWith('mailto:')) {
+                            return; // Skip in-page, JS, and mailto links
                         }
-                        link.setAttribute('target', '_blank');
-                        link.setAttribute('rel', 'noopener noreferrer');
+
+                        // Determine if the link is external (different origin)
+                        const url = new URL(href, window.location.href);
+                        const isExternal = url.origin !== window.location.origin;
+                        const explicitNewTab = link.hasAttribute('data-new-tab') || link.classList.contains('new-tab');
+
+                        if (isExternal || explicitNewTab) {
+                            link.setAttribute('target', '_blank');
+                            link.setAttribute('rel', 'noopener noreferrer');
+                        } else {
+                            // Ensure internal links don’t unexpectedly inherit _blank from SSR/hydration.
+                            link.removeAttribute('target');
+                            link.removeAttribute('rel');
+                        }
                     });
                 };
 
                 // Initial pass
                 applyBlankTargets();
 
-                // Observe future additions to the DOM
+                // Observe future additions to the DOM (e.g., dynamically rendered quiz results)
                 const observer = new MutationObserver((mutations) => {
                     mutations.forEach((m) => {
                         m.addedNodes.forEach((node) => {

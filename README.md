@@ -237,6 +237,7 @@ Update all local contact information in `/get-help`:
 ## 🚀 Deployment
 
 ### GitHub Pages (Automatic)
+GitHub Pages automatically **purges its CDN cache** every time you push a new commit to the published branch. If you notice stale files (e.g., old links, missing images), simply push any commit—even a documentation tweak—and the new build will invalidate the cache within a few minutes.
 The site automatically deploys to GitHub Pages when you push to the `main` branch.
 
 ### Manual Deployment

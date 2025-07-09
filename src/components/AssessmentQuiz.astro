@@ -7,13 +7,13 @@
     <div id="quizContainer" class="space-y-6">
         <div class="progress-bar mb-6">
             <div class="flex justify-end text-sm assessment-text mb-2">
-                <span id="progressText">Step 1 of 4</span>
+                <span id="progressText">Step 1 of 8</span>
             </div>
             <div class="w-full bg-base-300 rounded-full h-2">
                 <div
                     id="progressBar"
                     class="bg-primary h-2 rounded-full transition-all duration-300"
-                    style="width: 25%"
+                    style="width: 12.5%"
                 >
                 </div>
             </div>
@@ -552,7 +552,7 @@
         // Explicit property declarations for TypeScript
         currentQuestion: number = 1;
         totalQuestions: number = 8;
-        totalSteps: number = 4;
+        totalSteps: number = 8;
         answers: Record<string, string> = {};
         constructor() {
             this.initializeQuiz();

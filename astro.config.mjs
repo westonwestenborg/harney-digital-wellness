@@ -6,7 +6,7 @@ import preact from '@astrojs/preact';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://westonwestenborg.github.io',
-  base: '/harney-digital-wellness',
+  site: 'https://harneydigitalwellness.com',
+  base: '/',
   integrations: [tailwind(), preact()]
 });

@@ -205,5 +205,26 @@ import "../styles/global.css";
                 </div>
             </div>
         </footer>
+        <script is:inline>
+            // Ensure all links (internal & external) open in a new tab, except same-page anchors and mailto links
+            if (typeof window !== 'undefined') {
+                document.querySelectorAll('a[href]').forEach((link) => {
+                    const href = link.getAttribute('href');
+
+                    // Skip if no href, same-page anchor, javascript void, or mailto link
+                    if (
+                        !href ||
+                        href.startsWith('#') ||
+                        href.startsWith('javascript:') ||
+                        href.startsWith('mailto:')
+                    ) {
+                        return;
+                    }
+
+                    link.setAttribute('target', '_blank');
+                    link.setAttribute('rel', 'noopener noreferrer');
+                });
+            }
+        </script>
     </body>
 </html>

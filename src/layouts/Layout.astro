@@ -206,24 +206,38 @@ import "../styles/global.css";
             </div>
         </footer>
         <script is:inline>
-            // Ensure all links (internal & external) open in a new tab, except same-page anchors and mailto links
+            // Ensure all links open in a new tab (except in-page anchors or mailto). Applies to existing and future links.
             if (typeof window !== 'undefined') {
-                document.querySelectorAll('a[href]').forEach((link) => {
-                    const href = link.getAttribute('href');
+                const applyBlankTargets = (root = document) => {
+                    root.querySelectorAll('a[href]').forEach((link) => {
+                        const href = link.getAttribute('href');
+                        if (
+                            !href ||
+                            href.startsWith('#') ||
+                            href.startsWith('javascript:') ||
+                            href.startsWith('mailto:')
+                        ) {
+                            return;
+                        }
+                        link.setAttribute('target', '_blank');
+                        link.setAttribute('rel', 'noopener noreferrer');
+                    });
+                };
 
-                    // Skip if no href, same-page anchor, javascript void, or mailto link
-                    if (
-                        !href ||
-                        href.startsWith('#') ||
-                        href.startsWith('javascript:') ||
-                        href.startsWith('mailto:')
-                    ) {
-                        return;
-                    }
+                // Initial pass
+                applyBlankTargets();
 
-                    link.setAttribute('target', '_blank');
-                    link.setAttribute('rel', 'noopener noreferrer');
+                // Observe future additions to the DOM
+                const observer = new MutationObserver((mutations) => {
+                    mutations.forEach((m) => {
+                        m.addedNodes.forEach((node) => {
+                            if (node.nodeType === 1) {
+                                applyBlankTargets(node);
+                            }
+                        });
+                    });
                 });
+                observer.observe(document.body, { childList: true, subtree: true });
             }
         </script>
     </body>

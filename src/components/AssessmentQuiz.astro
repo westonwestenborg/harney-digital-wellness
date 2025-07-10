@@ -435,19 +435,26 @@
         </div>
 
         <!-- Navigation -->
-        <div class="flex justify-between mt-8">
+        <footer id="quizNav"
+            class="quiz-nav sticky bottom-0 z-20 w-full mx-auto max-w-screen-sm flex items-center justify-between px-4 py-3 gap-2 backdrop-blur-md bg-base-100/90 ring-1 ring-base-300 shadow-lg rounded-t-lg">
+            <span id="navProgress" class="absolute top-0 left-0 h-0.5 bg-primary rounded-r-full transition-all"></span>
             <button
                 id="prevBtn"
-                class="btn btn-outline btn-primary"
-                style="display: none;">Previous</button
-            >
-            <button id="nextBtn" class="btn btn-primary">Next</button>
+                class="btn btn-ghost btn-circle"
+                style="visibility: hidden;"
+                aria-label="Previous">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
+                <span class="sr-only">Previous</span>
+            </button>
+            <button id="nextBtn" class="btn btn-primary ml-auto px-5 rounded-full h-12 gap-2 group transition-transform shadow-inner hover:shadow-primary/40 active:scale-95 disabled:opacity-30 disabled:grayscale disabled:pointer-events-none whitespace-nowrap text-sm">
+                Next
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+            </button>
             <button
                 id="submitBtn"
-                class="btn btn-primary"
-                style="display: none;">Get My Results</button
-            >
-        </div>
+                class="btn btn-primary flex-1 sm:flex-none px-6"
+                style="display: none;">Get My Results</button>
+        </footer>
     </div>
 
     <!-- Results Container -->
@@ -552,14 +559,28 @@
             const nextBtn = document.getElementById("nextBtn");
             const submitBtn = document.getElementById("submitBtn");
 
+            // Always enable the appropriate fallback button for accessibility
             if (this.currentQuestion < this.totalQuestions) {
                 nextBtn.disabled = false;
             } else {
                 submitBtn.disabled = false;
             }
+
+            // Auto-advance after a short delay so the selection state is visible
+            if (this.currentQuestion < this.totalQuestions) {
+                setTimeout(() => this.nextQuestion(), 200);
+            }
         }
 
         nextQuestion() {
+            // Prevent advancing if no answer selected
+            const currentCard = document.querySelector(
+                `[data-question="${this.currentQuestion}"]`,
+            );
+            const hasAnswer = currentCard ? currentCard.querySelector('input[type="radio"]:checked') : null;
+            if (!hasAnswer) {
+                return;
+            }
             if (this.currentQuestion < this.totalQuestions) {
                 this.saveCurrentAnswer();
                 this.currentQuestion++;
@@ -612,6 +633,11 @@
 
             progressBar.style.width = `${percentage}%`;
             progressText.textContent = `Step ${currentStep} of ${this.totalSteps}`;
+
+            const navProgress = document.getElementById("navProgress") as HTMLElement | null;
+            if (navProgress) {
+                navProgress.style.width = `${percentage}%`;
+            }
         }
 
         updateNavigation() {
@@ -619,7 +645,7 @@
             const nextBtn = document.getElementById("nextBtn");
             const submitBtn = document.getElementById("submitBtn");
 
-            prevBtn.style.display = this.currentQuestion > 1 ? "block" : "none";
+            prevBtn.style.visibility = this.currentQuestion > 1 ? "visible" : "hidden";
             nextBtn.style.display =
                 this.currentQuestion < this.totalQuestions ? "block" : "none";
             submitBtn.style.display =
@@ -926,6 +952,17 @@
     .question-card .label input[type="radio"] {
         @apply ml-auto radio-primary;
     }
+    /* Bold answer text when span follows input (peer variant) */
+    /* Larger touch targets */
+    .question-card .label {
+        min-height: 56px;
+    }
+
+    /* Sticky footer nav helper styles */
+    .quiz-nav .btn[disabled] {
+        @apply opacity-40 pointer-events-none;
+    }
+
     /* Bold answer text when span follows input (peer variant) */
     .question-card .assessment-subtitle {
         @apply peer-checked:font-semibold;

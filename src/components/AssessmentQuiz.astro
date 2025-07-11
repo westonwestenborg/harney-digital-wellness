@@ -436,18 +436,18 @@
 
         <!-- Navigation -->
         <footer id="quizNav"
-            class="quiz-nav sticky bottom-0 z-20 w-full mx-auto max-w-screen-sm flex items-center justify-between px-4 py-3 gap-2 backdrop-blur-md bg-base-100/90 ring-1 ring-base-300 shadow-lg rounded-t-lg">
+            class="quiz-nav sticky bottom-0 z-20 w-full flex items-center justify-between px-4 gap-2 h-16 md:h-14 border-t border-[#E0E6ED] bg-base-100 bg-opacity-90 backdrop-blur-md">
             <button
                 id="prevBtn"
-                class="btn btn-ghost btn-circle"
+                class="btn btn-ghost flex items-center gap-2 px-4 h-11 md:h-10 transition-colors hover:bg-base-200/70 focus:ring-2 focus:ring-primary/40 focus:outline-none"
                 style="visibility: hidden;"
                 aria-label="Previous">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
-                <span class="sr-only">Previous</span>
+                <span>Back</span>
             </button>
             <button
                  id="submitBtn"
-                 class="btn btn-primary ml-auto px-6 rounded-full h-12 shadow-inner hover:shadow-primary/40 active:scale-95 disabled:opacity-30 disabled:grayscale disabled:pointer-events-none whitespace-nowrap text-sm"
+                 class="btn btn-primary ml-auto px-6 rounded-full h-12 hover:shadow-primary/30 active:scale-95 disabled:opacity-30 disabled:grayscale disabled:pointer-events-none whitespace-nowrap text-sm"
                  style="display: none;">
                 Get My Results
             </button>
@@ -530,15 +530,9 @@
 
         attachEventListeners() {
 
-            document
-                .getElementById("prevBtn")
-                .addEventListener("click", () => this.prevQuestion());
-            document
-                .getElementById("submitBtn")
-                .addEventListener("click", () => this.showResults());
-            document
-                .getElementById("restartBtn")
-                .addEventListener("click", () => this.restartQuiz());
+            document.getElementById("prevBtn")?.addEventListener("click", () => this.prevQuestion());
+            document.getElementById("submitBtn")?.addEventListener("click", () => this.showResults());
+            document.getElementById("restartBtn")?.addEventListener("click", () => this.restartQuiz());
 
             // Listen for radio button changes
             document
@@ -551,10 +545,10 @@
         }
 
         handleAnswerChange() {
-            const submitBtn = document.getElementById("submitBtn");
+            const submitBtn = document.getElementById("submitBtn") as HTMLButtonElement | null;
 
             // Enable results button only on the last question
-            if (this.currentQuestion === this.totalQuestions) {
+            if (submitBtn && this.currentQuestion === this.totalQuestions) {
                 submitBtn.disabled = false;
             }
 
@@ -595,9 +589,9 @@
             const currentCard = document.querySelector(
                 `[data-question="${this.currentQuestion}"]`,
             );
-            const selectedAnswer = currentCard.querySelector(
+            const selectedAnswer = currentCard?.querySelector(
                 'input[type="radio"]:checked',
-            );
+            ) as HTMLInputElement | null;
             if (selectedAnswer) {
                 this.answers[selectedAnswer.name] = selectedAnswer.value;
             }
@@ -617,25 +611,26 @@
         }
 
         updateProgress() {
-            const progressBar = document.getElementById("progressBar");
-            const progressText = document.getElementById("progressText");
+            const progressBar = document.getElementById("progressBar") as HTMLDivElement | null;
+            const progressText = document.getElementById("progressText") as HTMLElement | null;
             const stepSize = this.totalQuestions / this.totalSteps;
             const currentStep = Math.ceil(this.currentQuestion / stepSize);
             const percentage = (currentStep / this.totalSteps) * 100;
 
-            progressBar.style.width = `${percentage}%`;
-            progressText.textContent = `Step ${currentStep} of ${this.totalSteps}`;
+            if (progressBar) progressBar.style.width = `${percentage}%`;
+            if (progressText) progressText.textContent = `Step ${currentStep} of ${this.totalSteps}`;
 
             
         }
 
         updateNavigation() {
-            const prevBtn = document.getElementById("prevBtn");
-            const submitBtn = document.getElementById("submitBtn");
+            const prevBtn = document.getElementById("prevBtn") as HTMLButtonElement | null;
+            const submitBtn = document.getElementById("submitBtn") as HTMLButtonElement | null;
 
-            prevBtn.style.visibility = this.currentQuestion > 1 ? "visible" : "hidden";
-            submitBtn.style.display =
-                this.currentQuestion === this.totalQuestions ? "block" : "none";
+            if (prevBtn) prevBtn.style.visibility = this.currentQuestion > 1 ? "visible" : "hidden";
+            if (submitBtn) {
+                submitBtn.style.display = this.currentQuestion === this.totalQuestions ? "block" : "none";
+            }
 
             // Disable submit until answer is selected
             const currentCard = document.querySelector(
@@ -644,7 +639,7 @@
             const hasAnswer = currentCard ? currentCard.querySelector(
                 'input[type="radio"]:checked',
             ) : null;
-            submitBtn.disabled = !hasAnswer;
+            if (submitBtn) submitBtn.disabled = !hasAnswer;
         }
 
         calculateRiskLevel() {
@@ -747,8 +742,8 @@
             const resultsContainer =
                 document.getElementById("resultsContainer");
 
-            quizContainer.classList.add("hidden");
-            resultsContainer.classList.remove("hidden");
+            quizContainer?.classList.add("hidden");
+            resultsContainer?.classList.remove("hidden");
 
             this.displayResults(riskScore);
         }
@@ -879,14 +874,14 @@
             const resultsContainer =
                 document.getElementById("resultsContainer");
 
-            resultsContainer.classList.add("hidden");
-            quizContainer.classList.remove("hidden");
+            resultsContainer?.classList.add("hidden");
+            quizContainer?.classList.remove("hidden");
 
             // Clear all radio selections
             document
                 .querySelectorAll('input[type="radio"]')
                 .forEach((radio) => {
-                    radio.checked = false;
+                    (radio as HTMLInputElement).checked = false;
                 });
 
             this.showCurrentQuestion();
@@ -944,6 +939,9 @@
     }
 
     /* Sticky footer nav helper styles */
+    .quiz-nav {
+        @apply backdrop-blur-md bg-base-100 bg-opacity-90;
+    }
     .quiz-nav .btn[disabled] {
         @apply opacity-40 pointer-events-none;
     }

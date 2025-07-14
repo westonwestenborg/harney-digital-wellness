@@ -223,6 +223,44 @@ a:focus-visible {
   }
 }
 
+@media print {
+  /* Hide everything using visibility so layout is preserved */
+  body > *:not(#family-media-plan) {
+    display: none !important;
+  }
+
+  /* Reveal the plan wrapper and its children */
+  #family-media-plan,
+  #family-media-plan * {
+    display: block !important;
+    color: black !important;
+    background: transparent !important;
+  }
+
+  /* Reset body margin so plan starts at top-left */
+  body {
+    margin: 0 !important;
+  }
+
+  /* Position plan at top-left of page */
+  #family-media-plan {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  /* Remove shadows/borders that don’t translate well */
+  * {
+    box-shadow: none !important;
+  }
+
+  /* Ensure print button stays hidden regardless */
+  .print\:hidden {
+    display: none !important;
+  }
+}
+
 /* Additional Quiz Results Contrast */
 .alert h3, .alert p {
   color: oklch(25.47% 0.110 82.31) \!important;
@@ -231,4 +269,32 @@ a:focus-visible {
 .btn-outline.btn-primary {
   color: oklch(47.47% 0.222 255.56) \!important;
   border-color: oklch(47.47% 0.222 255.56) \!important;
+}
+
+/* Extra-small devices (phones ≤480 px) */
+@media (max-width: 480px) {
+  /* Full-width stacking and comfortable touch targets */
+  .assessment-quiz,
+  #quizContainer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  .quiz-option {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Reduce oversized headings */
+  h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1.25rem;
+  }
 }

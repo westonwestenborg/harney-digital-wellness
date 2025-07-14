@@ -273,6 +273,16 @@ a:focus-visible {
 
 /* Extra-small devices (phones ≤480 px) */
 @media (max-width: 480px) {
+  /* Remove auto side margins so content uses full viewport width */
+  .mx-auto {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Ensure cards span full width */
+  .card {
+    width: 100% !important;
+  }
   /* Allow full-width containers even if Tailwind max-w classes are present */
   .max-w-xs,
   .max-w-sm,

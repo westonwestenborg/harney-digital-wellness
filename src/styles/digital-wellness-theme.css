@@ -261,6 +261,42 @@ a:focus-visible {
   }
 }
 
+/* Question title contrast fix */
+.question-card .card-title {
+  color: oklch(95.47% 0.02 82.31) !important;
+}
+
+/* Hide disabled nav buttons */
+.quiz-nav .btn[disabled] {
+  display: none !important;
+}
+
+/* Hide any disabled buttons globally on XS */
+@media (max-width: 480px) {
+  .btn[disabled] {
+    display: none !important;
+  }
+}
+
+/* Wrap long question text and option text inside quiz cards */
+.question-card .card-title,
+.question-card .label-text,
+.question-card .assessment-subtitle {
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+}
+
+/* Brighten assessment results text shown on dark background */
+#resultsContainer * {
+  color: oklch(96% 0.02 82.31) !important;
+}
+
+
+/* Brighten option text inside dark quiz cards */
+.question-card .assessment-subtitle {
+  color: oklch(85% 0.02 82.31) !important;
+}
+
 /* Additional Quiz Results Contrast */
 .alert h3, .alert p {
   color: oklch(25.47% 0.110 82.31) \!important;
@@ -297,10 +333,24 @@ a:focus-visible {
     max-width: 100% !important;
   }
   /* Full-width stacking and comfortable touch targets */
+  /* Ensure hero titles/subtitles and navbar brand span full width */
+  .hero-title,
+  .hero-subtitle,
+  .navbar .text-xl, /* brand */
+  .navbar .text-lg {
+    white-space: normal !important;
+    max-width: 100% !important;
+  }
+  .hero-title,
+  .hero-subtitle {
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
   .assessment-quiz,
   #quizContainer {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 
   .card {

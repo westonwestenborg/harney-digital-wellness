@@ -334,6 +334,15 @@ a:focus-visible {
   }
   /* Full-width stacking and comfortable touch targets */
   /* Ensure hero titles/subtitles and navbar brand span full width */
+  /* Shrink navbar brand font on extra-small screens */
+  .navbar .btn-ghost.normal-case {
+    font-size: 1rem !important; /* ~text-base */
+    white-space: normal !important;
+    line-height: 1.25rem !important; /* tighten line height */
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    text-align: center !important;
+  }
   .hero-title,
   .hero-subtitle,
   .navbar .text-xl, /* brand */

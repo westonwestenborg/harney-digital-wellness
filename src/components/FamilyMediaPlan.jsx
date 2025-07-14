@@ -474,7 +474,7 @@ export default function FamilyMediaPlan() {
     {
       title: "Review & Print",
       content: (
-        <div className="space-y-6">
+        <div id="family-media-plan" className="space-y-6">
           <div className="prose max-w-none">
             <h3>{data.familyName || "Family"} Media Plan Summary</h3>
 
@@ -543,7 +543,9 @@ export default function FamilyMediaPlan() {
             <h4>Plan Signatures</h4>
             <p>{data.signatures || "—"}</p>
 
-          <button className="btn btn-primary btn-lg print:hidden mt-6" onClick={() => window.print()}>
+          <p className="text-xs mt-8 hidden print:block text-center">Created on {new Date().toLocaleDateString()} • Harney Digital Wellness</p>
+
+          <button className="btn btn-primary btn-lg print:hidden mt-6" onClick={printPlan}>
             Print / Save as PDF
           </button>
           </div>
@@ -560,6 +562,20 @@ export default function FamilyMediaPlan() {
     });
   };
   const back = () => setStep((s) => Math.max(s - 1, 0));
+
+  // Print helper – temporarily replace body with the plan only
+  function printPlan() {
+    const original = document.body.innerHTML;
+    const planEl = document.getElementById("family-media-plan");
+    if (!planEl) {
+      window.print();
+      return;
+    }
+    const planHtml = planEl.outerHTML;
+    document.body.innerHTML = planHtml;
+    window.print();
+    document.body.innerHTML = original;
+  };
 
   return (
     <div className="space-y-6">

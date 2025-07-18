@@ -24,7 +24,7 @@ import "../styles/global.css";
         <title>{title}</title>
     </head>
     <body class="bg-base-100 text-base-content">
-        <nav class="navbar bg-base-200 sticky top-0 z-50 shadow-sm relative">
+        <nav class="navbar bg-base-200 sticky top-0 z-50 shadow-sm">
             <div class="navbar-start">
                 <div class="dropdown">
                     <div
@@ -59,13 +59,12 @@ import "../styles/global.css";
 
                     </ul>
                 </div>
-                <a href="/" class="hidden lg:block px-1 py-0.5 font-bold text-base text-primary whitespace-normal break-words leading-tight normal-case"
+                <a href="/" class="mx-auto px-1 py-0.5 font-bold text-base sm:text-lg text-primary whitespace-normal break-words leading-tight normal-case text-center"
                     >Harney Digital Wellness</a
                 >
             </div>
-            <div class="navbar-center flex-1 justify-center">
-                <a href="/" class="block lg:hidden px-1 py-0.5 font-bold text-base text-primary text-center whitespace-normal break-words leading-tight normal-case">Harney Digital Wellness</a>
-                    <ul class="menu menu-horizontal px-1 hidden lg:flex">
+            <div class="navbar-center hidden lg:flex">
+                <ul class="menu menu-horizontal px-1">
                     <li>
                         <a href="/quick-start/" class="hover:text-primary"
                             >Start Here</a

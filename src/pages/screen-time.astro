@@ -24,7 +24,7 @@ import FamilyMediaPlan from "../components/FamilyMediaPlan.jsx";
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto">
                     <div class="card bg-base-100 shadow-xl">
-                        <div class="card-body">
+                        <div class="card-body flex flex-col h-full flex-1 md:pb-[96px]">
                             <h2 class="card-title text-2xl text-primary mb-6">
                                 Screen Time Calculator
                             </h2>
@@ -304,15 +304,18 @@ import FamilyMediaPlan from "../components/FamilyMediaPlan.jsx";
             <div class="container mx-auto px-4">
                 <div class="max-w-6xl mx-auto">
                     <h2
-                        class="text-3xl font-bold text-center text-primary mb-12"
+                        class="text-3xl font-bold text-center text-primary mb-4"
                     >
-                        Understanding Screen Time Impact
+                        How Screen Time Shapes Well-Being
                     </h2>
+                    <p class="text-center text-base-content mb-8">
+                         Below are the three big ways screen habits can help or hurt growing minds—plus a quick takeaway for families.
+                    </p>
 
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch md:[grid-auto-rows:1fr]">
                         <!-- Depression -->
-                        <div class="card bg-base-100 shadow-lg">
-                            <div class="card-body">
+                        <div class="card bg-base-100 shadow-lg h-full flex flex-col relative">
+                            <div class="card-body flex flex-col h-full flex-1 md:pb-[96px]">
                                 <div
                                     class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4"
                                 >
@@ -334,18 +337,17 @@ import FamilyMediaPlan from "../components/FamilyMediaPlan.jsx";
                                     Mental Health Impact
                                 </h3>
                                 <ul class="list-disc list-inside text-base-content text-sm space-y-2 mb-4">
-                                    <li><strong>Dose matters:</strong> Meta-analyses show that every extra recreational hour above ≈ 2 hrs/day raises the odds of depressive symptoms by 13–20 %, with a stronger effect in girls.<Cite id="liu2016" /><Cite id="li2022" /></li>
-                                    <li><strong>Quality over quantity:</strong> A 2025 <em>JAMA</em> cohort study of 4,200 U.S. teens found that addictive use patterns—difficulty logging off, emotional dependence—predicted anxiety, depression, and suicidal thoughts better than total hours online.<Cite id="xiao2025" /></li>
-                                    <li><strong>Sleep & mood loop:</strong> Evening screen-light suppresses melatonin, delaying sleep and amplifying next-day irritability; prospective data link late-night use to higher depression scores nine months later.<Cite id="hale2018" /><Cite id="hokby2025" /></li>
-                                    <li><strong>Good news:</strong> Families that cut leisure screen use for just one week reported measurable drops in children’s stress and sadness.<Cite id="schmidt2024" /><Cite id="pieh2025" /></li>
+                                    <li><strong>Dose matters:</strong> Every extra leisure hour above 2&nbsp;hrs/day raises depression risk 13–20&nbsp;%.<Cite id="liu2016" /><Cite id="li2022" /></li>
+                                     <li><strong>Sleep & mood loop:</strong> Evening screens suppress melatonin and predict next-day irritability.<Cite id="hale2018" /><Cite id="hokby2025" /></li>
+                                     <li><strong>Quick wins:</strong> One week of 30-min cuts dropped stress and sadness in families.<Cite id="schmidt2024" /><Cite id="pieh2025" /></li>
                                 </ul>
-                                <p class="italic text-sm">Take-away: Focus on balanced, purposeful use and tech-free wind-down time rather than rigid minute counts.</p>
+                                <p class="italic text-sm bg-[#ebe6f3] w-full mt-auto md:mt-0 p-3 min-h-[96px] md:absolute md:inset-x-0 md:bottom-0">Take-away: Emphasize quality over quotas: encourage purposeful screen use during the day, and build a tech-free wind-down before bed.</p>
                             </div>
                         </div>
 
                         <!-- School Performance -->
-                        <div class="card bg-base-100 shadow-lg">
-                            <div class="card-body">
+                        <div class="card bg-base-100 shadow-lg h-full flex flex-col relative">
+                            <div class="card-body flex flex-col h-full flex-1 md:pb-[96px]">
                                 <div
                                     class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-4"
                                 >
@@ -374,17 +376,17 @@ import FamilyMediaPlan from "../components/FamilyMediaPlan.jsx";
                                     School Performance
                                 </h3>
                                 <ul class="list-disc list-inside text-base-content text-sm space-y-2 mb-4">
-                                    <li><strong>Grades &amp; homework:</strong> Students exceeding the American Academy of Pediatrics’ 2-hour recreational limit had significantly lower GPA equivalents and reported less homework completion in a 2024 U.S. survey of 220 middle-schoolers.<Cite id="adelantado2019" /></li>
-                                    <li><strong>Bedroom screens:</strong> Having a TV or game console in the bedroom predicts a 7–8-point drop on standardized math/reading tests, independent of socioeconomic status.<Cite id="borzekowski2005" /></li>
-                                    <li><strong>Classroom distraction:</strong> States and districts limiting smartphones during lessons report improved on-task behavior and test scores, prompting 2025 legislation in Virginia and Los Angeles.<Cite id="beland2016" /><Cite id="paul2024" /></li>
+                                    <li><strong>Grades slip:</strong> Exceeding the AAP’s 2-hour leisure limit was tied to lower GPAs and less homework in a 2024 survey of 220 middle-schoolers.<Cite id="adelantado2019" /></li>
+                                    <li><strong>Bedroom screens hurt scores:</strong> A TV or game console in the bedroom predicted a 7–8-point drop on math / reading tests, regardless of family income.<Cite id="borzekowski2005" /></li>
+                                    <li><strong>Phone-free classes boost focus:</strong> Districts that restrict smartphones report better on-task behavior and higher test scores—fueling 2025 bans in Virginia and Los Angeles.<Cite id="beland2016" /><Cite id="paul2024" /></li>
                                 </ul>
-                                <p class="italic text-sm">Take-away: Keep study spaces device-light and reserve entertainment screens for after assignments are done.</p>
+                                <p class="italic text-sm bg-[#ebe6f3] w-full mt-auto md:mt-0 p-3 min-h-[96px] md:absolute md:inset-x-0 md:bottom-0">Take-away: Keep study zones device-light and save entertainment screens for after the work is done.</p>
                             </div>
                         </div>
 
                         <!-- Benefits of Devices -->
-                        <div class="card bg-base-100 shadow-lg">
-                            <div class="card-body">
+                        <div class="card bg-base-100 shadow-lg h-full flex flex-col relative">
+                            <div class="card-body flex flex-col h-full flex-1 md:pb-[96px]">
                                 <div
                                     class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4"
                                 >
@@ -406,12 +408,12 @@ import FamilyMediaPlan from "../components/FamilyMediaPlan.jsx";
                                     Positive Uses
                                 </h3>
                                 <ul class="list-disc list-inside text-base-content text-sm space-y-2 mb-4">
-                                    <li><strong>Learning tools:</strong> A three-year longitudinal trial found gamified math apps boosted test scores and engagement vs. traditional homework.<Cite id="lampropoulos2024" /></li>
-                                    <li><strong>Creativity &amp; connection:</strong> Pew’s 2025 teen survey shows 74&nbsp;% feel social media helps them stay connected, and 63&nbsp;% say it lets them express creativity that doesn’t fit offline spaces.<Cite id="pew2025" /></li>
-                                    <li><strong>Inclusive communities:</strong> WHO reports heavy-but-non-problematic users often gain peer support—especially marginalized youths finding niche interest groups online.<Cite id="who2023" /></li>
-                                    <li><strong>Active tech in class:</strong> Evidence-based one-to-one laptop programs with interactive lessons raise reading and math achievement when screens are used with the teacher, not instead of.<Cite id="zheng2016" /></li>
+                                    <li><strong>Game-style learning boosts results:</strong> A three-year study showed gamified math apps beat traditional homework on both test scores and engagement.<Cite id="lampropoulos2024" /></li>
+                                    <li><strong>Creativity &amp; connection flourish:</strong> In Pew’s 2025 teen survey, 74&nbsp;% of teens said social media keeps them connected, and 63&nbsp;% said it unlocks creative outlets they can’t access offline.<Cite id="pew2025" /></li>
+                                    
+                                    <li><strong>Inclusive, hands-on instruction:</strong> Teacher-guided one-to-one laptop instruction lifts reading and math scores, while focused online communities give marginalized youth supportive peer networks.<Cite id="who2023" /><Cite id="zheng2016" /></li>
                                 </ul>
-                                <p class="italic text-sm">Take-away: Encourage “active” screen time—creating, exploring, collaborating—while setting guardrails around passive scrolling.</p>
+                                <p class="italic text-sm bg-[#ebe6f3] w-full mt-auto md:mt-0 p-3 min-h-[96px] md:absolute md:inset-x-0 md:bottom-0">Take-away: Steer students toward active screen time—creating, exploring, collaborating—and set clear limits on passive scrolling.</p>
                             </div>
                         </div>
                     </div>
@@ -424,7 +426,7 @@ import FamilyMediaPlan from "../components/FamilyMediaPlan.jsx";
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto">
                     <div class="card bg-base-100 shadow-xl">
-                        <div class="card-body">
+                        <div class="card-body flex flex-col h-full flex-1 md:pb-[96px]">
                             <h2 class="card-title text-2xl text-primary mb-6">
                                 Create a Family Media Plan
                             </h2>
@@ -449,13 +451,13 @@ import FamilyMediaPlan from "../components/FamilyMediaPlan.jsx";
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto">
                     <h2
-                        class="text-3xl font-bold text-center text-primary mb-8"
+                        class="text-3xl font-bold text-center text-primary mb-4"
                     >
                         Sleep & Screens
                     </h2>
 
-                    <div class="card bg-base-100 shadow-lg">
-                        <div class="card-body">
+                    <div class="card bg-base-100 shadow-lg h-full flex flex-col relative">
+                        <div class="card-body flex flex-col h-full flex-1 md:pb-[96px]">
                             <div class="flex items-center mb-4">
                                 <div
                                     class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4"
@@ -540,15 +542,15 @@ import FamilyMediaPlan from "../components/FamilyMediaPlan.jsx";
             <div class="container mx-auto px-4">
                 <div class="max-w-4xl mx-auto">
                     <h2
-                        class="text-3xl font-bold text-center text-primary mb-8"
+                        class="text-3xl font-bold text-center text-primary mb-4"
                     >
                         Screen Time Monitoring Tools
                     </h2>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <!-- iOS Tools -->
-                        <div class="card bg-base-100 shadow-lg">
-                            <div class="card-body">
+                        <div class="card bg-base-100 shadow-lg h-full flex flex-col relative">
+                            <div class="card-body flex flex-col h-full flex-1 md:pb-[96px]">
                                 <div class="flex items-center mb-4">
                                     <svg
                                         class="w-8 h-8 text-primary mr-3"
@@ -582,8 +584,8 @@ import FamilyMediaPlan from "../components/FamilyMediaPlan.jsx";
                         </div>
 
                         <!-- Android Tools -->
-                        <div class="card bg-base-100 shadow-lg">
-                            <div class="card-body">
+                        <div class="card bg-base-100 shadow-lg h-full flex flex-col relative">
+                            <div class="card-body flex flex-col h-full flex-1 md:pb-[96px]">
                                 <div class="flex items-center mb-4">
                                     <svg
                                         class="w-8 h-8 text-primary mr-3"

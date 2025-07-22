@@ -574,53 +574,51 @@ import Cite from '../lib/citations/Cite.astro';
               <div class="card-body">
                 <h3 class="card-title text-xl text-secondary mb-4">Risks &amp; Benefits of Social Media</h3>
                 
-                <!-- Positive aspects -->
-                <h4 class="font-semibold mb-3">Positive aspects for tweens &amp; teens</h4>
-                <ul class="list-disc list-inside space-y-2 mb-4">
+                <!-- Snapshot -->
+                <h3 class="font-semibold mb-4" id="sm-risks-benefits-why">Why this matters: Social media can boost connection and creativity yet also threaten teens’ mental health and privacy—balanced guidance builds lifelong digital wellbeing.</h3>
+
+                <!-- Positive aspects accordion -->
+                <details class="border border-base-300 rounded-lg" aria-expanded="false">
+                  <summary class="cursor-pointer flex items-center justify-between font-semibold p-3">
+                    Positive aspects for tweens &amp; teens
+                    <span class="ml-2 transform transition-transform group-open:rotate-180">▾</span>
+                  </summary>
+                  <ul class="list-disc list-inside mt-2 pl-4 space-y-2">
+
                   <li>Connection &amp; belonging – keeps friendships alive after school and lets rural or marginalized youth find supportive communities online<Cite id="surgeon2023" /></li>
                   <li>Creativity &amp; self-expression – platforms allow kids to showcase art, music, coding projects and build digital-portfolio skills valued by colleges and employers<Cite id="surgeon2023" /></li>
                   <li>On-demand learning – short tutorials teach everything from language phrases to CPR, making “just-in-time” learning easy<Cite id="surgeon2023" /></li>
                 </ul>
-                
-                <!-- Key risks -->
-                <h4 class="font-semibold mb-3">Key risks to monitor</h4>
-                <ul class="list-disc list-inside space-y-2 mb-4">
+                </details>
+
+                <!-- Gap before next accordion -->
+                <div class="h-4"></div>
+
+                <!-- Key risks accordion -->
+                <details class="border border-base-300 rounded-lg" aria-expanded="false">
+                  <summary class="cursor-pointer flex items-center justify-between font-semibold p-3">
+                    Key risks to monitor
+                    <span class="ml-2 transform transition-transform group-open:rotate-180">▾</span>
+                  </summary>
+                  <ul class="list-disc list-inside mt-2 pl-4 space-y-2">
+
                   <li>Mental-health strain – daily use &gt; 3&nbsp;h is linked to roughly doubled odds of anxiety or depression, and the U.S. Surgeon General warns social media is not yet proven safe for youth<Cite id="surgeon2023" /></li>
                   <li>Cyberbullying &amp; harassment – 46&nbsp;% of U.S. teens report being targeted online, with older teen girls at highest risk<Cite id="vogels2022" /></li>
                   <li>Privacy &amp; data tracking – a 2024 FTC report found major platforms collected and indefinitely stored vast troves of teen data, exposing them to identity-theft, stalking and invasive ads<Cite id="ftcSurveillance2024" /></li>
                   <li>Sleep &amp; attention impacts – late-night scrolling erodes sleep quality; heavy users show shorter sleep duration and next-day focus problems<Cite id="pirdehghan2021" /></li>
                 </ul>
-                
-                <!-- Age-appropriate tips -->
-                <h4 class="font-semibold mb-3">Age-appropriate platform tips</h4>
-                <div class="overflow-x-auto mb-4">
-                  <table class="table table-zebra w-full text-sm">
-                    <thead>
-                      <tr>
-                        <th>Age</th>
-                        <th>Recommended approach</th>
-                        <th>Why it matters</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>Under&nbsp;13</td>
-                        <td>Stick to closed ecosystems (family messaging, school apps) &amp; postpone mainstream social apps</td>
-                        <td>COPPA and AAP guidance set 13 as the minimum for Instagram, Snapchat, TikTok<Cite id="ftcCoppa" /><Cite id="aapIntroSM2025" /></td>
-                      </tr>
-                      <tr>
-                        <td>13 – 15&nbsp;yrs</td>
-                        <td>Begin with private or supervised accounts; turn on safety defaults (comment filters, limited DMs)</td>
-                        <td>Gradual exposure plus adult co-viewing lowers risk while skills develop<Cite id="aapIntroSM2025" /></td>
-                      </tr>
-                      <tr>
-                        <td>16 – 18&nbsp;yrs</td>
-                        <td>Teach digital-literacy: use screen-time dashboards, review data-sharing settings together</td>
-                        <td>Older teens value autonomy but still need privacy &amp; wellbeing check-ins<Cite id="surgeon2023" /></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+                </details>
+
+                <!-- Checklist: age-appropriate tips -->
+                <div class="h-4"></div>
+                <ol class="list-decimal list-inside space-y-3 mb-4">
+                  <li><strong>Under&nbsp;13:</strong> stick to closed family &amp; school apps; delay mainstream platforms.</li>
+                  <li><strong>13–15&nbsp;yrs:</strong> use private accounts + enable default safety settings.</li>
+                  <li><strong>16–18&nbsp;yrs:</strong> review privacy &amp; data-sharing together each month.</li>
+                  <li><strong>All&nbsp;ages:</strong> keep devices out of bedrooms to protect sleep quality.</li>
+                </ol>
+
+
                 
                 <!-- Setting expectations -->
                 <h4 class="font-semibold mb-3">Setting realistic expectations</h4>
@@ -634,32 +632,32 @@ import Cite from '../lib/citations/Cite.astro';
             </div>
 
             <!-- Platform Safety -->
-            <div class="card bg-base-100 shadow-lg">
+            <div class="card bg-base-100 shadow-lg lg:min-h-[440px]">
               <div class="card-body">
                 <h3 class="card-title text-xl text-secondary mb-4">Platform-Specific Safety</h3>
-                <p class="text-base-content opacity-70 mb-4">
-                  Jump straight to each app’s official safety hub for parental controls, privacy settings, and wellbeing tips.
-                </p>
-                <div class="space-y-3">
-                  <a href="https://help.instagram.com/285881641526716" target="_blank" class="flex items-center p-2 bg-base-200 rounded-lg hover:bg-base-300 transition-colors">
-                    <div class="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mr-3">
-                      <span class="text-white text-xs font-bold">IG</span>
-                    </div>
-                    <span>Instagram Safety Center</span>
-                  </a>
-                  <a href="https://support.snapchat.com/en-US/a/safety-center" target="_blank" class="flex items-center p-2 bg-base-200 rounded-lg hover:bg-base-300 transition-colors">
-                    <div class="w-8 h-8 bg-yellow-400 rounded-lg flex items-center justify-center mr-3">
-                      <span class="text-white text-xs font-bold">SC</span>
-                    </div>
-                    <span>Snapchat Safety Center</span>
-                  </a>
-                  <a href="https://support.tiktok.com/en/safety-hc" target="_blank" class="flex items-center p-2 bg-base-200 rounded-lg hover:bg-base-300 transition-colors">
-                    <div class="w-8 h-8 bg-black rounded-lg flex items-center justify-center mr-3">
-                      <span class="text-white text-xs font-bold">TT</span>
-                    </div>
-                    <span>TikTok Safety Center</span>
-                  </a>
-                </div>
+                <h3 class="font-semibold mb-4">Why this matters: Quick access to each platform’s safety hub lets families apply controls consistently and revisit them as kids’ needs evolve.</h3>
+
+                <!-- Checklist with branded buttons -->
+                <ol class="list-decimal list-inside space-y-3 mb-4">
+                  <li class="flex flex-col gap-2">
+                    Instagram: Open Safety Center &amp; enable Family Pairing.
+                    <a href="https://help.instagram.com/285881641526716" target="_blank" class="btn btn-accent w-fit">Instagram Safety Center</a>
+                  </li>
+                  <li class="flex flex-col gap-2">
+                    Snapchat: Turn on “Friends Only” contact setting.
+                    <a href="https://support.snapchat.com/en-US/a/safety-center" target="_blank" class="btn btn-accent w-fit">Snapchat Safety Center</a>
+                  </li>
+                  <li class="flex flex-col gap-2">
+                    TikTok: Use screen-time dashboard for daily limits.
+                    <a href="https://support.tiktok.com/en/safety-hc" target="_blank" class="btn btn-accent w-fit">TikTok Safety Center</a>
+                  </li>
+                  <li class="flex flex-col gap-2">
+                    YouTube: Activate Restricted Mode &amp; set bedtime reminders.
+                    <a href="https://support.google.com/youtube/answer/174084" target="_blank" class="btn btn-accent w-fit">YouTube Safety Center</a>
+                  </li>
+                </ol>
+
+                <p class="text-base-content opacity-70">Bookmark each hub for quarterly check-ins.</p>
               </div>
             </div>
           </div>

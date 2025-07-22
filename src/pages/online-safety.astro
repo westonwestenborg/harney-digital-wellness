@@ -81,43 +81,64 @@ import Cite from '../lib/citations/Cite.astro';
             <div class="card bg-base-100 shadow-lg">
               <div class="card-body space-y-6">
                 <h3 class="card-title text-xl text-accent mb-4">What is Cyberbullying?</h3>
-                <p class="text-base-content opacity-70 mb-4">
-                  Cyberbullying is willful, repeated harm carried out through digital devices—phones, tablets, computers, game consoles, even smart-TV chat apps—by sending, posting, or sharing negative, false, or private content about someone else<Cite id="stopbullying2024" />.
-                </p>
+                <div class="card-intro md:min-h-[240px] flex flex-col justify-between">
+                
                 <p class="text-base-content opacity-70 mb-6">
-                  Unlike traditional face-to-face bullying, these attacks can follow a child 24/7, reach a vast audience in seconds, and leave a permanent record online, making them harder to escape and potentially more damaging to mental health<Cite id="stopbullying2024" /><Cite id="vogels2022" />.
+                  Cyberbullying is repeated digital harassment—texts, posts, DMs—that can reach kids anytime, spread fast, and leave a lasting record<Cite id="stopbullying2024" /><Cite id="vogels2022" />.
                 </p>
 
-                <div class="mb-4 border-l-4 border-accent/30 pl-4">
-                  <h4 class="font-semibold mb-2">Common Forms</h4>
-                  <ul class="list-disc list-inside space-y-1">
-                    <li>Harassment &amp; flaming – repeated insults, threats, or humiliating comments in texts, DMs, or comment threads<Cite id="cyberbullyingrc2024" /></li>
-                    <li>Exclusion – deliberately leaving someone out of group chats, games, or online communities<Cite id="cyberbullyingrc2024" /></li>
-                    <li>Outing / doxxing – posting private messages, photos, or personal details to embarrass or endanger someone<Cite id="stopbullying2024" /><Cite id="cyberbullyingrc2024" /></li>
-                    <li>Impersonation – creating fake profiles or hijacking accounts to spread rumors or pose as the victim<Cite id="cyberbullyingrc2024" /></li>
-                    <li>Rumor-spreading &amp; image-based abuse – sharing edited or humiliating pictures, videos, or gossip<Cite id="stopbullying2024" /></li>
-                  </ul>
-                </div>
+                <!-- Quick snapshot (always visible) -->
+                <ul class="list-disc list-inside space-y-1 mt-4">
+                  <li>Messages can arrive any time, even overnight</li>
+                  <li>Screenshots make posts hard to erase</li>
+                  <li>Linked to stronger mental-health impacts</li>
+                </ul>
 
-                <div class="mb-4 border-l-4 border-accent/30 pl-4">
-                  <h4 class="font-semibold mb-2">Where It Happens Most</h4>
-                  <ul class="list-disc list-inside space-y-1">
-                    <li>Social media platforms (Snapchat, Instagram, TikTok, Facebook)<Cite id="stopbullying2024" /></li>
-                    <li>Group texts and direct-message apps</li>
-                    <li>Online multiplayer games and voice-chat services<Cite id="stopbullying2024" /></li>
-                    <li>School learning portals, forums, or live-stream comments<Cite id="cyberbullyingrc2024" /></li>
-                  </ul>
                 </div>
+                <!-- Collapsible Accordions (collapsed by default) -->
+                <details class="border-t border-base-300 py-2 group">
+                  <summary class="cursor-pointer flex items-center justify-between font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-expanded="false">
+                    Common forms
+                    <span class="ml-2 transform transition-transform group-open:rotate-180">▾</span>
+                  </summary>
+                  <ul class="list-disc list-inside mt-2 pl-4 space-y-1">
+                    <li>Harassment &amp; flaming — repeated insults, threats, humiliating comments<Cite id="cyberbullyingrc2024" /></li>
+                    <li>Exclusion — leaving someone out of chats, games, or communities<Cite id="cyberbullyingrc2024" /></li>
+                    <li>Outing / doxxing — posting private info or images to embarrass<Cite id="stopbullying2024" /><Cite id="cyberbullyingrc2024" /></li>
+                    <li>Impersonation — fake profiles or hijacked accounts spreading rumors<Cite id="cyberbullyingrc2024" /></li>
+                    <li>Rumor-spreading &amp; image abuse — sharing edited or humiliating media<Cite id="stopbullying2024" /></li>
+                  </ul>
+                </details>
 
-                <div class="border-l-4 border-accent/30 pl-4">
-                  <h4 class="font-semibold mb-2">Why It Can Be More Harmful Than In-Person Bullying</h4>
-                  <ul class="list-disc list-inside space-y-1">
-                    <li>Round-the-clock reach: messages arrive any time, even at home or during the night<Cite id="stopbullying2024" /></li>
-                    <li>Amplified audience &amp; permanence: posts can be screenshotted, forwarded, and remain searchable long after deletion<Cite id="stopbullying2024" /></li>
-                    <li>Anonymity: perpetrators may hide their identity, lowering empathy and increasing cruelty<Cite id="cyberbullyingrc2024" /></li>
-                    <li>Growing prevalence: 59&nbsp;% of U.S. teens say they’ve been bullied or harassed online, and girls 15–17 report the highest rates<Cite id="vogels2022" />; 22&nbsp;% of bullied students (ages 12–18) said it happened online or by text in the 2021-22 school year<Cite id="nces2023" /></li>
+                <details class="border-t border-base-300 py-2 group">
+                  <summary class="cursor-pointer flex items-center justify-between font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-expanded="false">
+                    Where it happens
+                    <span class="ml-2 transform transition-transform group-open:rotate-180">▾</span>
+                  </summary>
+                  <ul class="list-disc list-inside mt-2 pl-4 space-y-1">
+                    <li>Social media (Snapchat, Instagram, TikTok, Facebook)<Cite id="stopbullying2024" /></li>
+                    <li>Group texts &amp; direct-message apps</li>
+                    <li>Online multiplayer games &amp; voice chat<Cite id="stopbullying2024" /></li>
+                    <li>School learning portals, forums, livestream comments<Cite id="cyberbullyingrc2024" /></li>
                   </ul>
-                </div>
+                </details>
+
+                <details class="border-t border-base-300 py-2 group">
+                  <summary class="cursor-pointer flex items-center justify-between font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-expanded="false">
+                    Why it can be more harmful
+                    <span class="ml-2 transform transition-transform group-open:rotate-180">▾</span>
+                  </summary>
+                  <ul class="list-disc list-inside mt-2 pl-4 space-y-1">
+                    <li>Round-the-clock reach increases stress<Cite id="stopbullying2024" /></li>
+                    <li>Amplified audience &amp; permanence via re-shares &amp; screenshots<Cite id="stopbullying2024" /></li>
+                    <li>Anonymity lowers empathy and raises cruelty<Cite id="cyberbullyingrc2024" /></li>
+                    <li>Rising prevalence — 59% of U.S. teens report online harassment<Cite id="vogels2022" /></li>
+                  </ul>
+                </details>
+
+                <p class="text-base-content opacity-70 mt-4">
+                  Think your child might be experiencing cyberbullying? Save key screenshots with timestamps and talk with a trusted adult or school counselor.
+                </p>
               </div>
             </div>
 
@@ -125,24 +146,61 @@ import Cite from '../lib/citations/Cite.astro';
             <div class="card bg-base-100 shadow-lg">
               <div class="card-body space-y-6">
                 <h3 class="card-title text-xl text-accent mb-4">Warning Signs</h3>
+                <div class="card-intro md:min-h-[240px] flex flex-col justify-between">
                 <p class="text-base-content opacity-70">
-                  Children rarely tell adults outright when cyberbullying is happening. Watch for these behavioral and emotional red-flags — especially if several appear together:
+                  Children rarely tell adults outright when cyberbullying is happening. Instead, look for clusters of behavioral, emotional, and academic red flags.
                 </p>
 
-                <div class="border-l-4 border-accent/30 pl-4">
-                  <ul class="list-disc list-inside space-y-1">
-                    <li>Noticeable shifts in device use — late-night scrolling, compulsive checking, or suddenly avoiding screens<Cite id="stopbullyingSigns2021" /></li>
-                    <li>Strong emotional reactions after going online — visible laughter, anger, or tears immediately after reading messages<Cite id="stopbullyingSigns2021" /></li>
-                    <li>Secrecy about digital life — quickly closing tabs, hiding the screen, or refusing to talk about online activities<Cite id="stopbullyingSigns2021" /></li>
-                    <li>Withdrawal from friends or activities once enjoyed — skipping hang-outs, sports, or clubs; spending more time alone<Cite id="stopbullyingSigns2021" /><Cite id="netsmartz2025" /></li>
-                    <li>Changes in sleep, appetite, or mood — headaches, stomach-aches, insomnia, overeating/undereating, signs of depression or anxiety<Cite id="netsmartz2025" /></li>
-                    <li>Academic struggles or declining grades — trouble concentrating, sudden drop in performance<Cite id="netsmartz2025" /><Cite id="aapHealthyChildren2022" /></li>
-                  </ul>
+                <!-- Quick snapshot list (always visible) -->
+                <ul class="list-disc list-inside space-y-1 mt-4">
+                  <li>Sudden shifts in device habits</li>
+                  <li>Big emotions right after going online</li>
+                  <li>Withdrawing from friends or slipping grades</li>
+                </ul>
+
                 </div>
+                <!-- Collapsible Accordions (collapsed by default) -->
+                <details class="border-t border-base-300 py-2 group">
+                  <summary class="cursor-pointer flex items-center justify-between font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-expanded="false">
+                    Device &amp; secrecy clues
+                    <span class="ml-2 transform transition-transform group-open:rotate-180">▾</span>
+                  </summary>
+                  <ul class="list-disc list-inside mt-2 pl-4 space-y-1">
+                    <li>Late-night scrolling or compulsive checking<Cite id="stopbullyingSigns2021" /></li>
+                    <li>Suddenly avoiding screens altogether<Cite id="stopbullyingSigns2021" /></li>
+                    <li>Quickly closing tabs or hiding the screen when someone walks by<Cite id="stopbullyingSigns2021" /></li>
+                  </ul>
+                </details>
 
-                <p class="text-base-content opacity-70">
-                  Any one sign doesn’t prove cyberbullying, but a pattern should prompt calm, open-ended questions and supportive follow-up.
+                <details class="border-t border-base-300 py-2 group">
+                  <summary class="cursor-pointer flex items-center justify-between font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-expanded="false">
+                    Emotional &amp; physical clues
+                    <span class="ml-2 transform transition-transform group-open:rotate-180">▾</span>
+                  </summary>
+                  <ul class="list-disc list-inside mt-2 pl-4 space-y-1">
+                    <li>Strong reactions after going online — visible laughter, anger, or tears<Cite id="stopbullyingSigns2021" /></li>
+                    <li>Changes in mood, sleep, or appetite (headaches, stomach-aches, insomnia, overeating/undereating)<Cite id="netsmartz2025" /></li>
+                    <li>Signs of anxiety or depression<Cite id="netsmartz2025" /></li>
+                  </ul>
+                </details>
+
+                <details class="border-t border-base-300 py-2 group">
+                  <summary class="cursor-pointer flex items-center justify-between font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-expanded="false">
+                    Social &amp; academic clues
+                    <span class="ml-2 transform transition-transform group-open:rotate-180">▾</span>
+                  </summary>
+                  <ul class="list-disc list-inside mt-2 pl-4 space-y-1">
+                    <li>Skipping hang-outs, sports, or clubs; spending more time alone<Cite id="netsmartz2025" /></li>
+                    <li>Declining grades or trouble concentrating<Cite id="aapHealthyChildren2022" /></li>
+                    <li>Dropping participation in class or school activities<Cite id="netsmartz2025" /></li>
+                  </ul>
+                </details>
+
+                <p class="text-base-content opacity-70 mt-4">
+                  One sign alone doesn’t prove cyberbullying, but a pattern should spark calm, open-ended questions and supportive follow-up.
                 </p>
+
+
               </div>
             </div>
 
@@ -150,63 +208,215 @@ import Cite from '../lib/citations/Cite.astro';
             <div class="card bg-base-100 shadow-lg">
               <div class="card-body space-y-6">
                 <h3 class="card-title text-xl text-accent mb-4">Prevention Strategies</h3>
+                <div class="card-intro md:min-h-[240px] flex flex-col justify-between">
                 <p class="text-base-content opacity-70">
-                  Strong relationships and smart tech settings are the best defense. Try weaving these practices into everyday life:
+                  Strong relationships and smart tech settings are the best defenses. Weave these practices into everyday family life.
                 </p>
 
-                <div class="border-l-4 border-accent/30 pl-4">
-                  <ul class="list-disc list-inside space-y-1">
-                    <li>Talk early &amp; often — ask what they’re doing online, how posts make them feel, and listen without judgment<Cite id="stopbullyingPrevent2024" /></li>
-                    <li>Build a Family Media Plan — together set screen-time limits, approved apps, and agreed-upon consequences for hurtful posts<Cite id="aapHealthyChildren2022" /></li>
-                    <li>Teach digital citizenship &amp; empathy — use school or free curricula (e.g., Common Sense) to practice respectful commenting, verifying sources, and protecting privacy<Cite id="aapCoE2024" /></li>
-                    <li>Lock down privacy &amp; security tools — review every platform’s settings, enable two-factor log-ins, and show kids how to block/report harassers<Cite id="stopbullyingPrevent2024" /></li>
-                    <li>Model healthy tech habits — put your own phone away at dinner, avoid posting gossip, and show how to pause before sharing<Cite id="aapHealthyChildren2022" /></li>
-                    <li>Coach “up-stander” skills — encourage kids to support peers, refuse to forward cruel content, and speak up when someone’s targeted<Cite id="verywell2020" /></li>
-                    <li>Document &amp; report problems fast — screenshot abusive messages, save dates/times, and follow school or platform reporting channels<Cite id="stopbullyingPrevent2024" /></li>
-                    <li>Work with schools &amp; community — align household rules with classroom policies and community programs so messages stay consistent<Cite id="stopbullyingPrevent2024" /></li>
-                  </ul>
+                <!-- Quick snapshot list (always visible) -->
+                <ul class="list-disc list-inside space-y-1 mt-4">
+                  <li>Talk early &amp; often about online life</li>
+                  <li>Create a family media plan together</li>
+                  <li>Teach critical thinking &amp; privacy basics</li>
+                </ul>
+
                 </div>
+                <!-- Collapsible Accordions (collapsed by default) -->
+                <details class="border-t border-base-300 py-2 group">
+                  <summary class="cursor-pointer flex items-center justify-between font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-expanded="false">
+                    Everyday communication &amp; planning
+                    <span class="ml-2 transform transition-transform group-open:rotate-180">▾</span>
+                  </summary>
+                  <ul class="list-disc list-inside mt-2 pl-4 space-y-1">
+                    <li>Ask what kids are doing online, how posts make them feel, and listen without judgment<Cite id="stopbullyingPrevent2024" /></li>
+                    <li>Build a Family Media Plan—set screen-time limits, approve apps, and agree on consequences for hurtful posts<Cite id="aapHealthyChildren2022" /></li>
+                    <li>Keep dialogue two-way so kids feel safe telling you when something goes wrong<Cite id="stopbullyingPrevent2024" /></li>
+                  </ul>
+                </details>
+
+                <details class="border-t border-base-300 py-2 group">
+                  <summary class="cursor-pointer flex items-center justify-between font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-expanded="false">
+                    Digital skills &amp; safety tools
+                    <span class="ml-2 transform transition-transform group-open:rotate-180">▾</span>
+                  </summary>
+                  <ul class="list-disc list-inside mt-2 pl-4 space-y-1">
+                    <li>Teach digital citizenship &amp; empathy using free curricula like Common Sense<Cite id="aapCoE2024" /></li>
+                    <li>Practice critical commenting: verify sources, respect privacy, avoid gossip<Cite id="aapCoE2024" /></li>
+                    <li>Lock down privacy settings, enable two-factor log-ins, and show kids how to block/report harassers<Cite id="stopbullyingPrevent2024" /></li>
+                  </ul>
+                </details>
+
+                <details class="border-t border-base-300 py-2 group">
+                  <summary class="cursor-pointer flex items-center justify-between font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-accent" aria-expanded="false">
+                    Model, Act &amp; Report 
+                    <span class="ml-2 transform transition-transform group-open:rotate-180">▾</span>
+                  </summary>
+                  <ul class="list-disc list-inside mt-2 pl-4 space-y-1">
+                    <li>Model healthy habits—put phones away at dinner, take social breaks, avoid posting gossip<Cite id="aapHealthyChildren2022" /></li>
+                    <li>Coach “upstander” skills: support peers, refuse to forward hurtful content, speak up when someone is targeted<Cite id="verywell2020" /></li>
+                    <li>Document problems quickly (screenshots, dates, times) and follow school or platform reporting channels<Cite id="stopbullyingPrevent2024" /></li>
+                    <li>Align household rules with school policies and community programs for consistent messaging<Cite id="stopbullyingPrevent2024" /></li>
+                  </ul>
+                </details>
+
+                <p class="text-base-content opacity-70 mt-4">
+                  Preventive steps work best when they become routine—short, frequent conversations beat one big lecture.
+                </p>
               </div>
             </div>
           </div>
 
           <!-- Response Actions -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-            <div class="card bg-base-100 shadow-lg">
-              <div class="card-body space-y-6">
-                <h3 class="card-title text-xl text-accent mb-4">If Your Child is Being Bullied</h3>
-                <p class="text-base-content opacity-70">Stay calm and walk through these steps together—each one helps protect your child and limits further harm.</p>
+            <!-- If Your Child is Being Bullied -->
+            <div class="space-y-6">
+              <h3 class="text-xl font-bold text-accent mb-2">If Your Child is Being Bullied</h3>
+              <p class="text-base-content opacity-70 max-w-2xl">Stay calm and walk through these steps together—each one helps protect your child and limits further harm.</p>
 
-                <div class="border-l-4 border-accent/30 pl-4">
-                  <ul class="space-y-3">
-                    <li><strong>Listen &amp; reassure.</strong> Thank your child for telling you, stay composed, and remind them the bullying is not their fault<Cite id="stopbullyingResponse2021" /> <Cite id="aapBullied2022" /></li>
-                    <li><strong>Collect proof.</strong> Save screenshots, messages, dates, and usernames; keep a written log in case repeated incidents need to be shown to school officials or police<Cite id="stopbullyingResponse2021" /> <Cite id="cyberbullyingRC2024v2" /></li>
-                    <li><strong>Block &amp; report online.</strong> Use the platform’s tools to block the bully, tighten privacy settings, and submit an official report<Cite id="stopbullyingResponse2021" /></li>
-                    <li><strong>Notify the school.</strong> Share evidence with teachers or the principal and ask how they’ll enforce the district’s bullying policy<Cite id="stopbullyingResponse2021" /></li>
-                    <li><strong>Don’t take the device away.</strong> Removing phones can feel like punishment and may discourage future disclosure; instead, agree on safety rules together<Cite id="aapBullied2022" /></li>
-                    <li><strong>Offer emotional &amp; mental-health support.</strong> Check for changes in mood or sleep, encourage healthy routines, and consider a counselor, pediatrician, or calling 988 if distress escalates<Cite id="aapBullied2022" /></li>
-                    <li><strong>Escalate when necessary.</strong> Contact law enforcement if there are threats, sexual images, or hate crimes, or if harassment continues after reporting<Cite id="stopbullyingResponse2021" /></li>
-                    <li><strong>Follow up &amp; celebrate progress.</strong> Keep the conversation going, review reporting outcomes, and praise your child’s resilience and positive online choices<Cite id="aapBullied2022" /></li>
-                  </ul>
+              <!-- Three mini-cards -->
+              <div class="space-y-6">
+                <!-- Document Card -->
+                <div class="card bg-base-100 shadow-lg border-t-4 border-blue-500">
+                  <div class="card-body min-h-[230px] space-y-4">
+                    <h4 class="card-title text-lg text-blue-600">Document</h4>
+                    <p class="opacity-70">Capture proof quickly before it disappears.</p>
+
+                    <details class="border-t border-base-300 py-2 group" aria-expanded="false">
+                      <summary class="cursor-pointer flex items-center justify-between font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
+                        Checklist
+                        <span class="ml-2 transform transition-transform group-open:rotate-180">▾</span>
+                      </summary>
+                      <ul class="list-disc list-inside mt-2 pl-4 space-y-1">
+                        <li>Take screenshots of messages, images, usernames, dates, and times.<Cite id="stopbullyingResponse2021" /></li>
+                        <li>Save URLs or direct links to offending posts.<Cite id="cyberbullyingRC2024v2" /></li>
+                        <li>Note platforms, game titles, or chat apps involved.<Cite id="stopbullyingResponse2021" /></li>
+                        <li>Record witness names or anyone copied on group chats.<Cite id="aapBullied2022" /></li>
+                        <li>Back up files to cloud or external drive; avoid editing originals.<Cite id="stopbullyingResponse2021" /></li>
+                        <li>Log the child’s emotional or physical reactions (e.g., lost sleep).<Cite id="aapBullied2022" /></li>
+                      </ul>
+                    </details>
+
+                    <!-- Micro-CTA -->
+
+                  </div>
                 </div>
-              </div>
+
+                <!-- Report Card -->
+                <div class="card bg-base-100 shadow-lg border-t-4 border-orange-500">
+                  <div class="card-body min-h-[230px] space-y-4">
+                    <h4 class="card-title text-lg text-orange-600">Report</h4>
+                    <p class="opacity-70">Alert platforms, schools, or law enforcement fast.</p>
+
+                    <details class="border-t border-base-300 py-2 group" aria-expanded="false">
+                      <summary class="cursor-pointer flex items-center justify-between font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500">
+                        Checklist
+                        <span class="ml-2 transform transition-transform group-open:rotate-180">▾</span>
+                      </summary>
+                      <ul class="list-disc list-inside mt-2 pl-4 space-y-1">
+                        <li>Use the platform’s “Report” or “Block” tools (attach screenshots).<Cite id="stopbullyingResponse2021" /></li>
+                        <li>Copy confirmation numbers or email receipts for your records.<Cite id="stopbullyingResponse2021" /></li>
+                        <li>Notify the school counselor or principal if students are involved.<Cite id="stopbullyingResponse2021" /></li>
+                        <li>Escalate to law enforcement for threats, sexual content, or doxxing.<Cite id="stopbullyingResponse2021" /></li>
+                        <li>Share only the evidence—don’t repost hurtful content publicly.<Cite id="aapBullied2022" /></li>
+                        <li>Follow up within 48 hours; resend evidence if needed.<Cite id="aapBullied2022" /></li>
+                      </ul>
+                    </details>
+
+
+                  </div>
+                </div>
+
+                <!-- Support Card -->
+                <div class="card bg-base-100 shadow-lg border-t-4 border-green-500">
+                  <div class="card-body min-h-[230px] space-y-4">
+                    <h4 class="card-title text-lg text-green-700">Support</h4>
+                    <p class="opacity-70">Rebuild safety and confidence after the incident.</p>
+
+                    <details class="border-t border-base-300 py-2 group" aria-expanded="false">
+                      <summary class="cursor-pointer flex items-center justify-between font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500">
+                        Checklist
+                        <span class="ml-2 transform transition-transform group-open:rotate-180">▾</span>
+                      </summary>
+                      <ul class="list-disc list-inside mt-2 pl-4 space-y-1">
+                        <li>Listen without judgment; validate feelings before advising.<Cite id="aapBullied2022" /></li>
+                        <li>Brainstorm coping tactics—exercise, art, offline friends.<Cite id="aapBullied2022" /></li>
+                        <li>Adjust privacy settings and friend lists together.<Cite id="stopbullyingResponse2021" /></li>
+                        <li>Schedule check-ins to monitor mood, sleep, and schoolwork.<Cite id="aapBullied2022" /></li>
+                        <li>Seek professional help if anxiety or depression persists (988, counselor).<Cite id="aapBullied2022" /></li>
+                        <li>Celebrate upstander moments—praise your child for seeking help.<Cite id="stopbullyingResponse2021" /></li>
+                      </ul>
+                    </details>
+                  </div>
+                </div>
+            </div>
             </div>
 
-            <div class="card bg-base-100 shadow-lg">
-              <div class="card-body space-y-6">
-                <h3 class="card-title text-xl text-accent mb-4">If Your Child is Bullying Others</h3>
-                <p class="text-base-content opacity-70">A calm, solution-focused response helps kids change harmful behavior without shame. Walk through these steps together:</p>
+            <div class="space-y-6">
+              <h3 class="text-xl font-bold text-accent mb-2">If Your Child is Bullying Others</h3>
+              <p class="text-base-content opacity-70 max-w-2xl">
+                Bullying behavior can change. Walk through these steps together—each one guides your child toward accountability and growth.
+               </p>
 
-                <div class="border-l-4 border-accent/30 pl-4">
-                  <ul class="space-y-3">
-                    <li><strong>Start with an honest talk.</strong> Describe the exact behavior you saw or that was reported, emphasize that it is bullying, and listen for underlying motives (fitting-in, stress, past victimization, etc.)<Cite id="stopbullyingChildBully2024" /></li>
-                    <li><strong>Make expectations crystal-clear.</strong> State that bullying will not be tolerated at home, school, or online; outline firm, consistent consequences such as loss of device time or activities<Cite id="stopbullyingChildBully2024" /> <Cite id="aapChildBully2024" /></li>
-                    <li><strong>Build empathy &amp; accountability.</strong> Ask your child to imagine how the target feels; role-play respectful alternatives and require genuine apologies or restitution (e.g., repairing a post, writing a note)<Cite id="aapChildBully2024" /></li>
-                    <li><strong>Address root causes.</strong> If bullying masks anxiety, trauma, or peer-pressure, involve the pediatrician, school counselor, or a mental-health professional; channel energy into positive groups, sports, or clubs<Cite id="stopbullyingChildBully2024" /></li>
-                    <li><strong>Partner with the school.</strong> Work with teachers or principals on a behavior plan that includes monitoring, logical consequences, and opportunities for your child to make amends<Cite id="stopbullyingChildBully2024" /> <Cite id="aapChildBully2024" /></li>
-                    <li><strong>Model &amp; monitor digital citizenship.</strong> Show respectful online behavior yourself, review privacy settings together, and keep an eye on accounts to reinforce progress without constant surveillance<Cite id="cyberbullyingBully2023" /></li>
-                    <li><strong>Reinforce the positives.</strong> Praise every step toward kindness—helping a peer, posting something supportive, or handling conflict respectfully—to replace negativity with pro-social habits<Cite id="aapChildBully2024" /> <Cite id="cyberbullyingBully2023" /></li>
-                  </ul>
+              <!-- Recognize Card -->
+              <div class="card bg-base-100 shadow-lg border-t-4 border-blue-500">
+                <div class="card-body min-h-[230px] space-y-4">
+                  <h4 class="card-title text-lg text-blue-600">Recognize</h4>
+                  <p class="opacity-70">Stay calm and gather the full picture first.</p>
+                  <details class="border-t border-base-300 py-2 group" aria-expanded="false">
+                    <summary class="cursor-pointer flex items-center justify-between font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
+                      Checklist
+                      <span class="ml-2 transform transition-transform group-open:rotate-180">▾</span>
+                    </summary>
+                    <ul class="list-disc list-inside mt-2 pl-4 space-y-1">
+                      <li>Listen to reports from teachers, parents, or the target’s family without interrupting.<Cite id="stopbullyingChildBully2024" /></li>
+                      <li>Ask your child to describe what happened; avoid yes/no questions.<Cite id="aapChildBully2024" /></li>
+                      <li>Collect evidence (screenshots, messages) to confirm details.<Cite id="stopbullyingChildBully2024" /></li>
+                      <li>Note any patterns—times, platforms, peer pressure.<Cite id="cyberbullyingBully2023" /></li>
+                      <li>Reflect on possible triggers: stress, conflict, or copying peers.<Cite id="aapChildBully2024" /></li>
+                    </ul>
+                  </details>
+                </div>
+              </div>
+
+              <!-- Address Card -->
+              <div class="card bg-base-100 shadow-lg border-t-4 border-orange-500">
+                <div class="card-body min-h-[230px] space-y-4">
+                  <h4 class="card-title text-lg text-orange-600">Address</h4>
+                  <p class="opacity-70">Set clear rules and teach empathy right away.</p>
+                  <details class="border-t border-base-300 py-2 group" aria-expanded="false">
+                    <summary class="cursor-pointer flex items-center justify-between font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500">
+                      Checklist
+                      <span class="ml-2 transform transition-transform group-open:rotate-180">▾</span>
+                    </summary>
+                    <ul class="list-disc list-inside mt-2 pl-4 space-y-1">
+                      <li>State why the behavior is unacceptable and outline immediate consequences.<Cite id="stopbullyingChildBully2024" /></li>
+                      <li>Discuss impact on the victim—use “How would you feel if…?” prompts.<Cite id="aapChildBully2024" /></li>
+                      <li>Practice replacement skills: respectful messaging, conflict resolution.<Cite id="aapChildBully2024" /></li>
+                      <li>Role-play responding to peers who encourage bullying.<Cite id="cyberbullyingBully2023" /></li>
+                      <li>Involve school staff or counselors to reinforce expectations.<Cite id="stopbullyingChildBully2024" /></li>
+                    </ul>
+                  </details>
+                </div>
+              </div>
+
+              <!-- Repair Card -->
+              <div class="card bg-base-100 shadow-lg border-t-4 border-green-500">
+                <div class="card-body min-h-[230px] space-y-4">
+                  <h4 class="card-title text-lg text-green-700">Repair</h4>
+                  <p class="opacity-70">Help them make amends and prevent repeat incidents.</p>
+                  <details class="border-t border-base-300 py-2 group" aria-expanded="false">
+                    <summary class="cursor-pointer flex items-center justify-between font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500">
+                      Checklist
+                      <span class="ml-2 transform transition-transform group-open:rotate-180">▾</span>
+                    </summary>
+                    <ul class="list-disc list-inside mt-2 pl-4 space-y-1">
+                      <li>Guide your child to apologize sincerely—written or face-to-face, if safe.<Cite id="aapChildBully2024" /></li>
+                      <li>Remove or edit harmful posts; ensure blocking tools prevent further harm.<Cite id="cyberbullyingBully2023" /></li>
+                      <li>Monitor online activity & emotional cues for at least 30 days.<Cite id="stopbullyingChildBully2024" /></li>
+                      <li>Schedule check-ins with school and, if needed, a mental-health professional.<Cite id="aapChildBully2024" /></li>
+                      <li>Celebrate positive steps (kind posts, bystander actions).<Cite id="cyberbullyingBully2023" /></li>
+                    </ul>
+                  </details>
                 </div>
               </div>
             </div>

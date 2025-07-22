@@ -295,9 +295,6 @@ import Cite from '../lib/citations/Cite.astro';
                         <li>Log the child’s emotional or physical reactions (e.g., lost sleep).<Cite id="aapBullied2022" /></li>
                       </ul>
                     </details>
-
-                    <!-- Micro-CTA -->
-
                   </div>
                 </div>
 
@@ -321,8 +318,6 @@ import Cite from '../lib/citations/Cite.astro';
                         <li>Follow up within 48 hours; resend evidence if needed.<Cite id="aapBullied2022" /></li>
                       </ul>
                     </details>
-
-
                   </div>
                 </div>
 
@@ -348,9 +343,10 @@ import Cite from '../lib/citations/Cite.astro';
                     </details>
                   </div>
                 </div>
-            </div>
+              </div>
             </div>
 
+            <!-- If Your Child is Bullying Others -->
             <div class="space-y-6">
               <h3 class="text-xl font-bold text-accent mb-2">If Your Child is Bullying Others</h3>
               <p class="text-base-content opacity-70 max-w-2xl">
@@ -384,7 +380,7 @@ import Cite from '../lib/citations/Cite.astro';
                   <h4 class="card-title text-lg text-orange-600">Address</h4>
                   <p class="opacity-70">Set clear rules and teach empathy right away.</p>
                   <details class="border-t border-base-300 py-2 group" aria-expanded="false">
-                    <summary class="cursor-pointer flex items-center justify-between font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500">
+                    <summary class="cursor-pointer flex items-center justify-between font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500">
                       Checklist
                       <span class="ml-2 transform transition-transform group-open:rotate-180">▾</span>
                     </summary>
@@ -405,7 +401,7 @@ import Cite from '../lib/citations/Cite.astro';
                   <h4 class="card-title text-lg text-green-700">Repair</h4>
                   <p class="opacity-70">Help them make amends and prevent repeat incidents.</p>
                   <details class="border-t border-base-300 py-2 group" aria-expanded="false">
-                    <summary class="cursor-pointer flex items-center justify-between font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500">
+                    <summary class="cursor-pointer flex items-center justify-between font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-green-500">
                       Checklist
                       <span class="ml-2 transform transition-transform group-open:rotate-180">▾</span>
                     </summary>
@@ -448,23 +444,53 @@ import Cite from '../lib/citations/Cite.astro';
                 </div>
                 <div class="prose text-base-content mb-4">
                   <h4 class="font-semibold">iOS 17 Setup Guide</h4>
-                  <ol class="list-decimal pl-5 space-y-2">
-                    <li><strong>Add child to Family&nbsp;Sharing.</strong> On the parent iPhone open <em>Settings › Family</em> › <em>Add Member</em> (or choose the child) and follow the prompts.</li>
-                    <li><strong>Turn on Screen Time & set a passcode.</strong> Go to <em>Settings › Screen Time › [child]</em>, tap <em>Turn On Screen Time</em>, choose “This is My Child’s iPhone,” then create a 4-digit Screen Time passcode that’s different from the device unlock code.</li>
-                    <li><strong>Schedule Downtime.</strong> In Screen Time tap <em>Downtime › Scheduled</em>, pick a start/end time (e.g., 9 PM–7 AM) and enable <em>Block at Downtime</em>.</li>
-                    <li><strong>Set App Limits.</strong> Screen Time › <em>App Limits › Add Limit</em>, select categories/apps, set a daily limit (e.g., 1 hour) and tap <em>Add</em>.</li>
-                    <li><strong>Configure Communication Limits.</strong> Screen Time › <em>Communication Limits</em>, decide who the child can contact during allowed time and downtime (e.g., Contacts Only).</li>
-                    <li><strong>Choose “Always Allowed” apps.</strong> Screen Time › <em>Always Allowed</em>, keep essentials (Phone, Messages) and remove browsers/games you don’t want accessible 24/7.</li>
-                    <li><strong>Turn on Content & Privacy Restrictions.</strong> Screen Time › <em>Content & Privacy Restrictions</em> → On, then adjust:
-                      <ul class="list-disc pl-5">
-                        <li><em>Web Content</em> → Limit Adult Websites</li>
-                        <li><em>App Store Purchases</em> → In-App Purchases = Don’t Allow</li>
-                        <li><em>Allowed Apps</em> → Hide Safari or Mail if desired</li>
-                      </ul>
-                    </li>
-                    <li><strong>Enable “Ask to Buy” & block in-app purchases.</strong> <em>Settings › Family › [child] › Ask to Buy</em> → Require Purchase Approval. Also ensure <em>In-App Purchases = Don’t Allow</em> (Content & Privacy › App Store Purchases).</li>
-                    <li><strong>Turn on Communication Safety & Screen Distance.</strong> Screen Time › <em>Communication Safety</em> → On (nudity warnings); on supported models enable <em>Screen Distance</em> to remind kids not to hold the phone too close.</li>
-                  </ol>
+                  <!-- Accordion 1 -->
+                  <div class="collapse collapse-plus border border-base-300 bg-base-100 rounded-box mb-3">
+                    <input type="checkbox" class="peer" />
+                    <div class="collapse-title font-medium">Set Up Screen Time &amp; Downtime</div>
+                    <div class="collapse-content">
+                      <p class="mb-2"><em>Why this matters:</em> Establishes healthy device routines and boundaries.</p>
+                      <ol class="list-decimal pl-5 space-y-2">
+                        <li><strong>Add child to Family&nbsp;Sharing.</strong> On the parent iPhone open <em>Settings › Family</em> › <em>Add Member</em> (or choose the child) and follow the prompts.</li>
+                        <li><strong>Turn on Screen Time &amp; set a passcode.</strong> Go to <em>Settings › Screen Time › [child]</em>, tap <em>Turn On Screen Time</em>, choose “This is My Child’s iPhone,” then create a 4-digit Screen Time passcode that’s different from the device unlock code.</li>
+                        <li><strong>Schedule Downtime.</strong> In Screen Time tap <em>Downtime › Scheduled</em>, pick a start/end time (e.g., 9&nbsp;PM–7&nbsp;AM) and enable <em>Block at Downtime</em>.</li>
+                        <li><strong>Set App Limits.</strong> Screen Time › <em>App Limits › Add Limit</em>, select categories/apps, set a daily limit (e.g., 1&nbsp;hour) and tap <em>Add</em>.</li>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <!-- Accordion 2 -->
+                  <div class="collapse collapse-plus border border-base-300 bg-base-100 rounded-box mb-3">
+                    <input type="checkbox" class="peer" />
+                    <div class="collapse-title font-medium">Manage Contacts &amp; Safety Features</div>
+                    <div class="collapse-content">
+                      <p class="mb-2"><em>Why this matters:</em> Limits who kids can talk to and warns them about risky content.</p>
+                      <ol class="list-decimal pl-5 space-y-2">
+                        <li><strong>Configure Communication Limits.</strong> Screen Time › <em>Communication Limits</em>, decide who the child can contact during allowed time and downtime (e.g., Contacts Only).</li>
+                        <li><strong>Choose “Always Allowed” apps.</strong> Screen Time › <em>Always Allowed</em>, keep essentials (Phone, Messages) and remove browsers/games you don’t want accessible 24/7.</li>
+                        <li><strong>Turn on Communication Safety &amp; Screen Distance.</strong> Screen Time › <em>Communication Safety</em> → On (nudity warnings); on supported models enable <em>Screen Distance</em> to remind kids not to hold the phone too close.</li>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <!-- Accordion 3 -->
+                  <div class="collapse collapse-plus border border-base-300 bg-base-100 rounded-box">
+                    <input type="checkbox" class="peer" />
+                    <div class="collapse-title font-medium">Lock Purchases &amp; Mature Content</div>
+                    <div class="collapse-content">
+                      <p class="mb-2"><em>Why this matters:</em> Prevents surprise bills and blocks adult material.</p>
+                      <ol class="list-decimal pl-5 space-y-2">
+                        <li><strong>Turn on Content &amp; Privacy Restrictions.</strong> Screen Time › <em>Content &amp; Privacy Restrictions</em> → On, then adjust:
+                          <ul class="list-disc pl-5">
+                            <li><em>Web Content</em> → Limit Adult Websites</li>
+                            <li><em>App Store Purchases</em> → In-App Purchases = Don’t Allow</li>
+                            <li><em>Allowed Apps</em> → Hide Safari or Mail if desired</li>
+                          </ul>
+                        </li>
+                        <li><strong>Enable “Ask to Buy” &amp; block in-app purchases.</strong> <em>Settings › Family › [child] › Ask to Buy</em> → Require Purchase Approval. Also ensure <em>In-App Purchases = Don’t Allow</em> (Content &amp; Privacy › App Store Purchases).</li>
+                      </ol>
+                    </div>
+                  </div>
                 </div>
                 <div class="card-actions">
                   <a href="https://support.apple.com/en-us/HT208982" target="_blank" class="btn btn-primary btn-sm">Official Apple Guide</a>
@@ -483,18 +509,48 @@ import Cite from '../lib/citations/Cite.astro';
                 </div>
                 <div class="prose text-base-content mb-4">
                   <h4 class="font-semibold">Android 13/14 Family Link Guide</h4>
-                  <ol class="list-decimal pl-5 space-y-2">
-                    <li><strong>Add child with Google Family Link.</strong> On the parent phone, install or open Google&nbsp;Family&nbsp;Link and tap <em>Add child</em>. Follow the prompts to create or link the child’s Google&nbsp;Account. On the child phone, sign in via <em>Settings › Passwords &amp; accounts</em>.</li>
-                    <li><strong>Turn on daily screen-time limits.</strong> In the Family&nbsp;Link parent app, select your child → <em>Screen time › Daily&nbsp;Limit</em>; set total hours allowed (e.g., 2&nbsp;h). Optional: tap <em>Lock device now</em> to enforce limits immediately.</li>
-                    <li><strong>Set a bedtime (“curfew”).</strong> In the same <em>Screen time</em> menu, tap <em>Bedtime</em>; choose start/end times (e.g., 9&nbsp;PM–7&nbsp;AM). The device locks outside these hours.</li>
-                    <li><strong>Add per-app timers with Digital&nbsp;Wellbeing.</strong> On the child phone, open <em>Settings › Digital&nbsp;Wellbeing &amp; Parental controls</em>; tap the pie chart, choose an app → <em>Set timer</em>, then pick daily minutes (e.g., 30&nbsp;m).</li>
-                    <li><strong>Turn on Bedtime&nbsp;mode.</strong> <em>Settings › Digital&nbsp;Wellbeing &amp; Parental controls › Bedtime mode › Customize</em>; schedule sleep hours and enable <em>Keep screen dark</em> and <em>Do&nbsp;Not&nbsp;Disturb</em>.</li>
-                    <li><strong>Use Focus&nbsp;mode for homework.</strong> <em>Settings › Digital&nbsp;Wellbeing › Focus mode</em>; select distracting apps to pause, then tap <em>Turn on now</em> or set an automatic schedule.</li>
-                    <li><strong>Lock Google&nbsp;Play with content filters.</strong> In Family&nbsp;Link → child → <em>Controls › Google&nbsp;Play</em>; set age ratings for Apps&nbsp;&amp;&nbsp;Games, Movies, Books, etc., then create a PIN so kids can’t change the filters.</li>
-                    <li><strong>Require parent approval for purchases.</strong> Family&nbsp;Link → child → <em>Controls › Google&nbsp;Play › Purchase approvals</em>; set <em>All content</em> so every paid download or in-app purchase needs your OK.</li>
-                    <li><strong>Enable or lock SafeSearch.</strong> Family&nbsp;Link → child → <em>Controls › Google&nbsp;Search</em>; ensure <em>SafeSearch = Filter</em>. (Locked by default for under-13s.)</li>
-                    <li><strong>Optional: view location &amp; device info.</strong> In Family&nbsp;Link, tap <em>Location</em> on the home screen to see the device on a map or play a sound; toggle settings as preferred.</li>
-                  </ol>
+                  <!-- Accordion 1 -->
+                  <div class="collapse collapse-plus border border-base-300 bg-base-100 rounded-box mb-3">
+                    <input type="checkbox" class="peer" />
+                    <div class="collapse-title font-medium">Family Link &amp; Daily Limits</div>
+                    <div class="collapse-content">
+                      <p class="mb-2"><em>Why this matters:</em> Links your child’s account and sets core time boundaries.</p>
+                      <ol class="list-decimal pl-5 space-y-2">
+                        <li><strong>Add child with Google Family Link.</strong> On the parent phone, install or open Google&nbsp;Family&nbsp;Link and tap <em>Add child</em>. Follow the prompts to create or link the child’s Google&nbsp;Account. On the child phone, sign in via <em>Settings › Passwords &amp; accounts</em>.</li>
+                        <li><strong>Turn on daily screen-time limits.</strong> In the Family&nbsp;Link parent app, select your child → <em>Screen time › Daily&nbsp;Limit</em>; set total hours allowed (e.g., 2&nbsp;h).</li>
+                        <li><strong>Set a bedtime (“curfew”).</strong> In the same <em>Screen time</em> menu, tap <em>Bedtime</em>; choose start/end times (e.g., 9&nbsp;PM–7&nbsp;AM).</li>
+                        <li><strong>Add per-app timers.</strong> On the child phone, open <em>Settings › Digital&nbsp;Wellbeing</em>; choose an app → <em>Set timer</em>, then pick daily minutes (e.g., 30&nbsp;m).</li>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <!-- Accordion 2 -->
+                  <div class="collapse collapse-plus border border-base-300 bg-base-100 rounded-box mb-3">
+                    <input type="checkbox" class="peer" />
+                    <div class="collapse-title font-medium">Focus &amp; Bedtime Modes</div>
+                    <div class="collapse-content">
+                      <p class="mb-2"><em>Why this matters:</em> Minimises distractions during sleep and study.</p>
+                      <ol class="list-decimal pl-5 space-y-2">
+                        <li><strong>Turn on Bedtime&nbsp;mode.</strong> <em>Settings › Digital&nbsp;Wellbeing › Bedtime mode</em>; schedule sleep hours and enable <em>Keep screen dark</em> and <em>Do&nbsp;Not&nbsp;Disturb</em>.</li>
+                        <li><strong>Use Focus&nbsp;mode for homework.</strong> <em>Settings › Digital&nbsp;Wellbeing › Focus mode</em>; select distracting apps to pause, then tap <em>Turn on now</em> or set a schedule.</li>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <!-- Accordion 3 -->
+                  <div class="collapse collapse-plus border border-base-300 bg-base-100 rounded-box">
+                    <input type="checkbox" class="peer" />
+                    <div class="collapse-title font-medium">Content Filters, Purchases &amp; Safety</div>
+                    <div class="collapse-content">
+                      <p class="mb-2"><em>Why this matters:</em> Blocks inappropriate material and surprise spending.</p>
+                      <ol class="list-decimal pl-5 space-y-2">
+                        <li><strong>Lock Google&nbsp;Play with content filters.</strong> In Family&nbsp;Link → child → <em>Controls › Google&nbsp;Play</em>; set age ratings for Apps&nbsp;&amp;&nbsp;Games, Movies, Books, etc., then create a PIN so kids can’t change the filters.</li>
+                        <li><strong>Require parent approval for purchases.</strong> Family&nbsp;Link → child → <em>Controls › Google&nbsp;Play › Purchase approvals</em>; set <em>All content</em>.</li>
+                        <li><strong>Enable or lock SafeSearch.</strong> Family&nbsp;Link → child → <em>Controls › Google&nbsp;Search</em>; ensure <em>SafeSearch = Filter</em>.</li>
+                        <li><strong>View location &amp; device info.</strong> In Family&nbsp;Link, tap <em>Location</em> to see the device on a map or play a sound.</li>
+                      </ol>
+                    </div>
+                  </div>
                 </div>
                 <div class="card-actions">
                   <a href="https://support.google.com/families/answer/7103338" target="_blank" class="btn btn-primary btn-sm">Official Family Link Guide</a>

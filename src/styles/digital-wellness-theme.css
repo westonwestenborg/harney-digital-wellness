@@ -15,14 +15,6 @@
   color: oklch(25.47% 0.110 82.31);
 }
 
-/* Dark mode hero gradients (if implementing dark mode later) */
-@media (prefers-color-scheme: dark) {
-  .hero-gradient-primary {
-    background: linear-gradient(135deg,
-      oklch(20.47% 0.080 255.56) 0%,
-      oklch(20.47% 0.080 106.26) 100%);
-  }
-}
 
 /* Hero text contrast improvements */
 .hero-title {

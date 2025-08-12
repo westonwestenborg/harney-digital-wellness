@@ -48,6 +48,24 @@ import FamilyMediaPlan from "../components/FamilyMediaPlan.jsx";
                                             ><input
                                                 type="radio"
                                                 name="ageGroup"
+                                                value="5-7"
+                                                class="radio radio-primary"
+                                            />
+                                            5–7
+                                        </label>
+                                        <label class="cursor-pointer flex items-center gap-2"
+                                            ><input
+                                                type="radio"
+                                                name="ageGroup"
+                                                value="8-10"
+                                                class="radio radio-primary"
+                                            />
+                                            8–10
+                                        </label>
+                                        <label class="cursor-pointer flex items-center gap-2"
+                                            ><input
+                                                type="radio"
+                                                name="ageGroup"
                                                 value="10-12"
                                                 class="radio radio-primary"
                                             />
@@ -176,6 +194,8 @@ import FamilyMediaPlan from "../components/FamilyMediaPlan.jsx";
                                             const total = parseFloat(totalInput.value) || 0;
 
                                             const thresholds = {
+                                                "5-7": { healthy: 1.5, caution: 2.5 },
+                                                "8-10": { healthy: 2, caution: 3 },
                                                 "10-12": { healthy: 2, caution: 3.5 },
                                                 "13-15": { healthy: 2, caution: 4 },
                                                 "16-18": { healthy: 2, caution: 4 },

@@ -13,7 +13,7 @@ This website provides practical tools and resources for parents and families in 
 
 **Created for:** Harney County families  
 **Backed by:** Pacific University research team  
-**Approved by:** Harney County School District
+**Approved by:** Harney County School District #3
 
 ## 🚀 Quick Start
 
@@ -328,7 +328,7 @@ For technical questions about this implementation:
 
 For content and local resource questions:
 - Contact Pacific University research team
-- Consult with Harney County School District
+- Consult with Harney County School District #3
 - Verify local contact information with sources
 
 ## 📝 License

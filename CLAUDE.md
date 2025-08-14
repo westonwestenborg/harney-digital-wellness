@@ -1,7 +1,7 @@
 # Claude Context - Harney County Digital Wellness Website
 
 ## Project Overview
-A comprehensive digital wellness resource website for Harney County, Oregon families, built with Astro, Tailwind CSS, and daisyUI. Created in partnership with Pacific University research team and approved by Harney County School District.
+A comprehensive digital wellness resource website for Harney County, Oregon families, built with Astro, Tailwind CSS, and daisyUI. Created in partnership with Pacific University research team and approved by Harney County School District #3.
 
 ## Tech Stack & Setup
 - **Framework:** Astro v5 with static site generation

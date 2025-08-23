@@ -58,7 +58,6 @@ module.exports = {
   plugins: [require('daisyui')],
   daisyui: {
     themes: [
-      "light",
       {
         flexoki: {
           // Core brand colors - semantic meaning for digital wellness
@@ -87,5 +86,6 @@ module.exports = {
         },
       },
     ],
+    darkTheme: false, // Disable automatic dark theme switching
   },
 }

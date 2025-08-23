@@ -1,7 +1,7 @@
 /* Digital Wellness Semantic Color Extensions */
 /* Extends Flexoki theme with meaningful color usage for parent guidance */
 
-/* Hero Section Backgrounds - Responsive to light/dark mode */
+/* Hero Section Backgrounds - Light mode styling */
 .hero-gradient-primary {
   background: linear-gradient(135deg, 
     oklch(98.47% 0.050 255.56) 0%, 
